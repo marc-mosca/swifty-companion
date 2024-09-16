@@ -2,6 +2,7 @@
   "sourceLanguage" : "fr",
   "strings" : {
     "- %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -18,6 +19,7 @@
       }
     },
     "%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -34,6 +36,7 @@
       }
     },
     "%@ - %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -50,6 +53,7 @@
       }
     },
     "%@ %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -66,6 +70,7 @@
       }
     },
     "%@ %%" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -82,6 +87,7 @@
       }
     },
     "%@ 👋" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -98,6 +104,7 @@
       }
     },
     "%@ heures" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -114,6 +121,7 @@
       }
     },
     "%@h / jour" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -130,6 +138,7 @@
       }
     },
     "%lld heures" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "variations" : {
@@ -170,6 +179,7 @@
       }
     },
     "%lld heures %lld minutes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -270,6 +280,7 @@
       }
     },
     "%lld jours" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "variations" : {
@@ -310,6 +321,7 @@
       }
     },
     "%lld minutes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "variations" : {
@@ -350,6 +362,7 @@
       }
     },
     "%lldh" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -366,6 +379,7 @@
       }
     },
     "Accomplissements" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -382,6 +396,7 @@
       }
     },
     "Activités à venir" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -398,6 +413,7 @@
       }
     },
     "Aide" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -414,6 +430,7 @@
       }
     },
     "Ajouter" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -430,6 +447,7 @@
       }
     },
     "Ajouter un créneau de correction" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -446,6 +464,7 @@
       }
     },
     "Annuler" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -462,6 +481,7 @@
       }
     },
     "Aucun accomplissement trouvé" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -478,6 +498,7 @@
       }
     },
     "Aucun créneau de correction trouvé" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -494,6 +515,7 @@
       }
     },
     "Aucun historique de recherche" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -510,6 +532,7 @@
       }
     },
     "Aucun parrainage trouvé" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -526,6 +549,7 @@
       }
     },
     "Aucun projet trouvé" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -542,6 +566,7 @@
       }
     },
     "Aucune activité prévu" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -558,6 +583,7 @@
       }
     },
     "Aucune compétence trouvée" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -574,6 +600,7 @@
       }
     },
     "Bienvenue sur" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -590,6 +617,7 @@
       }
     },
     "Bon retour parmi nous !" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -606,6 +634,7 @@
       }
     },
     "Clair" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -622,6 +651,7 @@
       }
     },
     "Compétences" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -638,6 +668,7 @@
       }
     },
     "Compte" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -654,6 +685,7 @@
       }
     },
     "Corrections" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -670,6 +702,7 @@
       }
     },
     "Créer un créneau de correction" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -686,6 +719,7 @@
       }
     },
     "Créez un créneau de correction pour le voir apparaître dans la liste." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -702,6 +736,7 @@
       }
     },
     "Créneau de correction" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -718,6 +753,7 @@
       }
     },
     "Créneau disponible" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -734,6 +770,7 @@
       }
     },
     "Créneau pris" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -750,6 +787,7 @@
       }
     },
     "Cursus" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -766,6 +804,7 @@
       }
     },
     "Dashboard42" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -782,6 +821,7 @@
       }
     },
     "Date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -798,6 +838,7 @@
       }
     },
     "Début" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -814,6 +855,7 @@
       }
     },
     "Définissez la langue de l'application." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -830,6 +872,7 @@
       }
     },
     "Définissez le thème de l'application." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -846,6 +889,7 @@
       }
     },
     "Définissez une valeur par défaut pour le nombre d'heures que vous souhaitez travailler par jour. Laissez sur « Défaut » si vous souhaitez que l'application calcule automatiquement le nombre d'heures que vous devriez travailler par mois." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -862,6 +906,7 @@
       }
     },
     "Description" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -878,6 +923,7 @@
       }
     },
     "Détails" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -894,6 +940,7 @@
       }
     },
     "Developed by Marc MOSCA while eating 🍿" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -910,6 +957,7 @@
       }
     },
     "Durée" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -926,6 +974,7 @@
       }
     },
     "Email" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -942,6 +991,7 @@
       }
     },
     "Emplacement" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -958,6 +1008,7 @@
       }
     },
     "En cours" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -974,6 +1025,7 @@
       }
     },
     "Évènements" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -990,6 +1042,7 @@
       }
     },
     "Examens" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1006,6 +1059,7 @@
       }
     },
     "Filleul" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1022,6 +1076,7 @@
       }
     },
     "Fin" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1038,6 +1093,7 @@
       }
     },
     "Général" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1054,6 +1110,7 @@
       }
     },
     "Grade" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1069,7 +1126,11 @@
         }
       }
     },
+    "Hello, world!" : {
+
+    },
     "Historique de recherche" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1086,6 +1147,7 @@
       }
     },
     "Indéfinie" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1102,6 +1164,7 @@
       }
     },
     "Informations" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1118,6 +1181,7 @@
       }
     },
     "Inscrit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1134,6 +1198,7 @@
       }
     },
     "Inscrivez-vous à une activité (événement, correction ou examen) pour le voir apparaître sur la page d'accueil." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1150,6 +1215,7 @@
       }
     },
     "Langue" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1166,6 +1232,7 @@
       }
     },
     "Lieu" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1182,6 +1249,7 @@
       }
     },
     "Logtime" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1198,6 +1266,7 @@
       }
     },
     "Mon campus" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1214,6 +1283,7 @@
       }
     },
     "Moyenne" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1230,6 +1300,7 @@
       }
     },
     "Niveau" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1246,6 +1317,7 @@
       }
     },
     "Niveau - %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1262,6 +1334,7 @@
       }
     },
     "Nom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1278,6 +1351,7 @@
       }
     },
     "Non" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1294,6 +1368,7 @@
       }
     },
     "Nouveau créneau de correction" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1310,6 +1385,7 @@
       }
     },
     "Numéro de téléphone" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1326,6 +1402,7 @@
       }
     },
     "Objectif" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1342,6 +1419,7 @@
       }
     },
     "OK" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1358,6 +1436,7 @@
       }
     },
     "Oui" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1374,6 +1453,7 @@
       }
     },
     "Par défaut" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1390,6 +1470,7 @@
       }
     },
     "Paramètres" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1406,6 +1487,7 @@
       }
     },
     "Parrain" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1422,6 +1504,7 @@
       }
     },
     "Parrainages" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1438,6 +1521,7 @@
       }
     },
     "Participants" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1454,6 +1538,7 @@
       }
     },
     "Points de corrections" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1470,6 +1555,7 @@
       }
     },
     "Profil intranet" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1486,6 +1572,7 @@
       }
     },
     "Projets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1502,6 +1589,7 @@
       }
     },
     "Projets associés" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1518,6 +1606,7 @@
       }
     },
     "Promotion" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1534,6 +1623,7 @@
       }
     },
     "Recherche" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1550,6 +1640,7 @@
       }
     },
     "Recherchez un étudiant pour le voir dans la liste." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1566,6 +1657,7 @@
       }
     },
     "S'inscrire" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1582,6 +1674,7 @@
       }
     },
     "S'inscrire à l'événement" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1598,6 +1691,7 @@
       }
     },
     "Se déconnecter" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1614,6 +1708,7 @@
       }
     },
     "Se désinscrire" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1630,6 +1725,7 @@
       }
     },
     "Se désinscrire de l'événement" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1646,6 +1742,7 @@
       }
     },
     "Selectionne une catégorie d'activité" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1662,6 +1759,7 @@
       }
     },
     "Sélectionner un filtre" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1678,6 +1776,7 @@
       }
     },
     "Sélectionner une categorie d'activité" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1694,6 +1793,7 @@
       }
     },
     "Signaler un problème" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1710,6 +1810,7 @@
       }
     },
     "Sombre" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1726,6 +1827,7 @@
       }
     },
     "Souhaitez vous vraiment vous désinscrire de cet événement ?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1742,6 +1844,7 @@
       }
     },
     "Souhaitez vous vraiment vous inscrire à cet événement ?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1758,6 +1861,7 @@
       }
     },
     "Souhaitez-vous vraiment vous déconnecter de l'application ?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1774,6 +1878,7 @@
       }
     },
     "Système" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1790,6 +1895,7 @@
       }
     },
     "Tableau de bord" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1806,6 +1912,7 @@
       }
     },
     "Terminé" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1822,6 +1929,7 @@
       }
     },
     "Thème" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1838,6 +1946,7 @@
       }
     },
     "Total" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1854,6 +1963,7 @@
       }
     },
     "Tous" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1870,6 +1980,7 @@
       }
     },
     "Tous voir" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1886,6 +1997,7 @@
       }
     },
     "Un créneau est un intervalle de temps pendant lequel vous vous déclarez disponible pour évaluer les autres étudiants. Un créneau peut être défini chaque jour entre 45 minutes et 2 semaines à l'avance et doit durer au moins une heure." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1902,6 +2014,7 @@
       }
     },
     "Valeur" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1918,6 +2031,7 @@
       }
     },
     "Validez un projet pour gagner des points de compétences." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1934,6 +2048,7 @@
       }
     },
     "Vous corrigez %@ sur %@." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1950,6 +2065,7 @@
       }
     },
     "Vous devez atteindre des objectifs pour débloquer des accomplissements." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1966,6 +2082,7 @@
       }
     },
     "Vous devez être inscrit ou avoir rendu un projet pour le voir dans la liste." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1982,6 +2099,7 @@
       }
     },
     "Vous êtes corrigé par %@ sur %@." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1998,6 +2116,7 @@
       }
     },
     "Wallets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
