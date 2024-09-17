@@ -21,7 +21,7 @@
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/marc-mosca/Dashboard42.git
+    git clone https://github.com/Dashboard42/Dashboard42.git
     ```
 
 2. Navigate to the project folder:
@@ -55,6 +55,7 @@ Contributions are welcome! If you would like to suggest changes or improvements,
 5. Open a Pull Request.
 
 You need to [create an application for 42's API]((https://profile.intra.42.fr/oauth/applications/new)) with the following redirection URI: `fr.marcmosca.Dashboard42://oauth2callback`.
+
 After this, you need to create a configuration file (.xcconfig) to contains API credentials, like this:
 
 ```xcconfig
@@ -67,7 +68,6 @@ API_REDIRECT_URI = fr.marcmosca.Dashboard42:/$(API_CALLBACK)
 ## Known Issues
 
 - The application may have difficulty retrieving data when API 42 is under maintenance.
-- Some features may not be available depending on the campus you are attached to.
 
 ## Disclaimer
 
