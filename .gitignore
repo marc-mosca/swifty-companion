@@ -91,5 +91,7 @@ iOSInjectionProject/
 
 # Configuration files
 
+Configurations/*.xcconfig
+
 Development.xcconfig
 Release.xcconfig
