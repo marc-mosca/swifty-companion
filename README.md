@@ -54,6 +54,16 @@ Contributions are welcome! If you would like to suggest changes or improvements,
 4. Push your branch (`git push origin feature/new-feature`).
 5. Open a Pull Request.
 
+You need to [create an application for 42's API]((https://profile.intra.42.fr/oauth/applications/new)) with the following redirection URI: `fr.marcmosca.Dashboard42://oauth2callback`.
+After this, you need to create a configuration file (.xcconfig) to contains API credentials, like this:
+
+```xcconfig
+API_CLIENT_ID = <YOUR_CLIENT_ID_KEY>
+API_CLIENT_SECRET = <YOUR_CLIENT_SECRET_KEY>
+API_CALLBACK = /oauth2callback
+API_REDIRECT_URI = fr.marcmosca.Dashboard42:/$(API_CALLBACK)
+```
+
 ## Known Issues
 
 - The application may have difficulty retrieving data when API 42 is under maintenance.
@@ -66,7 +76,3 @@ This project is not officially affiliated with 42 or any of its official entitie
 ## Contact
 
 You can send me an email at **mmosca@student.42lyon.fr**.
-
----
-
-**Dashboard42** - Your intranet 42 at your fingertips!
