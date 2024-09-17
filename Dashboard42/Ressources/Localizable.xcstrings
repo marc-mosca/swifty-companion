@@ -1,6 +1,33 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "An application developed by a student for the student community of 42." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An application developed by a student for the student community of 42."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une application développée par un étudiant pour la communauté étudiante de 42."
+          }
+        }
+      }
+    },
+    "Dashboard42" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dashboard42"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "Hello, world!" : {
       "localizations" : {
         "en" : {
@@ -13,6 +40,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bonjour le monde !"
+          }
+        }
+      }
+    },
+    "Sign In" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign In"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se connecter"
+          }
+        }
+      }
+    },
+    "Welcome to" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenue sur"
           }
         }
       }
