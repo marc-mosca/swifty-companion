@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Dashboard42App: App {
+    @State private var authenticationService = AuthenticationService()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(authenticationService)
         }
     }
 }

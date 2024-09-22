@@ -5,10 +5,14 @@
 //  Created by Marc MOSCA on 17/09/2024.
 //
 
+import AuthenticationServices
 import SwiftUI
 
 struct OnBoardingView: View {
-    var appIcon: String {
+    @Environment(\.webAuthenticationSession) private var webAuthenticationSession
+    @Environment(AuthenticationService.self) private var authenticationService
+    
+    private var appIcon: String {
         guard let icons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
               let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
               let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
@@ -55,11 +59,29 @@ struct OnBoardingView: View {
     }
     
     private func signInButtonTapped() {
-        print("Sign In Button Tapped!")
+        Task {
+            do {
+                guard let authenticationURL = authenticationService.authenticationURL,
+                      let callbackURL = Constants.redirectURI.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+                else {
+                    return
+                }
+                
+                let urlWithToken = try await webAuthenticationSession.authenticate(
+                    using: authenticationURL,
+                    callbackURLScheme: callbackURL
+                )
+                try await authenticationService.signIn(url: urlWithToken)
+            }
+            catch let error {
+                print(error)
+            }
+        }
     }
 }
 
 #Preview {
     OnBoardingView()
+        .environment(AuthenticationService())
         .padding()
 }
