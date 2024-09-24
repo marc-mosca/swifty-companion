@@ -10,6 +10,8 @@ import Foundation
 enum Constants {
     private static let infoDictionary = Bundle.main.infoDictionary
     
+    static let userIsConnectedKey = "APPSTORAGE_USER_IS_CONNECTED_KEY"
+    
     static var clientID: String {
         guard let infoDictionary, let clientID: String = infoDictionary["API_CLIENT_ID"] as? String else {
             fatalError("Missing API_CLIENT_ID in Info.plist")

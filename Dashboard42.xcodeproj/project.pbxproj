@@ -12,6 +12,7 @@
 		01169A2A2CA2FFB600F52E90 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A292CA2FFB600F52E90 /* KeychainManager.swift */; };
 		01169A2E2CA3051800F52E90 /* NetworkingEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A2D2CA3051800F52E90 /* NetworkingEndpoint.swift */; };
 		01169A312CA3073C00F52E90 /* AuthenticationEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A302CA3073C00F52E90 /* AuthenticationEndpoints.swift */; };
+		01169A342CA30B9200F52E90 /* ApplicationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A332CA30B9200F52E90 /* ApplicationIcon.swift */; };
 		0120889F2C9C71930007E57B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120889E2C9C71930007E57B /* Constants.swift */; };
 		01AD6F932C9FFFBD00FC6374 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD6F922C9FFFBD00FC6374 /* Errors.swift */; };
 		01CEAB3C2BF4DE500056A97E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 01CEAB3B2BF4DE500056A97E /* Localizable.xcstrings */; };
@@ -29,6 +30,7 @@
 		01169A292CA2FFB600F52E90 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		01169A2D2CA3051800F52E90 /* NetworkingEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingEndpoint.swift; sourceTree = "<group>"; };
 		01169A302CA3073C00F52E90 /* AuthenticationEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoints.swift; sourceTree = "<group>"; };
+		01169A332CA30B9200F52E90 /* ApplicationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationIcon.swift; sourceTree = "<group>"; };
 		0120889E2C9C71930007E57B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0170E9A12BE8D39E00D59D45 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0170E9A42BE8D48300D59D45 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		010F27D62C99BD4200B9E555 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01169A322CA30B8400F52E90 /* Components */,
 				010F27DA2C99BD6200B9E555 /* OnBoardingView.swift */,
 			);
 			path = Views;
@@ -83,6 +86,14 @@
 				01169A302CA3073C00F52E90 /* AuthenticationEndpoints.swift */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		01169A322CA30B8400F52E90 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				01169A332CA30B9200F52E90 /* ApplicationIcon.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		0120889D2C9C71690007E57B /* Extensions */ = {
@@ -241,6 +252,7 @@
 				01F270152C99DA5B00F9683C /* AuthenticationToken.swift in Sources */,
 				01D976B32BE8D0D900DB9F30 /* ContentView.swift in Sources */,
 				01169A312CA3073C00F52E90 /* AuthenticationEndpoints.swift in Sources */,
+				01169A342CA30B9200F52E90 /* ApplicationIcon.swift in Sources */,
 				01D976B12BE8D0D900DB9F30 /* Dashboard42App.swift in Sources */,
 				01F270172C99DC9400F9683C /* AuthenticationService.swift in Sources */,
 				01169A222CA2E8B300F52E90 /* NetworkingManager.swift in Sources */,

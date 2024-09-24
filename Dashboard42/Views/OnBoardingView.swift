@@ -11,26 +11,13 @@ import SwiftUI
 struct OnBoardingView: View {
     @Environment(\.webAuthenticationSession) private var webAuthenticationSession
     @Environment(AuthenticationService.self) private var authenticationService
-    
-    private var appIcon: String {
-        guard let icons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
-              let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
-              let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
-              let iconFileName = iconFiles.last else {
-            fatalError("Could not find icons in bundle")
-        }
-        
-        return iconFileName
-    }
+    @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Spacer()
             
-            Image(uiImage: .init(imageLiteralResourceName: appIcon))
-                .resizable()
-                .frame(width: 80, height: 80)
-                .clipShape(.rect(cornerRadius: 10))
+            ApplicationIcon()
             
             VStack(alignment: .leading) {
                 Text("Welcome to")
@@ -72,6 +59,7 @@ struct OnBoardingView: View {
                     callbackURLScheme: callbackURL
                 )
                 try await authenticationService.signIn(url: urlWithToken)
+                userIsConnected = true
             }
             catch {
                 print(error)

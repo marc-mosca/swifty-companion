@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool?
+
     var body: some View {
-        OnBoardingView()
-            .padding()
+        if userIsConnected != true {
+            OnBoardingView()
+                .padding()
+        }
+        else {
+            ProgressView()
+        }
     }
 }
 
