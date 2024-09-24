@@ -37,7 +37,7 @@ struct OnBoardingView: View {
                 Text("Dashboard42")
                     .foregroundStyle(.accent)
             }
-            .font(.system(size: 34))
+            .font(.largeTitle)
             .fontWeight(.heavy)
             
             Text("An application developed by a student for the student community of 42.")
@@ -48,32 +48,32 @@ struct OnBoardingView: View {
             
             Button(action: signInButtonTapped) {
                 Text("Sign In")
+                    .fontWeight(.semibold)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                     .padding()
             }
             .background(.accent)
             .foregroundStyle(.white)
             .clipShape(.rect(cornerRadius: 10))
-            .fontWeight(.medium)
         }
     }
     
     private func signInButtonTapped() {
+        guard let authenticationURL = authenticationService.authenticationURL,
+              let callbackURL = Constants.redirectURI.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        else {
+            return
+        }
+        
         Task {
             do {
-                guard let authenticationURL = authenticationService.authenticationURL,
-                      let callbackURL = Constants.redirectURI.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-                else {
-                    return
-                }
-                
                 let urlWithToken = try await webAuthenticationSession.authenticate(
                     using: authenticationURL,
                     callbackURLScheme: callbackURL
                 )
                 try await authenticationService.signIn(url: urlWithToken)
             }
-            catch let error {
+            catch {
                 print(error)
             }
         }
