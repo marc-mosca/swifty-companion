@@ -8,8 +8,41 @@
 import Foundation
 
 enum AuthenticationToken {
-    case user(AuthenticationUserToken)
-    case application(AuthenticationApplicationToken)
+    case user
+    case application
+    
+    var accessToken: String? {
+        get {
+            KeychainManager.shared.get(account: self == .application ? .applicationAccessToken : .userAccessToken)
+        }
+        set {
+            let account = self == .application ? KeychainAccount.applicationAccessToken : KeychainAccount.userAccessToken
+
+            if let newValue = newValue {
+                try? KeychainManager.shared.save(account: account, data: newValue)
+            }
+            else {
+                try? KeychainManager.shared.delete(account: account)
+            }
+        }
+    }
+    
+    var refreshToken: String? {
+        get {
+            if self == .application { return nil }
+            return KeychainManager.shared.get(account: .userRefreshToken)
+        }
+        set {
+            if self == .application { return }
+
+            if let newValue = newValue {
+                try? KeychainManager.shared.save(account: .userRefreshToken, data: newValue)
+            }
+            else {
+                try? KeychainManager.shared.delete(account: .userRefreshToken)
+            }
+        }
+    }
 }
 
 struct AuthenticationUserToken: Decodable {

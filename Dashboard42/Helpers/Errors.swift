@@ -8,10 +8,10 @@
 import Foundation
 
 enum Dashboard42Errors: Error {
-    case cannotFoundCodeInURL
-    
-    case invalidURL
-    case invalidResponse
+    case decodingError
+    case invalidAccessToken
+    case tooManyRequests
+    case serverError
     
     case runtimeError(String)
 }
