@@ -42,7 +42,6 @@
 
 - **SwiftUI**: Modern and responsive user interface.
 - **API 42**: Retrieving data from the intranet.
-- **Swift Package Manager**: Managing external dependencies.
 
 ## Contribute
 
