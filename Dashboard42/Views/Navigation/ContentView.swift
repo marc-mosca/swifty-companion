@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool?
+    @State private var selection = ApplicationScreens.home
 
     var body: some View {
         if userIsConnected != true {
@@ -16,7 +17,7 @@ struct ContentView: View {
                 .padding()
         }
         else {
-            ProgressView()
+            ApplicationTabView(selection: $selection)
         }
     }
 }
