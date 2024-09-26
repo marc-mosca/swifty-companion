@@ -60,12 +60,12 @@ struct SettingsView: View {
                 }
                 
                 Section("Help") {
-                    Link("Report a problem", destination: URL(string: "https://github.com/Dashboard42/Dashboard42/issues")!)
+                    CustomLink(title: "Report a problem", url: URL(string: "https://github.com/Dashboard42/Dashboard42/issues")!)
                 }
                 
                 Section("Account") {
                     // TODO: Replace `mmosca` by the current connected user in the URL.
-                    Link("Intranet Profile", destination: URL(string: "https://profile.intra.42.fr/users/mmosca")!)
+                    CustomLink(title: "Intranet Profile", url: URL(string: "https://profile.intra.42.fr/users/mmosca")!)
                     Button("Log out", role: .destructive, action: logOutButtonTapped)
                 }
             }
@@ -81,4 +81,24 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+}
+
+extension SettingsView {
+    private struct CustomLink: View {
+        let title: LocalizedStringKey
+        let url: URL
+
+        var body: some View {
+            Link(destination: url) {
+                HStack {
+                    Text(title)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .imageScale(.small)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .foregroundStyle(.primary)
+        }
+    }
 }
