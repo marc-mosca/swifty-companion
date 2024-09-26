@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(UserService.self) private var userService
     @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool?
     @AppStorage(Constants.applicationLanguageKey) private var applicationLanguage: String?
     @AppStorage(Constants.applicationThemeKey) private var applicationTheme: Int?
@@ -64,8 +65,7 @@ struct SettingsView: View {
                 }
                 
                 Section("Account") {
-                    // TODO: Replace `mmosca` by the current connected user in the URL.
-                    CustomLink(title: "Intranet Profile", url: URL(string: "https://profile.intra.42.fr/users/mmosca")!)
+                    CustomLink(title: "Intranet Profile", url: URL(string: "https://profile.intra.42.fr/users/\(userService.user?.login ?? "")")!)
                     Button("Log out", role: .destructive, action: logOutButtonTapped)
                 }
             }
@@ -81,6 +81,7 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environment(UserService())
 }
 
 extension SettingsView {

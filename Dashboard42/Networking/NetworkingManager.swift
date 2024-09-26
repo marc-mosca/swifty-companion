@@ -17,7 +17,14 @@ actor NetworkingManager {
     
     enum HTTPMethod: String { case GET, POST, PUT, DELETE }
     
-    private init() { }
+    private init() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        
+        decoder.dateDecodingStrategy = .formatted(formatter)
+    }
     
     func request(_ endpoint: NetworkingEndpoint) async throws {
         logger.log("🔵 \(endpoint.path) - Request started.")
@@ -93,9 +100,14 @@ extension NetworkingManager {
         
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
-
-        if let accessToken = endpoint.token?.accessToken {
-            request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        
+        if endpoint.token == .application {
+            let accessToken = KeychainManager.shared.get(account: .applicationAccessToken)
+            request.addValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
+        }
+        else if endpoint.token == .user {
+            let accessToken = KeychainManager.shared.get(account: .userAccessToken)
+            request.addValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
         }
         
         return request
@@ -127,7 +139,7 @@ extension NetworkingManager {
             try? KeychainManager.shared.save(account: .applicationAccessToken, data: newToken.accessToken)
         }
         else {
-            guard let refreshToken = token?.refreshToken else { throw Dashboard42Errors.invalidAccessToken }
+            guard let refreshToken = KeychainManager.shared.get(account: .userRefreshToken) else { throw Dashboard42Errors.invalidAccessToken }
 
             let newToken = try await request(AuthenticationEndpoints.refreshUserTokens(refreshToken: refreshToken), type: AuthenticationUserToken.self)
             try? KeychainManager.shared.save(account: .userAccessToken, data: newToken.accessToken)
