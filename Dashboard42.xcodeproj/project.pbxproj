@@ -19,6 +19,9 @@
 		01169A3D2CA315BC00F52E90 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A3C2CA315BC00F52E90 /* SettingsView.swift */; };
 		0120889F2C9C71930007E57B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120889E2C9C71930007E57B /* Constants.swift */; };
 		013595A82CA45F08009385EE /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013595A72CA45F08009385EE /* ApplicationSettings.swift */; };
+		017403A92CA6997D00410419 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017403A82CA6997D00410419 /* Event.swift */; };
+		017403AB2CA699CE00410419 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017403AA2CA699CE00410419 /* Exam.swift */; };
+		017403AD2CA69A3F00410419 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017403AC2CA69A3F00410419 /* Scale.swift */; };
 		019951B62CA5811400ECD4EA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951B52CA5811400ECD4EA /* HomeView.swift */; };
 		019951B82CA581DB00ECD4EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951B72CA581DB00ECD4EA /* User.swift */; };
 		019951BA2CA5891900ECD4EA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951B92CA5891900ECD4EA /* UserService.swift */; };
@@ -48,6 +51,9 @@
 		013595A72CA45F08009385EE /* ApplicationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		0170E9A12BE8D39E00D59D45 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0170E9A42BE8D48300D59D45 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		017403A82CA6997D00410419 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		017403AA2CA699CE00410419 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		017403AC2CA69A3F00410419 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
 		0176FCC32BE9129200C41C06 /* Dashboard42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dashboard42.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0176FCC42BE9129200C41C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		019951B52CA5811400ECD4EA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -196,6 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				01F270142C99DA5B00F9683C /* AuthenticationToken.swift */,
+				017403A82CA6997D00410419 /* Event.swift */,
+				017403AA2CA699CE00410419 /* Exam.swift */,
+				017403AC2CA69A3F00410419 /* Scale.swift */,
 				019951B72CA581DB00ECD4EA /* User.swift */,
 			);
 			path = Models;
@@ -294,14 +303,17 @@
 				019951B62CA5811400ECD4EA /* HomeView.swift in Sources */,
 				01D976B12BE8D0D900DB9F30 /* Dashboard42App.swift in Sources */,
 				01169A3D2CA315BC00F52E90 /* SettingsView.swift in Sources */,
+				017403A92CA6997D00410419 /* Event.swift in Sources */,
 				01F270172C99DC9400F9683C /* AuthenticationService.swift in Sources */,
 				01169A222CA2E8B300F52E90 /* NetworkingManager.swift in Sources */,
 				01169A392CA313B700F52E90 /* ApplicationScreens.swift in Sources */,
 				0120889F2C9C71930007E57B /* Constants.swift in Sources */,
 				019951BA2CA5891900ECD4EA /* UserService.swift in Sources */,
+				017403AB2CA699CE00410419 /* Exam.swift in Sources */,
 				019951BC2CA5899700ECD4EA /* UserEndpoints.swift in Sources */,
 				01AD6F932C9FFFBD00FC6374 /* Errors.swift in Sources */,
 				01169A2A2CA2FFB600F52E90 /* KeychainManager.swift in Sources */,
+				017403AD2CA69A3F00410419 /* Scale.swift in Sources */,
 				019951B82CA581DB00ECD4EA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
