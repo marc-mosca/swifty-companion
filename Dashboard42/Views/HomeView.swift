@@ -26,6 +26,8 @@ struct HomeView: View {
     }
     
     private func loadUserInformations() {
+        guard userService.user == nil else { return }
+
         Task {
             do {
                 try await userService.loadUser()

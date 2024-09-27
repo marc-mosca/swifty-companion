@@ -33,7 +33,7 @@ struct SettingsView: View {
                         .font(.title)
                         .fontWeight(.bold)
                     
-                    Text(applicationVersion)
+                    Text("Version \(applicationVersion)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
