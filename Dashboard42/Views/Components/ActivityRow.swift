@@ -11,6 +11,7 @@ enum ActivityType {
     case info
     case project
     case event(isSubscribe: Bool)
+    case exam
     case scale
     case logtime
     case achievement
@@ -21,6 +22,7 @@ enum ActivityType {
         case .info: "info.circle"
         case .project: "folder"
         case .event: "megaphone"
+        case .exam: ""
         case .scale: "pencil.and.outline"
         case .logtime: "clock"
         case .achievement: "rosette"
@@ -33,6 +35,7 @@ enum ActivityType {
         case .info: .gray
         case .project: .indigo
         case .event(let isSubscribe): isSubscribe ? .green : .cyan
+        case .exam: .blue
         case .scale: .purple
         case .logtime: .teal
         case .achievement: .brown
