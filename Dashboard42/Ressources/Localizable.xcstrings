@@ -204,6 +204,38 @@
         }
       }
     },
+    "No activity found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No activity found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune activité trouvé"
+          }
+        }
+      }
+    },
+    "No activity found in your campus. Please check back later." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No activity found in your campus. Please check back later."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune activité n’a été trouvé dans votre campus. Merci de réessayer plus tard."
+          }
+        }
+      }
+    },
     "No recent activity" : {
       "localizations" : {
         "en" : {

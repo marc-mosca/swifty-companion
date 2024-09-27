@@ -65,4 +65,27 @@ enum Activities: Identifiable {
         case .event(let event): event.beginAt
         }
     }
+    
+    var beginAtFormatted: String {
+        beginAt.formatted(.dateTime.year().month(.wide))
+    }
+}
+
+struct GroupedActivities: Identifiable {
+    let monthYear: String
+    let activities: [Activities]
+    
+    var id: String { monthYear }
+    
+    static func create(for activities: [Activities]) -> [GroupedActivities] {
+        let dictionary = Dictionary(grouping: activities, by: \.beginAtFormatted)
+        let sortedKey = dictionary.keys.sorted { lhs, rhs in
+            let lhsActivity = activities.first(where: { $0.beginAtFormatted == lhs })
+            let rhsActivity = activities.first(where: { $0.beginAtFormatted == rhs })
+            
+            guard let lhsDate = lhsActivity?.beginAt, let rhsDate = rhsActivity?.beginAt else { return false }
+            return lhsDate < rhsDate
+        }
+        return sortedKey.compactMap { GroupedActivities(monthYear: $0, activities: dictionary[$0] ?? []) }
+    }
 }

@@ -15,24 +15,44 @@ struct ActivitiesView: View {
     private var activities: [Activities] {
         let events = campusService.events.map { Activities.event($0) }
         let exams = campusService.exams.map { Activities.exam($0) }
-        let homeActivities = events + exams
+        let homeActivities = (events + exams).sorted(by: { $0.beginAt < $1.beginAt })
         
-        return homeActivities.sorted(by: { $0.beginAt < $1.beginAt })
+        guard !searchText.isEmpty else { return homeActivities }
+        
+        return homeActivities.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
     }
+    
+    private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: activities) }
     
     var body: some View {
         NavigationStack {
             if campusService.isLoading == false {
-                List {
-                    ForEach(activities) { activity in
-                        NavigationLink(destination: EmptyView()) {
-                            ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                List(groupedActivities) { groupedActivity in
+                    if !groupedActivity.activities.isEmpty {
+                        Section(groupedActivity.monthYear) {
+                            ForEach(groupedActivity.activities) { activity in
+                                NavigationLink(destination: EmptyView()) {
+                                    ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                                }
+                            }
                         }
                     }
                 }
                 .navigationTitle("Activities")
                 .searchable(text: $searchText, prompt: "Search an activity")
                 .refreshable { loadCampusActivities(refresh: true) }
+                .overlay {
+                    if activities.isEmpty && searchText.isEmpty {
+                        ContentUnavailableView(
+                            "No activity found",
+                            systemImage: "calendar",
+                            description: Text("No activity found in your campus. Please check back later.")
+                        )
+                    }
+                    else if activities.isEmpty && !searchText.isEmpty {
+                        ContentUnavailableView.search(text: searchText)
+                    }
+                }
             }
             else {
                 ProgressView()
