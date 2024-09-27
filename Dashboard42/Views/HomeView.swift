@@ -29,7 +29,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            if userService.user != nil {
+            if userService.isLoading == false {
                 List {
                     Section {
                         NavigationLink(destination: EmptyView()) {
@@ -61,17 +61,21 @@ struct HomeView: View {
                 }
                 .navigationTitle("Home")
                 .searchable(text: $searchText, prompt: "Search a student")
+                .refreshable {
+                    loadUserInformations()
+                }
             }
             else {
                 ProgressView()
             }
         }
-        .task { loadUserInformations() }
+        .task {
+            guard userService.user == nil else { return }
+            loadUserInformations()
+        }
     }
     
     private func loadUserInformations() {
-        guard userService.user == nil else { return }
-
         Task {
             do {
                 try await userService.loadUserInformations()
