@@ -58,7 +58,7 @@ struct HomeView: View {
 
         Task {
             do {
-                try await userService.loadUser()
+                try await userService.loadUserInformations()
             }
             catch {
                 print(error.localizedDescription)

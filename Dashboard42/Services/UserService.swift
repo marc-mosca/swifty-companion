@@ -16,7 +16,7 @@ class UserService {
     
     init() { }
     
-    func loadUser() async throws {
+    func loadUserInformations() async throws {
         let userResult = try await NetworkingManager.shared.request(UserEndpoints.fetchMe, type: User.self)
         
         user = userResult
