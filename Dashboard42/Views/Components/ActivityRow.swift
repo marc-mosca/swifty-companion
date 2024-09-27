@@ -50,7 +50,7 @@ struct ActivityRow: View {
         HStack(spacing: 16) {
             Image(systemName: type.icon)
                 .imageScale(.large)
-                .foregroundStyle(type.color)
+                .foregroundStyle(type.color.gradient)
             
             VStack(alignment: .leading) {
                 Text(title)
@@ -62,7 +62,7 @@ struct ActivityRow: View {
                 }
             }
         }
-        .frame(height: 50, alignment: .leading)
+        .frame(height: 40, alignment: .leading)
     }
 }
 
