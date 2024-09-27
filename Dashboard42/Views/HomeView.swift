@@ -12,17 +12,11 @@ struct HomeView: View {
     @State private var searchText = ""
     
     private var activities: [Activities] {
-        let homeActivities: [Activities]
         let events = userService.events.map { Activities.event($0) }
         let exams = userService.exams.map { Activities.exam($0) }
         let scales = userService.scales.map { Activities.scale($0) }
-        
-        if let projects = userService.user?.projectsUsers.map({ Activities.project($0) }) {
-            homeActivities = events + exams + scales + projects
-        }
-        else {
-            homeActivities = events + exams + scales
-        }
+        let projects = userService.user?.projectsUsers.map { Activities.project($0) } ?? []
+        let homeActivities = events + exams + scales + projects
         
         return homeActivities.sorted(by: { $0.beginAt > $1.beginAt })
     }
@@ -52,8 +46,17 @@ struct HomeView: View {
                     }
                     
                     Section {
-                        ForEach(activities.prefix(10)) { activity in
-                            ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                        if activities.isEmpty {
+                            ContentUnavailableView(
+                                "No recent activity",
+                                systemImage: "calendar",
+                                description: Text("No recent activity was found on your profile.")
+                            )
+                        }
+                        else {
+                            ForEach(activities.prefix(10)) { activity in
+                                ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                            }
                         }
                     } header: {
                         SectionHeader(header: "Recent")

@@ -204,6 +204,38 @@
         }
       }
     },
+    "No recent activity" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No recent activity"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune activité récente"
+          }
+        }
+      }
+    },
+    "No recent activity was found on your profile." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No recent activity was found on your profile."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune activité récente n'a été trouvé sur votre profil."
+          }
+        }
+      }
+    },
     "Profile" : {
       "localizations" : {
         "en" : {
