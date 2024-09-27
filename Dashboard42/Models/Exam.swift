@@ -50,7 +50,7 @@ extension Exam {
         enum CodingKeys: String, CodingKey {
             case id = "id"
             case name = "name"
-            case slug = "slug_name"
+            case slug = "slug"
         }
         
         init(from decoder: any Decoder) throws {

@@ -300,6 +300,22 @@
         }
       }
     },
+    "Search an activity" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search an activity"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher une activité"
+          }
+        }
+      }
+    },
     "Settings" : {
       "localizations" : {
         "en" : {

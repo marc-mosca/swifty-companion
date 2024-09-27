@@ -26,6 +26,16 @@ struct User: Identifiable, Decodable {
     let patroned: [Self.Patronages]
     let patroning: [Self.Patronages]
     let campus: [Self.Campus]
+    let campusUsers: [Self.CampusUsers]
+    
+    var mainCursus: Self.Cursus? {
+        let studentCursus = cursusUsers.first(where: { $0.cursus.slug == "42cursus" })
+        let piscineCursus = cursusUsers.first(where: { $0.cursus.slug == "c-piscine" })
+        
+        return studentCursus != nil ? studentCursus : piscineCursus
+    }
+    
+    var mainCampus: Self.CampusUsers? { campusUsers.first(where: \.isPrimary) }
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -46,6 +56,7 @@ struct User: Identifiable, Decodable {
         case patroned = "patroned"
         case patroning = "patroning"
         case campus = "campus"
+        case campusUsers = "campus_users"
     }
     
     init(from decoder: any Decoder) throws {
@@ -68,6 +79,7 @@ struct User: Identifiable, Decodable {
         self.patroned = try container.decode([User.Patronages].self, forKey: .patroned)
         self.patroning = try container.decode([User.Patronages].self, forKey: .patroning)
         self.campus = try container.decode([User.Campus].self, forKey: .campus)
+        self.campusUsers = try container.decode([User.CampusUsers].self, forKey: .campusUsers)
     }
 }
 
@@ -312,6 +324,27 @@ extension User {
             self.zip = try container.decode(String.self, forKey: .zip)
             self.city = try container.decode(String.self, forKey: .city)
             self.website = try container.decode(String.self, forKey: .website)
+        }
+    }
+    
+    // MARK: Campus Users
+    
+    struct CampusUsers: Identifiable, Decodable {
+        let id: Int
+        let campusId: Int
+        let isPrimary: Bool
+        
+        enum CodingKeys: String, CodingKey {
+            case id = "id"
+            case campusId = "campus_id"
+            case isPrimary = "is_primary"
+        }
+        
+        init(from decoder: any Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.id = try container.decode(Int.self, forKey: .id)
+            self.campusId = try container.decode(Int.self, forKey: .campusId)
+            self.isPrimary = try container.decode(Bool.self, forKey: .isPrimary)
         }
     }
 }

@@ -60,7 +60,7 @@ struct ActivityRow: View {
 
                 if let description {
                     Text(description)
-                        .font(.subheadline)
+                        .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
             }

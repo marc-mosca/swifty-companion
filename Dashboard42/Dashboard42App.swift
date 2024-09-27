@@ -12,8 +12,9 @@ struct Dashboard42App: App {
     @AppStorage(Constants.applicationLanguageKey) private var applicationLanguage: String?
     @AppStorage(Constants.applicationThemeKey) private var applicationTheme: Int?
 
-    @State private var authenticationService = AuthenticationService()
-    @State private var userService = UserService()
+    @State var authenticationService = AuthenticationService()
+    @State var campusService = CampusService()
+    @State var userService = UserService()
 
     var body: some Scene {
         WindowGroup {
@@ -21,6 +22,7 @@ struct Dashboard42App: App {
                 .preferredColorScheme(Themes(rawValue: applicationTheme ?? 0)?.scheme)
                 .environment(\.locale, .init(identifier: applicationLanguage ?? Locale.current.identifier))
                 .environment(authenticationService)
+                .environment(campusService)
                 .environment(userService)
         }
     }

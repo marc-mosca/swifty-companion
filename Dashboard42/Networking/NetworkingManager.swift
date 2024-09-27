@@ -27,7 +27,6 @@ actor NetworkingManager {
     }
     
     func request(_ endpoint: NetworkingEndpoint) async throws {
-        logger.log("🔵 \(endpoint.path) - Request started.")
         let urlRequest = try buildRequest(endpoint)
         let (_, response) = try await session.data(for: urlRequest)
         
@@ -56,7 +55,6 @@ actor NetworkingManager {
     }
     
     func request<T: Decodable>(_ endpoint: NetworkingEndpoint, type: T.Type) async throws -> T {
-        logger.log("🔵 \(endpoint.path) - Request started.")
         let urlRequest = try buildRequest(endpoint)
         let (data, response) = try await session.data(for: urlRequest)
         
