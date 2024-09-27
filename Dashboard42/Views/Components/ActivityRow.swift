@@ -22,7 +22,7 @@ enum ActivityType {
         case .info: "info.circle"
         case .project: "folder"
         case .event: "megaphone"
-        case .exam: ""
+        case .exam: "book.closed"
         case .scale: "pencil.and.outline"
         case .logtime: "clock"
         case .achievement: "rosette"
