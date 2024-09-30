@@ -35,9 +35,9 @@ class AuthenticationService {
         let code = try fetchCodeInURL(url)
         userTokens = try await NetworkingManager.shared.request(AuthenticationEndpoints.userTokens(code: code), type: AuthenticationUserToken.self)
         applicationTokens = try await NetworkingManager.shared.request(AuthenticationEndpoints.applicationTokens, type: AuthenticationApplicationToken.self)
-        try KeychainManager.shared.save(account: .applicationAccessToken, data: applicationTokens?.accessToken ?? "")
-        try KeychainManager.shared.save(account: .userAccessToken, data: userTokens?.accessToken ?? "")
-        try KeychainManager.shared.save(account: .userRefreshToken, data: userTokens?.refreshToken ?? "")
+        try KeychainService.shared.save(account: .applicationAccessToken, data: applicationTokens?.accessToken ?? "")
+        try KeychainService.shared.save(account: .userAccessToken, data: userTokens?.accessToken ?? "")
+        try KeychainService.shared.save(account: .userRefreshToken, data: userTokens?.refreshToken ?? "")
     }
 }
 

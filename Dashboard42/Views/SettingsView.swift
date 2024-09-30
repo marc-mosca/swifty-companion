@@ -75,7 +75,7 @@ struct SettingsView: View {
     
     private func logOutButtonTapped() {
         userIsConnected = false
-        KeychainManager.shared.clear()
+        KeychainService.shared.clear()
     }
 }
 

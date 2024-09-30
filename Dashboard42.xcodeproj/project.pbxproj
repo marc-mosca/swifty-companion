@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		010F27DB2C99BD6200B9E555 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010F27DA2C99BD6200B9E555 /* OnBoardingView.swift */; };
 		01169A222CA2E8B300F52E90 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A212CA2E8B300F52E90 /* NetworkingManager.swift */; };
-		01169A2A2CA2FFB600F52E90 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A292CA2FFB600F52E90 /* KeychainManager.swift */; };
 		01169A2E2CA3051800F52E90 /* NetworkingEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A2D2CA3051800F52E90 /* NetworkingEndpoint.swift */; };
 		01169A312CA3073C00F52E90 /* AuthenticationEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A302CA3073C00F52E90 /* AuthenticationEndpoints.swift */; };
 		01169A342CA30B9200F52E90 /* ApplicationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169A332CA30B9200F52E90 /* ApplicationIcon.swift */; };
@@ -26,6 +25,7 @@
 		017403B12CA6AE9100410419 /* CampusEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017403B02CA6AE9100410419 /* CampusEndpoints.swift */; };
 		017403B32CA6AFD000410419 /* CampusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017403B22CA6AFD000410419 /* CampusService.swift */; };
 		017403B52CA6B60600410419 /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017403B42CA6B60600410419 /* Activities.swift */; };
+		019358812CAB25D500A2F971 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019358802CAB25D500A2F971 /* KeychainService.swift */; };
 		019951B62CA5811400ECD4EA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951B52CA5811400ECD4EA /* HomeView.swift */; };
 		019951B82CA581DB00ECD4EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951B72CA581DB00ECD4EA /* User.swift */; };
 		019951BA2CA5891900ECD4EA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951B92CA5891900ECD4EA /* UserService.swift */; };
@@ -43,7 +43,6 @@
 /* Begin PBXFileReference section */
 		010F27DA2C99BD6200B9E555 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		01169A212CA2E8B300F52E90 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
-		01169A292CA2FFB600F52E90 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		01169A2D2CA3051800F52E90 /* NetworkingEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingEndpoint.swift; sourceTree = "<group>"; };
 		01169A302CA3073C00F52E90 /* AuthenticationEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoints.swift; sourceTree = "<group>"; };
 		01169A332CA30B9200F52E90 /* ApplicationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationIcon.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		017403B42CA6B60600410419 /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		0176FCC32BE9129200C41C06 /* Dashboard42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dashboard42.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0176FCC42BE9129200C41C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		019358802CAB25D500A2F971 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		019951B52CA5811400ECD4EA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		019951B72CA581DB00ECD4EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		019951B92CA5891900ECD4EA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -168,7 +168,6 @@
 				013595A72CA45F08009385EE /* ApplicationSettings.swift */,
 				0120889E2C9C71930007E57B /* Constants.swift */,
 				01AD6F922C9FFFBD00FC6374 /* Errors.swift */,
-				01169A292CA2FFB600F52E90 /* KeychainManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -226,6 +225,7 @@
 			children = (
 				01F270162C99DC9400F9683C /* AuthenticationService.swift */,
 				017403B22CA6AFD000410419 /* CampusService.swift */,
+				019358802CAB25D500A2F971 /* KeychainService.swift */,
 				019951B92CA5891900ECD4EA /* UserService.swift */,
 			);
 			path = Services;
@@ -311,6 +311,7 @@
 				017403B12CA6AE9100410419 /* CampusEndpoints.swift in Sources */,
 				01169A3B2CA314A400F52E90 /* ApplicationTabView.swift in Sources */,
 				01169A312CA3073C00F52E90 /* AuthenticationEndpoints.swift in Sources */,
+				019358812CAB25D500A2F971 /* KeychainService.swift in Sources */,
 				01169A342CA30B9200F52E90 /* ApplicationIcon.swift in Sources */,
 				013595A82CA45F08009385EE /* ApplicationSettings.swift in Sources */,
 				019951B62CA5811400ECD4EA /* HomeView.swift in Sources */,
@@ -328,7 +329,6 @@
 				017403AF2CA6AD6100410419 /* ActivitiesView.swift in Sources */,
 				019951BC2CA5899700ECD4EA /* UserEndpoints.swift in Sources */,
 				01AD6F932C9FFFBD00FC6374 /* Errors.swift in Sources */,
-				01169A2A2CA2FFB600F52E90 /* KeychainManager.swift in Sources */,
 				017403AD2CA69A3F00410419 /* Scale.swift in Sources */,
 				019951B82CA581DB00ECD4EA /* User.swift in Sources */,
 			);

@@ -1,8 +1,8 @@
 //
-//  KeychainManager.swift
+//  KeychainService.swift
 //  Dashboard42
 //
-//  Created by Marc MOSCA on 24/09/2024.
+//  Created by Marc MOSCA on 30/09/2024.
 //
 
 import Foundation
@@ -13,8 +13,8 @@ enum KeychainAccount: String {
     case userRefreshToken
 }
 
-final class KeychainManager {
-    static let shared = KeychainManager()
+final class KeychainService {
+    static let shared = KeychainService()
     
     private let service = "DASHBOARD42_KEYCHAIN_SERVICE"
     

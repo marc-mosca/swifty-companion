@@ -100,11 +100,11 @@ extension NetworkingManager {
         request.httpMethod = endpoint.method.rawValue
         
         if endpoint.token == .application {
-            let accessToken = KeychainManager.shared.get(account: .applicationAccessToken)
+            let accessToken = KeychainService.shared.get(account: .applicationAccessToken)
             request.addValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
         }
         else if endpoint.token == .user {
-            let accessToken = KeychainManager.shared.get(account: .userAccessToken)
+            let accessToken = KeychainService.shared.get(account: .userAccessToken)
             request.addValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
         }
         
@@ -134,14 +134,14 @@ extension NetworkingManager {
     private func handleInvalidAccessToken(token: AuthenticationToken?) async throws {
         if token == .application {
             let newToken = try await request(AuthenticationEndpoints.applicationTokens, type: AuthenticationApplicationToken.self)
-            try? KeychainManager.shared.save(account: .applicationAccessToken, data: newToken.accessToken)
+            try? KeychainService.shared.save(account: .applicationAccessToken, data: newToken.accessToken)
         }
         else {
-            guard let refreshToken = KeychainManager.shared.get(account: .userRefreshToken) else { throw Dashboard42Errors.invalidAccessToken }
+            guard let refreshToken = KeychainService.shared.get(account: .userRefreshToken) else { throw Dashboard42Errors.invalidAccessToken }
 
             let newToken = try await request(AuthenticationEndpoints.refreshUserTokens(refreshToken: refreshToken), type: AuthenticationUserToken.self)
-            try? KeychainManager.shared.save(account: .userAccessToken, data: newToken.accessToken)
-            try? KeychainManager.shared.save(account: .userRefreshToken, data: newToken.refreshToken)
+            try? KeychainService.shared.save(account: .userAccessToken, data: newToken.accessToken)
+            try? KeychainService.shared.save(account: .userRefreshToken, data: newToken.refreshToken)
         }
     }
     
