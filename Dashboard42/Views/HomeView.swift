@@ -39,7 +39,7 @@ struct HomeView: View {
                         }
                         
                         NavigationLink(destination: EmptyView()) {
-                            ActivityRow(type: .event(isSubscribe: false), title: "Events", description: nil)
+                            ActivityRow(type: .event, title: "Events", description: nil)
                         }
                     } header: {
                         SectionHeader(header: "Shortcuts")

@@ -11,8 +11,8 @@ struct Scale: Identifiable, Decodable {
     let id: Int
     let scaleId: Int
     let beginAt: Date
-    let correcteds: Self.CorrectedsType?
-    let corrector: Self.CorrectorType?
+    let correcteds: [Self.User]?
+    let corrector: Self.User?
     let scale: Self.Details
     let teams: Self.Team?
     
@@ -32,21 +32,15 @@ struct Scale: Identifiable, Decodable {
         self.scaleId = try container.decode(Int.self, forKey: .scaleId)
         self.beginAt = try container.decode(Date.self, forKey: .beginAt)
         
-        if let correctedString = try? container.decode(String.self, forKey: .correcteds) {
-            self.correcteds = .string(correctedString)
-        }
-        else if let userList = try? container.decode([Scale.User].self, forKey: .correcteds) {
-            self.correcteds = .userList(userList)
+        if let userList = try? container.decode([Scale.User].self, forKey: .correcteds) {
+            self.correcteds = userList
         }
         else {
             self.correcteds = nil
         }
         
-        if let correctorString = try? container.decode(String.self, forKey: .corrector) {
-            self.corrector = .string(correctorString)
-        }
-        else if let user = try? container.decode(Scale.User.self, forKey: .corrector) {
-            self.corrector = .user(user)
+        if let user = try? container.decode(Scale.User.self, forKey: .corrector) {
+            self.corrector = user
         }
         else {
             self.corrector = nil
@@ -58,16 +52,6 @@ struct Scale: Identifiable, Decodable {
 }
 
 extension Scale {
-    enum CorrectedsType: Codable {
-        case string(String)
-        case userList([Scale.User])
-    }
-    
-    enum CorrectorType: Codable {
-        case string(String)
-        case user(Scale.User)
-    }
-    
     struct User: Codable, Identifiable {
         let id: Int
         let login: String

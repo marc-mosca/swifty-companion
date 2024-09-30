@@ -10,7 +10,7 @@ import SwiftUI
 enum ActivityType {
     case info
     case project
-    case event(isSubscribe: Bool)
+    case event
     case exam
     case scale
     case logtime
@@ -34,7 +34,7 @@ enum ActivityType {
         switch self {
         case .info: .gray
         case .project: .indigo
-        case .event(let isSubscribe): isSubscribe ? .green : .cyan
+        case .event: .cyan
         case .exam: .blue
         case .scale: .purple
         case .logtime: .teal

@@ -31,7 +31,7 @@ enum Activities: Identifiable {
         case .project: .project
         case .exam: .exam
         case .scale: .scale
-        case .event: .event(isSubscribe: false)
+        case .event: .event
         }
     }
     
