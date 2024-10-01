@@ -46,13 +46,7 @@ struct ActivitiesView: View {
                 .refreshable { loadCampusActivities(refresh: true) }
                 .toolbar {
                     ToolbarItem {
-                        Menu("Filter activities", systemImage: "line.3.horizontal.decrease.circle") {
-                            Picker("Select a filter", selection: Binding($selectedFilter, deselectTo: "")) {
-                                ForEach(activityFilters, id: \.self) { filter in
-                                        Text(filter)
-                                }
-                            }
-                        }
+                        FilterButton(selectedFilter: $selectedFilter, filters: activityFilters)
                     }
                 }
                 .overlay {
