@@ -54,7 +54,7 @@ struct ProfileView<T: View>: View {
                             ActivityRow(type: .logtime, title: "Logtimes", destination: EmptyView())
                         }
                         
-                        ActivityRow(type: .achievement, title: "Achievements", destination: EmptyView())
+                        ActivityRow(type: .achievement, title: "Achievements", destination: UserAchievements<T>(achievements: user.achievements))
                         ActivityRow(type: .patronage, title: "Patronages", destination: EmptyView())
                     } header: {
                         SectionHeader(header: "Dashboard")

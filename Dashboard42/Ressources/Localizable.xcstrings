@@ -776,6 +776,22 @@
         }
       }
     },
+    "No achivements found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No achievements found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun accomplissement trouvé"
+          }
+        }
+      }
+    },
     "No activity found" : {
       "localizations" : {
         "en" : {
@@ -1048,6 +1064,38 @@
         }
       }
     },
+    "Scale" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scale"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correction"
+          }
+        }
+      }
+    },
+    "Scale %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scale %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correction %@"
+          }
+        }
+      }
+    },
     "Scales" : {
       "localizations" : {
         "en" : {
@@ -1092,6 +1140,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechercher un étudiant"
+          }
+        }
+      }
+    },
+    "Search an achievement" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search an achievement"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher un accomplissement"
           }
         }
       }
@@ -1316,6 +1380,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous devez être inscrit ou avoir rendu un projet pour le voir dans la liste."
+          }
+        }
+      }
+    },
+    "You must complete goals to unlock achievements." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You must complete goals to unlock achievements."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous devez avoir compléter un objectif pour débloquer des accomplissements."
           }
         }
       }
