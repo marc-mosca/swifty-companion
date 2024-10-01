@@ -67,10 +67,10 @@ enum Activities: Identifiable {
     @ViewBuilder
     var destination: some View {
         if case .event(let event) = self {
-            Text(event.name)
+            EventDetailsView(event: event)
         }
         else if case .exam(let exam) = self {
-            Text(exam.name)
+            ExamDetailsView(exam: exam)
         }
     }
     
