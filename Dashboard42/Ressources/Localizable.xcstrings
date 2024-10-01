@@ -253,6 +253,22 @@
         }
       }
     },
+    "Achievements" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achievements"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accomplissements"
+          }
+        }
+      }
+    },
     "Activities" : {
       "localizations" : {
         "en" : {
@@ -365,6 +381,22 @@
         }
       }
     },
+    "Dashboard" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dashboard"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tableau de bord"
+          }
+        }
+      }
+    },
     "Dashboard42" : {
       "localizations" : {
         "en" : {
@@ -424,6 +456,22 @@
         }
       }
     },
+    "Events" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Events"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Évènements"
+          }
+        }
+      }
+    },
     "Filter activities" : {
       "localizations" : {
         "en" : {
@@ -452,6 +500,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Général"
+          }
+        }
+      }
+    },
+    "Grade" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grade"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grade"
           }
         }
       }
@@ -536,6 +600,22 @@
         }
       }
     },
+    "Level - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level - %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau - %@"
+          }
+        }
+      }
+    },
     "Light" : {
       "localizations" : {
         "en" : {
@@ -580,6 +660,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se déconnecter"
+          }
+        }
+      }
+    },
+    "Logtimes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logtimes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logtimes"
           }
         }
       }
@@ -680,6 +776,22 @@
         }
       }
     },
+    "Patronages" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patronages"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parrainages"
+          }
+        }
+      }
+    },
     "Profile" : {
       "localizations" : {
         "en" : {
@@ -692,6 +804,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Profil"
+          }
+        }
+      }
+    },
+    "Projects" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projects"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projets"
+          }
+        }
+      }
+    },
+    "Promotion" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Promotion"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Promotion"
           }
         }
       }
@@ -772,6 +916,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Signaler un problème"
+          }
+        }
+      }
+    },
+    "Scales" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scales"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corrections"
           }
         }
       }

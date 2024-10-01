@@ -31,6 +31,9 @@
 		019951BA2CA5891900ECD4EA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951B92CA5891900ECD4EA /* UserService.swift */; };
 		019951BC2CA5899700ECD4EA /* UserEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951BB2CA5899700ECD4EA /* UserEndpoints.swift */; };
 		01AD6F932C9FFFBD00FC6374 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD6F922C9FFFBD00FC6374 /* Errors.swift */; };
+		01B32F972CAC0F7600C6C828 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B32F962CAC0F7600C6C828 /* ProfileView.swift */; };
+		01B32F992CAC10CE00C6C828 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B32F982CAC10CE00C6C828 /* SectionHeader.swift */; };
+		01B32F9D2CAC170E00C6C828 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B32F9C2CAC170E00C6C828 /* Avatar.swift */; };
 		01CEAB3C2BF4DE500056A97E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 01CEAB3B2BF4DE500056A97E /* Localizable.xcstrings */; };
 		01D702D12CABDB6C00456C61 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D702D02CABDB6C00456C61 /* Binding.swift */; };
 		01D702D32CABE63400456C61 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D702D22CABE63400456C61 /* FilterButton.swift */; };
@@ -75,6 +78,9 @@
 		019951B92CA5891900ECD4EA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		019951BB2CA5899700ECD4EA /* UserEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoints.swift; sourceTree = "<group>"; };
 		01AD6F922C9FFFBD00FC6374 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		01B32F962CAC0F7600C6C828 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		01B32F982CAC10CE00C6C828 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		01B32F9C2CAC170E00C6C828 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		01CEAB3B2BF4DE500056A97E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		01D702D02CABDB6C00456C61 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		01D702D22CABE63400456C61 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				017403AE2CA6AD6100410419 /* ActivitiesView.swift */,
 				019951B52CA5811400ECD4EA /* HomeView.swift */,
 				010F27DA2C99BD6200B9E555 /* OnBoardingView.swift */,
+				01B32F962CAC0F7600C6C828 /* ProfileView.swift */,
 				01169A3C2CA315BC00F52E90 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -144,8 +151,10 @@
 			children = (
 				01169A352CA30D6F00F52E90 /* ActivityRow.swift */,
 				01169A332CA30B9200F52E90 /* ApplicationIcon.swift */,
+				01B32F9C2CAC170E00C6C828 /* Avatar.swift */,
 				01D702D22CABE63400456C61 /* FilterButton.swift */,
 				01D702DB2CABF4D100456C61 /* HRow.swift */,
+				01B32F982CAC10CE00C6C828 /* SectionHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -341,10 +350,12 @@
 				019358812CAB25D500A2F971 /* KeychainService.swift in Sources */,
 				01D702DC2CABF4D100456C61 /* HRow.swift in Sources */,
 				01169A342CA30B9200F52E90 /* ApplicationIcon.swift in Sources */,
+				01B32F972CAC0F7600C6C828 /* ProfileView.swift in Sources */,
 				013595A82CA45F08009385EE /* ApplicationSettings.swift in Sources */,
 				019951B62CA5811400ECD4EA /* HomeView.swift in Sources */,
 				01D976B12BE8D0D900DB9F30 /* Dashboard42App.swift in Sources */,
 				01169A3D2CA315BC00F52E90 /* SettingsView.swift in Sources */,
+				01B32F9D2CAC170E00C6C828 /* Avatar.swift in Sources */,
 				017403A92CA6997D00410419 /* Event.swift in Sources */,
 				017403B32CA6AFD000410419 /* CampusService.swift in Sources */,
 				01F270172C99DC9400F9683C /* AuthenticationService.swift in Sources */,
@@ -360,6 +371,7 @@
 				017403AF2CA6AD6100410419 /* ActivitiesView.swift in Sources */,
 				019951BC2CA5899700ECD4EA /* UserEndpoints.swift in Sources */,
 				01D702D92CABF39800456C61 /* ExamDetailsView.swift in Sources */,
+				01B32F992CAC10CE00C6C828 /* SectionHeader.swift in Sources */,
 				01AD6F932C9FFFBD00FC6374 /* Errors.swift in Sources */,
 				017403AD2CA69A3F00410419 /* Scale.swift in Sources */,
 				019951B82CA581DB00ECD4EA /* User.swift in Sources */,

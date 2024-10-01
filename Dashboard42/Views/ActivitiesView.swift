@@ -21,7 +21,7 @@ struct ActivitiesView<T: View>: View {
         
         guard !searchText.isEmpty else { return homeActivities }
         
-        return homeActivities.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+        return homeActivities.filter { "\($0.title)".localizedStandardContains(searchText) }
     }
     
     private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: activities) }

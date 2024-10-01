@@ -83,19 +83,3 @@ struct HomeView<T: View>: View {
     HomeView<EmptyView>()
         .environment(UserService())
 }
-
-extension HomeView {
-    private struct SectionHeader: View {
-        let header: LocalizedStringKey
-        
-        var body: some View {
-            Text(header)
-                .textCase(.none)
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundStyle(.primary)
-                .padding(.vertical)
-                .listRowInsets(EdgeInsets())
-        }
-    }
-}

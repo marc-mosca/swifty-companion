@@ -46,7 +46,7 @@ enum ActivityType {
 
 struct ActivityRow<T: View>: View {
     let type: ActivityType
-    let title: String
+    let title: LocalizedStringKey
     let description: String?
     let destination: AnyView?
     
@@ -57,7 +57,7 @@ struct ActivityRow<T: View>: View {
         self.destination = activity.hasDestination ? AnyView(activity.destination) : nil
     }
     
-    init(type: ActivityType, title: String, description: String? = nil, destination: T) {
+    init(type: ActivityType, title: LocalizedStringKey, description: String? = nil, destination: T) {
         self.type = type
         self.title = title
         self.description = description

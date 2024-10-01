@@ -30,7 +30,7 @@ enum ApplicationScreens: Identifiable, CaseIterable {
         switch self {
         case .home: HomeView<AnyView>()
         case .activities: ActivitiesView<AnyView>()
-        case .profile: Text("Profile")
+        case .profile: ProfileView()
         case .settings: SettingsView()
         }
     }

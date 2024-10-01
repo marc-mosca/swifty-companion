@@ -37,6 +37,13 @@ struct User: Identifiable, Decodable {
     
     var mainCampus: Self.CampusUsers? { campusUsers.first(where: \.isPrimary) }
     
+    var isPostCC: Bool {
+        let lastProject = projectsUsers.first(where: { $0.project.slug == "ft_transcendence" })
+        let lastExam = projectsUsers.first(where: { $0.project.slug == "exam-rank-06" })
+        
+        return lastProject?.validated == true && lastExam?.validated == true
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case email = "email"

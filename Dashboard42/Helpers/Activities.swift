@@ -35,12 +35,12 @@ enum Activities: Identifiable {
         }
     }
     
-    var title: String {
+    var title: LocalizedStringKey {
         switch self {
-        case .project(let project): project.project.name
-        case .exam(let exam): exam.name
-        case .scale: "Scale"
-        case .event(let event): event.name
+        case .project(let project): "\(project.project.name)"
+        case .exam(let exam): "\(exam.name)"
+        case .scale: "Scales"
+        case .event(let event): "\(event.name)"
         }
     }
     
