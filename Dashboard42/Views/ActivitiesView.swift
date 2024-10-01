@@ -11,10 +11,12 @@ struct ActivitiesView: View {
     @Environment(CampusService.self) private var campusService
     @Environment(UserService.self) private var userService
     @State private var searchText = ""
+    @State private var selectedFilter = ""
     
     private var activities: [Activities] {
-        let events = campusService.events.map { Activities.event($0) }
-        let exams = campusService.exams.map { Activities.exam($0) }
+        let filteredEvents = selectedFilter == "" ? campusService.events : campusService.events.filter { $0.kind.capitalized == selectedFilter }
+        let events = filteredEvents.map { Activities.event($0) }
+        let exams = selectedFilter == "" ? campusService.exams.map { Activities.exam($0) } : []
         let homeActivities = (events + exams).sorted(by: { $0.beginAt < $1.beginAt })
         
         guard !searchText.isEmpty else { return homeActivities }
@@ -23,6 +25,7 @@ struct ActivitiesView: View {
     }
     
     private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: activities) }
+    private var activityFilters: [String] { Set(campusService.events.map(\.kind.capitalized)).sorted() }
     
     var body: some View {
         NavigationStack {
@@ -41,6 +44,17 @@ struct ActivitiesView: View {
                 .navigationTitle("Activities")
                 .searchable(text: $searchText, prompt: "Search an activity")
                 .refreshable { loadCampusActivities(refresh: true) }
+                .toolbar {
+                    ToolbarItem {
+                        Menu("Filter activities", systemImage: "line.3.horizontal.decrease.circle") {
+                            Picker("Select a filter", selection: Binding($selectedFilter, deselectTo: "")) {
+                                ForEach(activityFilters, id: \.self) { filter in
+                                        Text(filter)
+                                }
+                            }
+                        }
+                    }
+                }
                 .overlay {
                     if activities.isEmpty && searchText.isEmpty {
                         ContentUnavailableView(

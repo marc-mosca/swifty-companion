@@ -92,6 +92,22 @@
       },
       "shouldTranslate" : false
     },
+    "Filter activities" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter activities"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrer les activités"
+          }
+        }
+      }
+    },
     "General" : {
       "localizations" : {
         "en" : {
@@ -344,6 +360,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechercher une activité"
+          }
+        }
+      }
+    },
+    "Select a filter" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a filter"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner un filtre"
           }
         }
       }

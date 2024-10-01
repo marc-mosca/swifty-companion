@@ -32,6 +32,7 @@
 		019951BC2CA5899700ECD4EA /* UserEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019951BB2CA5899700ECD4EA /* UserEndpoints.swift */; };
 		01AD6F932C9FFFBD00FC6374 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD6F922C9FFFBD00FC6374 /* Errors.swift */; };
 		01CEAB3C2BF4DE500056A97E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 01CEAB3B2BF4DE500056A97E /* Localizable.xcstrings */; };
+		01D702D12CABDB6C00456C61 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D702D02CABDB6C00456C61 /* Binding.swift */; };
 		01D976B12BE8D0D900DB9F30 /* Dashboard42App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D976B02BE8D0D900DB9F30 /* Dashboard42App.swift */; };
 		01D976B32BE8D0D900DB9F30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D976B22BE8D0D900DB9F30 /* ContentView.swift */; };
 		01D976B52BE8D0DA00DB9F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01D976B42BE8D0DA00DB9F30 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		019951BB2CA5899700ECD4EA /* UserEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoints.swift; sourceTree = "<group>"; };
 		01AD6F922C9FFFBD00FC6374 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		01CEAB3B2BF4DE500056A97E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		01D702D02CABDB6C00456C61 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		01D976B02BE8D0D900DB9F30 /* Dashboard42App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard42App.swift; sourceTree = "<group>"; };
 		01D976B22BE8D0D900DB9F30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		01D976B42BE8D0DA00DB9F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		0120889D2C9C71690007E57B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				01D702D02CABDB6C00456C61 /* Binding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				0120889F2C9C71930007E57B /* Constants.swift in Sources */,
 				019951BA2CA5891900ECD4EA /* UserService.swift in Sources */,
 				017403B52CA6B60600410419 /* Activities.swift in Sources */,
+				01D702D12CABDB6C00456C61 /* Binding.swift in Sources */,
 				017403AB2CA699CE00410419 /* Exam.swift in Sources */,
 				017403AF2CA6AD6100410419 /* ActivitiesView.swift in Sources */,
 				019951BC2CA5899700ECD4EA /* UserEndpoints.swift in Sources */,
