@@ -35,7 +35,7 @@ struct ActivitiesView: View {
                         Section(groupedActivity.monthYear) {
                             ForEach(groupedActivity.activities) { activity in
                                 NavigationLink(destination: EmptyView()) {
-                                    ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                                    ActivityRow(activity: activity)
                                 }
                             }
                         }

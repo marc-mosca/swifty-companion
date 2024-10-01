@@ -55,7 +55,7 @@ struct HomeView: View {
                         }
                         else {
                             ForEach(activities.prefix(10)) { activity in
-                                ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                                ActivityRow(activity: activity)
                             }
                         }
                     } header: {

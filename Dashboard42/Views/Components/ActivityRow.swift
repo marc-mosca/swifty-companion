@@ -49,6 +49,18 @@ struct ActivityRow: View {
     let title: String
     let description: String?
     
+    init(activity: Activities) {
+        self.type = activity.type
+        self.title = activity.title
+        self.description = activity.description
+    }
+    
+    init(type: ActivityType, title: String, description: String? = nil) {
+        self.type = type
+        self.title = title
+        self.description = description
+    }
+    
     var body: some View {
         HStack(spacing: 16) {
             Image(systemName: type.icon)
