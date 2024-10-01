@@ -35,7 +35,7 @@ struct ProfileView: View {
                                 Avatar(url: user.image.link, isAvailable: user.location != nil)
                                 Informations(name: user.displayname, email: user.email, isPostCommonCore: user.isPostCC, cursus: user.mainCursus)
                             }
-                            .padding(.horizontal, 4)
+                            .padding(.horizontal, 8)
                             
                             GridInformations(location: user.location, grade: user.mainCursus?.grade, poolYear: user.poolYear)
                         }
@@ -47,9 +47,13 @@ struct ProfileView: View {
                     Section {
                         ActivityRow(type: .info, title: "Informations", destination: EmptyView())
                         ActivityRow(type: .project, title: "Projects", destination: EmptyView())
-                        ActivityRow(type: .event, title: "Events", destination: EmptyView())
-                        ActivityRow(type: .scale, title: "Scales", destination: EmptyView())
-                        ActivityRow(type: .logtime, title: "Logtimes", destination: EmptyView())
+                        
+                        if !isSearchedProfile {
+                            ActivityRow(type: .event, title: "Events", destination: EmptyView())
+                            ActivityRow(type: .scale, title: "Scales", destination: EmptyView())
+                            ActivityRow(type: .logtime, title: "Logtimes", destination: EmptyView())
+                        }
+                        
                         ActivityRow(type: .achievement, title: "Achievements", destination: EmptyView())
                         ActivityRow(type: .patronage, title: "Patronages", destination: EmptyView())
                     } header: {

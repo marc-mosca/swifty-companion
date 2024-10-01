@@ -10,6 +10,9 @@ import SwiftUI
 struct HomeView<T: View>: View {
     @Environment(UserService.self) private var userService
     @State private var searchText = ""
+    @State private var searchedUser: User?
+    @State private var searchFailed: Bool = false
+    @State private var isSearchedSucceded: Bool?
     
     private var activities: [Activities] {
         let events = userService.events.map { Activities.event($0) }
@@ -53,8 +56,14 @@ struct HomeView<T: View>: View {
                 }
                 .navigationTitle("Home")
                 .searchable(text: $searchText, prompt: "Search a student")
-                .refreshable {
-                    loadUserInformations()
+                .refreshable { loadUserInformations() }
+                .onAppear { isSearchedSucceded = nil }
+                .onChange(of: searchText) { isSearchedSucceded = nil }
+                .onSubmit(of: .search) { searchUser() }
+                .navigationDestination(isPresented: .constant(isSearchedSucceded == true)) {
+                    if let user = searchedUser {
+                        ProfileView(user: user)
+                    }
                 }
             }
             else {
@@ -65,6 +74,9 @@ struct HomeView<T: View>: View {
             guard userService.user == nil else { return }
             loadUserInformations()
         }
+        .alert("No user found", isPresented: $searchFailed) {
+            Button("OK", role: .cancel, action: {})
+        }
     }
     
     private func loadUserInformations() {
@@ -74,6 +86,18 @@ struct HomeView<T: View>: View {
             }
             catch {
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func searchUser() {
+        Task {
+            do {
+                searchedUser = try await NetworkingManager.shared.request(UserEndpoints.fetchUser(login: searchText.lowercased()), type: User.self)
+                isSearchedSucceded = true
+            }
+            catch {
+                searchFailed = true
             }
         }
     }
