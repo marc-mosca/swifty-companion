@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeView<T: View>: View {
     @Environment(UserService.self) private var userService
     @State private var searchText = ""
     
@@ -26,21 +26,10 @@ struct HomeView: View {
             if userService.isLoading == false {
                 List {
                     Section {
-                        NavigationLink(destination: EmptyView()) {
-                            ActivityRow(type: .project, title: "Projects", description: nil)
-                        }
-                        
-                        NavigationLink(destination: EmptyView()) {
-                            ActivityRow(type: .scale, title: "Scales", description: nil)
-                        }
-                        
-                        NavigationLink(destination: EmptyView()) {
-                            ActivityRow(type: .logtime, title: "Logtimes", description: nil)
-                        }
-                        
-                        NavigationLink(destination: EmptyView()) {
-                            ActivityRow(type: .event, title: "Events", description: nil)
-                        }
+                        ActivityRow(type: .project, title: "Projects", description: nil, destination: EmptyView())
+                        ActivityRow(type: .scale, title: "Scales", description: nil, destination: EmptyView())
+                        ActivityRow(type: .logtime, title: "Logtimes", description: nil, destination: EmptyView())
+                        ActivityRow(type: .event, title: "Events", description: nil, destination: EmptyView())
                     } header: {
                         SectionHeader(header: "Shortcuts")
                     }
@@ -55,7 +44,7 @@ struct HomeView: View {
                         }
                         else {
                             ForEach(activities.prefix(10)) { activity in
-                                ActivityRow(activity: activity)
+                                ActivityRow<T>(activity: activity)
                             }
                         }
                     } header: {
@@ -91,7 +80,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView<EmptyView>()
         .environment(UserService())
 }
 

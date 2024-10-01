@@ -5,7 +5,7 @@
 //  Created by Marc MOSCA on 27/09/2024.
 //
 
-import Foundation
+import SwiftUI
 
 enum Activities: Identifiable {
     case project(User.Projects)
@@ -55,6 +55,23 @@ enum Activities: Identifiable {
         }
         
         return date?.formatted(formatter).capitalized ?? nil
+    }
+    
+    var hasDestination: Bool {
+        switch self {
+        case .event, .exam: true
+        default: false
+        }
+    }
+    
+    @ViewBuilder
+    var destination: some View {
+        if case .event(let event) = self {
+            Text(event.name)
+        }
+        else if case .exam(let exam) = self {
+            Text(exam.name)
+        }
     }
     
     var beginAt: Date {

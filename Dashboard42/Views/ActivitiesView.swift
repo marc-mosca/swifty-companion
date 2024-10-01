@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActivitiesView: View {
+struct ActivitiesView<T: View>: View {
     @Environment(CampusService.self) private var campusService
     @Environment(UserService.self) private var userService
     @State private var searchText = ""
@@ -34,9 +34,7 @@ struct ActivitiesView: View {
                     if !groupedActivity.activities.isEmpty {
                         Section(groupedActivity.monthYear) {
                             ForEach(groupedActivity.activities) { activity in
-                                NavigationLink(destination: EmptyView()) {
-                                    ActivityRow(activity: activity)
-                                }
+                                ActivityRow<T>(activity: activity)
                             }
                         }
                     }
@@ -90,7 +88,7 @@ struct ActivitiesView: View {
 }
 
 #Preview {
-    ActivitiesView()
+    ActivitiesView<EmptyView>()
         .environment(CampusService())
         .environment(UserService())
 }

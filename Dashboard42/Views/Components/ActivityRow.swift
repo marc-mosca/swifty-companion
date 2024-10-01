@@ -44,24 +44,39 @@ enum ActivityType {
     }
 }
 
-struct ActivityRow: View {
+struct ActivityRow<T: View>: View {
     let type: ActivityType
     let title: String
     let description: String?
+    let destination: AnyView?
     
     init(activity: Activities) {
         self.type = activity.type
         self.title = activity.title
         self.description = activity.description
+        self.destination = activity.hasDestination ? AnyView(activity.destination) : nil
     }
     
-    init(type: ActivityType, title: String, description: String? = nil) {
+    init(type: ActivityType, title: String, description: String? = nil, destination: T) {
         self.type = type
         self.title = title
         self.description = description
+        self.destination = AnyView(destination)
     }
     
     var body: some View {
+        if let destination {
+            NavigationLink(destination: destination) {
+                activityLabel
+            }
+        }
+        else {
+            activityLabel
+        }
+    }
+    
+    @ViewBuilder
+    private var activityLabel: some View {
         HStack(spacing: 16) {
             Image(systemName: type.icon)
                 .imageScale(.large)
@@ -69,7 +84,7 @@ struct ActivityRow: View {
             
             VStack(alignment: .leading) {
                 Text(title)
-
+                
                 if let description {
                     Text(description)
                         .font(.footnote)
@@ -82,6 +97,6 @@ struct ActivityRow: View {
 }
 
 #Preview {
-    ActivityRow(type: .project, title: "swifty-companion", description: "42cursus - Finished")
+    ActivityRow(type: .project, title: "swifty-companion", description: "42cursus - Finished", destination: EmptyView())
         .padding()
 }
