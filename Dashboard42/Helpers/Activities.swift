@@ -39,7 +39,7 @@ enum Activities: Identifiable {
         switch self {
         case .project(let project): "\(project.project.name)"
         case .exam(let exam): "\(exam.name)"
-        case .scale: "Scales"
+        case .scale(let scale): scale.corrector != nil ? "Scale \(scale.corrector!.login)" : "Scale"
         case .event(let event): "\(event.name)"
         }
     }
