@@ -15,6 +15,7 @@ struct SettingsView: View {
     
     @State private var languageSelected = UserDefaults.standard.string(forKey: Constants.applicationLanguageKey) ?? Locale.preferredLanguages[0].components(separatedBy: "-").first ?? "en"
     @State private var themeSelected = UserDefaults.standard.integer(forKey: Constants.applicationThemeKey)
+    @State private var presentDialog = false
     
     private var applicationVersion: String {
         guard let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
@@ -66,16 +67,21 @@ struct SettingsView: View {
                 
                 Section("Account") {
                     CustomLink(title: "Intranet Profile", url: URL(string: "https://profile.intra.42.fr/users/\(userService.user?.login ?? "")")!)
-                    Button("Log out", role: .destructive, action: logOutButtonTapped)
+                    Button("Log out", role: .destructive, action: { presentDialog.toggle() })
                 }
             }
             .navigationTitle("Settings")
+            .confirmationDialog("Are you sure you want to log out?", isPresented: $presentDialog) {
+                Button("Log out", role: .destructive, action: logOutButtonTapped)
+            }
         }
     }
     
     private func logOutButtonTapped() {
-        userIsConnected = false
-        KeychainService.shared.clear()
+        withAnimation {
+            userIsConnected = false
+            KeychainService.shared.clear()
+        }
     }
 }
 

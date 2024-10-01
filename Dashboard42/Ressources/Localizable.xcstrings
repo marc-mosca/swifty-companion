@@ -285,6 +285,22 @@
         }
       }
     },
+    "Are you sure you want to log out?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to log out?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etes-vous sûr de vouloir vous déconnecter ?"
+          }
+        }
+      }
+    },
     "Are you sure you want to register for this event?" : {
       "localizations" : {
         "en" : {
