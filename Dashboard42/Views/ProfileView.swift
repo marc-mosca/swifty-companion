@@ -49,7 +49,7 @@ struct ProfileView<T: View>: View {
                         ActivityRow(type: .project, title: "Projects", destination: UserProjects<T>(projects: user.projectsUsers, cursus: user.cursusUsers))
                         
                         if !isSearchedProfile {
-                            ActivityRow(type: .event, title: "Events", destination: EmptyView())
+                            ActivityRow(type: .event, title: "Events", destination: UserEvents<T>(events: userService.events))
                             ActivityRow(type: .scale, title: "Scales", destination: EmptyView())
                             ActivityRow(type: .logtime, title: "Logtimes", destination: EmptyView())
                         }

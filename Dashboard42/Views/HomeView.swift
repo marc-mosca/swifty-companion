@@ -38,7 +38,7 @@ struct HomeView<T: View>: View {
                         
                         ActivityRow(type: .scale, title: "Scales", description: nil, destination: EmptyView())
                         ActivityRow(type: .logtime, title: "Logtimes", description: nil, destination: EmptyView())
-                        ActivityRow(type: .event, title: "Events", description: nil, destination: EmptyView())
+                        ActivityRow(type: .event, title: "Events", description: nil, destination: UserEvents<T>(events: userService.events))
                     } header: {
                         SectionHeader(header: "Shortcuts")
                     }

@@ -1,5 +1,5 @@
 //
-//  UserProjects.swift
+//  UserEvents.swift
 //  Dashboard42
 //
 //  Created by Marc MOSCA on 01/10/2024.
@@ -7,25 +7,23 @@
 
 import SwiftUI
 
-struct UserProjects<T: View>: View {
+struct UserEvents<T: View>: View {
     @State private var selectedFilter = ""
     @State private var searchText = ""
     
-    let projects: [User.Projects]
-    let cursus: [User.Cursus]
+    let events: [Event]
     
     private var activities: [Activities] {
-        let cursusId = cursus.first(where: { $0.cursus.name.capitalized == selectedFilter })?.cursus.id
-        let filteredProjects = selectedFilter == "" ? projects : projects.filter { $0.cursusIds.first == cursusId }
-        let activitiesProjects = filteredProjects.map({ Activities.project($0) }).sorted(by: { $0.beginAt > $1.beginAt })
+        let filteredEvents = selectedFilter == "" ? events : events.filter { $0.kind.capitalized == selectedFilter }
+        let events = filteredEvents.map { Activities.event($0) }.sorted(by: { $0.beginAt > $1.beginAt })
         
-        guard !searchText.isEmpty else { return activitiesProjects }
+        guard !searchText.isEmpty else { return events }
         
-        return activitiesProjects.filter { "\($0.title)".localizedStandardContains(searchText) }
+        return events.filter { "\($0.title)".localizedStandardContains(searchText) }
     }
     
     private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: activities, asc: false) }
-    private var filters: [String] { Set(cursus.map(\.cursus.name.capitalized)).sorted() }
+    private var activityFilters: [String] { Set(events.map(\.kind.capitalized)).sorted() }
     
     var body: some View {
         List(groupedActivities) { groupedActivity in
@@ -37,19 +35,19 @@ struct UserProjects<T: View>: View {
                 }
             }
         }
-        .navigationTitle("Projects")
-        .searchable(text: $searchText, prompt: "Search a project")
+        .navigationTitle("Events")
+        .searchable(text: $searchText, prompt: "Search an event")
         .toolbar {
             ToolbarItem {
-                FilterButton(selectedFilter: $selectedFilter, filters: filters)
+                FilterButton(selectedFilter: $selectedFilter, filters: activityFilters)
             }
         }
         .overlay {
             if activities.isEmpty && searchText.isEmpty {
                 ContentUnavailableView(
-                    "No project found",
-                    systemImage: "folder",
-                    description: Text("You must be registered or have submitted a project to see it in the list.")
+                    "No activity found",
+                    systemImage: "calendar",
+                    description: Text("No activity found in your campus. Please check back later.")
                 )
             }
             else if activities.isEmpty && !searchText.isEmpty {

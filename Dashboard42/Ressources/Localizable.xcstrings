@@ -1064,6 +1064,22 @@
         }
       }
     },
+    "Search a project" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search a project"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher un projet"
+          }
+        }
+      }
+    },
     "Search a student" : {
       "localizations" : {
         "en" : {
@@ -1096,18 +1112,18 @@
         }
       }
     },
-    "Search for a project" : {
+    "Search an event" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search for a project"
+            "value" : "Search an event"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rechercher un projet"
+            "value" : "Rechercher un évènement"
           }
         }
       }
