@@ -7,6 +7,25 @@
 
 import Foundation
 
+struct EventUser: Identifiable, Decodable {
+    let id: Int
+    let eventId: Int
+    let userId: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case eventId = "event_id"
+        case userId = "user_id"
+    }
+    
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.eventId = try container.decode(Int.self, forKey: .eventId)
+        self.userId = try container.decode(Int.self, forKey: .userId)
+    }
+}
+
 struct Event: Identifiable, Decodable {
     let id: Int
     let name: String

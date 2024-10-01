@@ -285,6 +285,38 @@
         }
       }
     },
+    "Are you sure you want to register for this event?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to register for this event?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etes-vous sûr de vouloir vous inscrire à cet événement ?"
+          }
+        }
+      }
+    },
+    "Are you sure you want to unregister for this event?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to unregister for this event?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etes-vous sûr de vouloir vous désinscrire de cet événement ?"
+          }
+        }
+      }
+    },
     "Automatic" : {
       "localizations" : {
         "en" : {
@@ -675,6 +707,22 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "S’inscrire"
+          }
+        }
+      }
+    },
+    "Registered" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registered"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Inscrit"
           }
         }
@@ -836,6 +884,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Non définie"
+          }
+        }
+      }
+    },
+    "Unregister" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unregister"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se désinscrire"
           }
         }
       }

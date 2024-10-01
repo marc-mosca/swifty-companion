@@ -30,4 +30,18 @@ class UserService {
         
         isLoading = false
     }
+    
+    func registerEvent(userId: Int, eventId: Int) async throws {
+        try await NetworkingManager.shared.request(UserEndpoints.registerEvent(userId: userId, eventId: eventId))
+        events = try await NetworkingManager.shared.request(UserEndpoints.fetchEvents(userId: userId), type: [Event].self)
+    }
+    
+    func unregisterEvent(userId: Int, eventId: Int) async throws {
+        let eventUser = try await NetworkingManager.shared.request(UserEndpoints.fetchEventUser(userId: userId, eventId: eventId), type: [EventUser].self)
+        
+        guard let eventUserId = eventUser.first?.id else { return }
+        
+        try await NetworkingManager.shared.request(UserEndpoints.unregisterEvent(eventUserId: eventUserId))
+        events = try await NetworkingManager.shared.request(UserEndpoints.fetchEvents(userId: userId), type: [Event].self)
+    }
 }
