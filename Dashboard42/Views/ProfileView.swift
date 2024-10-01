@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct ProfileView<T: View>: View {
     @Environment(UserService.self) private var userService
     
     let userParam: User?
@@ -45,8 +45,8 @@ struct ProfileView: View {
                     .padding(.vertical, 6)
                     
                     Section {
-                        ActivityRow(type: .info, title: "Informations", destination: EmptyView())
-                        ActivityRow(type: .project, title: "Projects", destination: EmptyView())
+                        ActivityRow(type: .info, title: "Informations", destination: UserInformations(user: user))
+                        ActivityRow(type: .project, title: "Projects", destination: UserProjects<T>(projects: user.projectsUsers, cursus: user.cursusUsers))
                         
                         if !isSearchedProfile {
                             ActivityRow(type: .event, title: "Events", destination: EmptyView())
@@ -71,7 +71,7 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView<AnyView>()
         .environment(UserService())
 }
 

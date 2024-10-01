@@ -26,10 +26,16 @@ struct HomeView<T: View>: View {
     
     var body: some View {
         NavigationStack {
-            if userService.isLoading == false {
+            if let user = userService.user, userService.isLoading == false {
                 List {
                     Section {
-                        ActivityRow(type: .project, title: "Projects", description: nil, destination: EmptyView())
+                        ActivityRow(
+                            type: .project,
+                            title: "Projects",
+                            description: nil,
+                            destination: UserProjects<T>(projects: user.projectsUsers, cursus: user.cursusUsers)
+                        )
+                        
                         ActivityRow(type: .scale, title: "Scales", description: nil, destination: EmptyView())
                         ActivityRow(type: .logtime, title: "Logtimes", description: nil, destination: EmptyView())
                         ActivityRow(type: .event, title: "Events", description: nil, destination: EmptyView())
@@ -62,7 +68,7 @@ struct HomeView<T: View>: View {
                 .onSubmit(of: .search) { searchUser() }
                 .navigationDestination(isPresented: .constant(isSearchedSucceded == true)) {
                     if let user = searchedUser {
-                        ProfileView(user: user)
+                        ProfileView<T>(user: user)
                     }
                 }
             }

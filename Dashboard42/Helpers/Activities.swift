@@ -94,14 +94,14 @@ struct GroupedActivities: Identifiable {
     
     var id: String { monthYear }
     
-    static func create(for activities: [Activities]) -> [GroupedActivities] {
+    static func create(for activities: [Activities], asc: Bool = true) -> [GroupedActivities] {
         let dictionary = Dictionary(grouping: activities, by: \.beginAtFormatted)
         let sortedKey = dictionary.keys.sorted { lhs, rhs in
             let lhsActivity = activities.first(where: { $0.beginAtFormatted == lhs })
             let rhsActivity = activities.first(where: { $0.beginAtFormatted == rhs })
             
             guard let lhsDate = lhsActivity?.beginAt, let rhsDate = rhsActivity?.beginAt else { return false }
-            return lhsDate < rhsDate
+            return asc ? lhsDate < rhsDate : lhsDate > rhsDate
         }
         return sortedKey.compactMap { GroupedActivities(monthYear: $0, activities: dictionary[$0] ?? []) }
     }

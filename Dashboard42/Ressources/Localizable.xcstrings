@@ -365,6 +365,38 @@
         }
       }
     },
+    "Correction points" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correction points"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Points de correction"
+          }
+        }
+      }
+    },
+    "Cursus" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cursus"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cursus"
+          }
+        }
+      }
+    },
     "Dark" : {
       "localizations" : {
         "en" : {
@@ -452,6 +484,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Durée"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
           }
         }
       }
@@ -600,6 +648,22 @@
         }
       }
     },
+    "Level" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau"
+          }
+        }
+      }
+    },
     "Level - %@" : {
       "localizations" : {
         "en" : {
@@ -680,6 +744,22 @@
         }
       }
     },
+    "Name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom"
+          }
+        }
+      }
+    },
     "No" : {
       "localizations" : {
         "en" : {
@@ -724,6 +804,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune activité n’a été trouvé dans votre campus. Merci de réessayer plus tard."
+          }
+        }
+      }
+    },
+    "No project found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No project found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun projet trouvé"
           }
         }
       }
@@ -1000,6 +1096,22 @@
         }
       }
     },
+    "Search for a project" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search for a project"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher un projet"
+          }
+        }
+      }
+    },
     "Select a filter" : {
       "localizations" : {
         "en" : {
@@ -1128,6 +1240,22 @@
         }
       }
     },
+    "Wallets" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wallets"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wallets"
+          }
+        }
+      }
+    },
     "Welcome to" : {
       "localizations" : {
         "en" : {
@@ -1156,6 +1284,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oui"
+          }
+        }
+      }
+    },
+    "You must be registered or have submitted a project to see it in the list." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You must be registered or have submitted a project to see it in the list."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous devez être inscrit ou avoir rendu un projet pour le voir dans la liste."
           }
         }
       }
