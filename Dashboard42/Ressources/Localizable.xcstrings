@@ -365,6 +365,21 @@
         }
       }
     },
+    "Cannot fetch campus activities. Please check your internet connection and try again." : {
+
+    },
+    "Cannot fetch user information. Please check your internet connection and try again." : {
+
+    },
+    "Cannot link your 42 account. Please check your internet connection and try again." : {
+
+    },
+    "Cannot register event. Please check your internet connection and try again." : {
+
+    },
+    "Cannot unregister event. Please check your internet connection and try again." : {
+
+    },
     "Correction points" : {
       "localizations" : {
         "en" : {
@@ -503,6 +518,24 @@
           }
         }
       }
+    },
+    "Error: Cannot fetch campus activities" : {
+
+    },
+    "Error: Cannot fetch user information" : {
+
+    },
+    "Error: Cannot link your 42 account" : {
+
+    },
+    "Error: Cannot register event" : {
+
+    },
+    "Error: Cannot unregister event" : {
+
+    },
+    "Error: User not found" : {
+
     },
     "Events" : {
       "localizations" : {
@@ -868,22 +901,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune activité récente n'a été trouvé sur votre profil."
-          }
-        }
-      }
-    },
-    "No user found" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No user found"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun utilisateur trouvé"
           }
         }
       }
@@ -1255,6 +1272,9 @@
           }
         }
       }
+    },
+    "The search for the user was unsuccessful. Please check the login and try again." : {
+
     },
     "Theme" : {
       "localizations" : {

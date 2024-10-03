@@ -25,7 +25,7 @@ struct AuthenticationUserToken: Decodable {
         case refreshToken = "refresh_token"
         case tokenType = "token_type"
         case expiresIn = "expires_in"
-        case scope
+        case scope = "scope"
         case createdAt = "created_at"
     }
     
@@ -51,7 +51,7 @@ struct AuthenticationApplicationToken: Decodable {
         case accessToken = "access_token"
         case tokenType = "token_type"
         case expiresIn = "expires_in"
-        case scope
+        case scope = "scope"
         case createdAt = "created_at"
     }
     

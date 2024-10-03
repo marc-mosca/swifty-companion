@@ -11,7 +11,7 @@ struct ApplicationTabView: View {
     @Binding var selection: ApplicationScreens
 
     var body: some View {
-        TabView(selection: $selection) {
+        TabView(selection: self.$selection) {
             ForEach(ApplicationScreens.allCases) { screen in
                 screen.destination
                     .tag(screen as ApplicationScreens?)

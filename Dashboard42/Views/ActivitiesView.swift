@@ -7,56 +7,78 @@
 
 import SwiftUI
 
-struct ActivitiesView<T: View>: View {
-    @Environment(CampusService.self) private var campusService
-    @Environment(UserService.self) private var userService
-    @State private var searchText = ""
-    @State private var selectedFilter = ""
+struct ActivitiesView: View {
+    @Environment(\.campusService) private var campusService: CampusService
+    @Environment(\.userService) private var userService: UserService
+    
+    @State private var isFirstLoad: Bool = true
+    @State private var isLoading: Bool = false
+    
+    @State private var error: Dashboard42UIErrors? = nil
+    @State private var hasError: Bool = false
+    
+    @State private var searchedText: String = ""
+    @State private var selectedFilter: String = ""
     
     private var activities: [Activities] {
-        let filteredEvents = selectedFilter == "" ? campusService.events : campusService.events.filter { $0.kind.capitalized == selectedFilter }
-        let events = filteredEvents.map { Activities.event($0) }
-        let exams = selectedFilter == "" ? campusService.exams.map { Activities.exam($0) } : []
-        let homeActivities = (events + exams).sorted(by: { $0.beginAt < $1.beginAt })
+        let campusEvents: [Event] = self.campusService.events
+        let filteredEvents: [Event] = self.selectedFilter == "" ? campusEvents : campusEvents.filter { $0.kind.capitalized == self.selectedFilter }
+        let events: [Activities] = filteredEvents.map { Activities.event($0) }
+        let exams: [Activities] = self.selectedFilter == "" ? self.campusService.exams.map { Activities.exam($0) } : []
+        let homeActivities: [Activities] = (events + exams).sorted(by: { $0.beginAt < $1.beginAt })
         
-        guard !searchText.isEmpty else { return homeActivities }
+        guard self.searchedText.isEmpty == false else { return homeActivities }
         
-        return homeActivities.filter { "\($0.title)".localizedStandardContains(searchText) }
+        return homeActivities.filter { "\($0.title)".localizedStandardContains(self.searchedText) }
     }
     
-    private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: activities) }
-    private var activityFilters: [String] { Set(campusService.events.map(\.kind.capitalized)).sorted() }
+    private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: self.activities, order: .ASC) }
+    private var filters: [String] { Set(self.campusService.events.map(\.kind.capitalized)).sorted() }
     
     var body: some View {
         NavigationStack {
-            if campusService.isLoading == false {
-                List(groupedActivities) { groupedActivity in
-                    if !groupedActivity.activities.isEmpty {
+            if self.isLoading == false {
+                List(self.groupedActivities) { groupedActivity in
+                    if groupedActivity.activities.isEmpty == false {
                         Section(groupedActivity.monthYear) {
                             ForEach(groupedActivity.activities) { activity in
-                                ActivityRow<T>(activity: activity)
+                                if case let .event(event) = activity {
+                                    NavigationLink(destination: EventDetailsView(event: event)) {
+                                        ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                                    }
+                                }
+                                else if case let .exam(exam) = activity {
+                                    NavigationLink(destination: ExamDetailsView(exam: exam)) {
+                                        ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                                    }
+                                }
+                                else {
+                                    ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                                }
                             }
                         }
                     }
                 }
                 .navigationTitle("Activities")
-                .searchable(text: $searchText, prompt: "Search an activity")
-                .refreshable { loadCampusActivities(refresh: true) }
+                .searchable(text: self.$searchedText, prompt: "Search an activity")
+                .refreshable {
+                    self.fetchCampusActivities()
+                }
                 .toolbar {
                     ToolbarItem {
-                        FilterButton(selectedFilter: $selectedFilter, filters: activityFilters)
+                        FilterButton(selectedFilter: self.$selectedFilter, filters: self.filters)
                     }
                 }
                 .overlay {
-                    if activities.isEmpty && searchText.isEmpty {
+                    if self.activities.isEmpty == true && self.searchedText.isEmpty == true {
                         ContentUnavailableView(
                             "No activity found",
                             systemImage: "calendar",
                             description: Text("No activity found in your campus. Please check back later.")
                         )
                     }
-                    else if activities.isEmpty && !searchText.isEmpty {
-                        ContentUnavailableView.search(text: searchText)
+                    else if self.activities.isEmpty == true && self.searchedText.isEmpty == false {
+                        ContentUnavailableView.search(text: self.searchedText)
                     }
                 }
             }
@@ -64,31 +86,36 @@ struct ActivitiesView<T: View>: View {
                 ProgressView()
             }
         }
-        .task { loadCampusActivities() }
+        .error(isPresented: self.$hasError, error: self.error)
+        .task {
+            guard self.isFirstLoad == true else { return }
+            self.fetchCampusActivities()
+        }
     }
+
     
-    private func loadCampusActivities(refresh: Bool = false) {
-        guard let user = userService.user else { return }
-        guard let campusId = user.mainCampus?.campusId, let cursusId = user.mainCursus?.cursusId else { return }
+    private func fetchCampusActivities() -> Void {
+        guard let user: User = self.userService.user else { return }
+        guard let campusId: Int = user.mainCampus?.campusId else { return }
+        guard let cursusId: Int = user.mainCursus?.cursusId else { return }
         
         Task {
+            self.isLoading = true
+            
             do {
-                if refresh == true {
-                    try await campusService.refreshCampusActivities(campusId: campusId, cursusId: cursusId)
-                }
-                else {
-                    try await campusService.loadCampusActivities(campusId: campusId, cursusId: cursusId)
-                }
+                try await self.campusService.fetchEvents(campusId: campusId, cursusId: cursusId)
+                try await self.campusService.fetchExams(campusId: campusId)
             }
             catch {
-                print(error.localizedDescription)
+                self.error = .cannotFetchCampusActivities
+                self.hasError = true
             }
+            
+            self.isLoading = false
         }
     }
 }
 
 #Preview {
-    ActivitiesView<EmptyView>()
-        .environment(CampusService())
-        .environment(UserService())
+    ActivitiesView()
 }

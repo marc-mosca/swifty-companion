@@ -9,21 +9,21 @@ import SwiftUI
 
 @main
 struct Dashboard42App: App {
-    @AppStorage(Constants.applicationLanguageKey) private var applicationLanguage: String?
-    @AppStorage(Constants.applicationThemeKey) private var applicationTheme: Int?
+    @AppStorage(Constants.applicationLanguageKey) private var applicationLanguage: String = Locale.current.identifier
+    @AppStorage(Constants.applicationThemeKey) private var applicationTheme: Int = 0
 
-    @State var authenticationService = AuthenticationService()
-    @State var campusService = CampusService()
-    @State var userService = UserService()
+    @State var authenticationService: AuthenticationService = .init()
+    @State var campusService: CampusService = .init()
+    @State var userService: UserService = .init()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .preferredColorScheme(Themes(rawValue: applicationTheme ?? 0)?.scheme)
-                .environment(\.locale, .init(identifier: applicationLanguage ?? Locale.current.identifier))
-                .environment(authenticationService)
-                .environment(campusService)
-                .environment(userService)
+                .preferredColorScheme(Themes(rawValue: self.applicationTheme)?.scheme)
+                .environment(\.locale, .init(identifier: self.applicationLanguage))
+                .environment(\.authenticationService, self.authenticationService)
+                .environment(\.campusService, self.campusService)
+                .environment(\.userService, self.userService)
         }
     }
 }

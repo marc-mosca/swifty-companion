@@ -8,9 +8,9 @@
 import SwiftUI
 
 extension Date {
-    
     static func duration(from start: Date, to end: Date) -> LocalizedStringKey {
-        let dateComponents = Calendar.current.dateComponents([.minute, .hour, .day], from: start, to: end)
+        let calendar: Calendar = .current
+        let dateComponents: DateComponents = calendar.dateComponents([.minute, .hour, .day], from: start, to: end)
         
         switch (dateComponents.day, dateComponents.hour, dateComponents.minute) {
         case let (days?, _, _) where days > 0:
@@ -25,5 +25,4 @@ extension Date {
             return "Undefined"
         }
     }
-    
 }

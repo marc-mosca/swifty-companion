@@ -11,25 +11,25 @@ struct ExamDetailsView: View {
     let exam: Exam
     
     private var date: String {
-        exam.beginAt.formatted(.dateTime.weekday(.wide).day(.twoDigits).month(.wide).year().hour().minute())
+        self.exam.beginAt.formatted(.dateTime.weekday(.wide).day(.twoDigits).month(.wide).year().hour().minute())
     }
 
     var body: some View {
         List {
             Section("Informations") {
-                HRow(title: "Date", value: date.localizedCapitalized)
-                HRow(title: "Duration", value: Date.duration(from: exam.beginAt, to: exam.endAt))
-                HRow(title: "Participants", value: exam.nbrSubscribers.formatted())
-                HRow(title: "Location", value: exam.location)
+                HRow(title: "Date", value: self.date.localizedCapitalized)
+                HRow(title: "Duration", value: Date.duration(from: self.exam.beginAt, to: self.exam.endAt))
+                HRow(title: "Participants", value: self.exam.nbrSubscribers.formatted())
+                HRow(title: "Location", value: self.exam.location)
             }
             
             Section("Related Projects") {
-                ForEach(exam.projects) { project in
+                ForEach(self.exam.projects) { project in
                     Text(project.name)
                 }
             }
         }
-        .navigationTitle(exam.name)
+        .navigationTitle(self.exam.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

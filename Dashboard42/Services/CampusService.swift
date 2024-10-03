@@ -9,28 +9,23 @@ import Foundation
 
 @Observable
 final class CampusService {
-    private(set) var events = [Event]()
-    private(set) var exams = [Exam]()
+    private(set) var events: [Event] = []
+    private(set) var exams: [Exam] = []
     
-    private(set) var isLoading = false
-    private(set) var isFirstLoad = true
+    private let network: NetworkingManager = .shared
     
-    init() { }
-    
-    func loadCampusActivities(campusId: Int, cursusId: Int) async throws {
-        guard isFirstLoad else { return }
-        
-        isFirstLoad = false
-        isLoading = true
-        
-        events = try await NetworkingManager.shared.request(CampusEndpoints.fetchEvents(campusId: campusId, cursusId: cursusId), type: [Event].self)
-        exams = try await NetworkingManager.shared.request(CampusEndpoints.fetchExams(campusId: campusId), type: [Exam].self)
-        
-        isLoading = false
+    init() {
     }
     
-    func refreshCampusActivities(campusId: Int, cursusId: Int) async throws {
-        isFirstLoad = true
-        try await loadCampusActivities(campusId: campusId, cursusId: cursusId)
+    func fetchEvents(campusId: Int, cursusId: Int) async throws -> Void {
+        let endpoint: NetworkingEndpoint = CampusEndpoints.fetchEvents(campusId: campusId, cursusId: cursusId)
+        
+        self.events = try await network.request(endpoint, type: [Event].self)
+    }
+    
+    func fetchExams(campusId: Int) async throws -> Void {
+        let endpoint: NetworkingEndpoint = CampusEndpoints.fetchExams(campusId: campusId)
+        
+        self.exams = try await network.request(endpoint, type: [Exam].self)
     }
 }

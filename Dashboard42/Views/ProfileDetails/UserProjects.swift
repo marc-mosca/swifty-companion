@@ -7,53 +7,53 @@
 
 import SwiftUI
 
-struct UserProjects<T: View>: View {
-    @State private var selectedFilter = ""
-    @State private var searchText = ""
+struct UserProjects: View {
+    @State private var searchedText: String = ""
+    @State private var selectedFilter: String = ""
     
     let projects: [User.Projects]
     let cursus: [User.Cursus]
     
     private var activities: [Activities] {
-        let cursusId = cursus.first(where: { $0.cursus.name.capitalized == selectedFilter })?.cursus.id
-        let filteredProjects = selectedFilter == "" ? projects : projects.filter { $0.cursusIds.first == cursusId }
-        let activitiesProjects = filteredProjects.map({ Activities.project($0) }).sorted(by: { $0.beginAt > $1.beginAt })
+        let cursusId: Int? = self.cursus.first(where: { $0.cursus.name.capitalized == self.selectedFilter })?.cursus.id
+        let filteredProjects: [User.Projects] = self.selectedFilter == "" ? self.projects : self.projects.filter { $0.cursusIds.first == cursusId }
+        let activitiesProjects: [Activities] = filteredProjects.map({ Activities.project($0) }).sorted(by: { $0.beginAt > $1.beginAt })
         
-        guard !searchText.isEmpty else { return activitiesProjects }
+        guard self.searchedText.isEmpty == false else { return activitiesProjects }
         
-        return activitiesProjects.filter { "\($0.title)".localizedStandardContains(searchText) }
+        return activitiesProjects.filter { "\($0.title)".localizedStandardContains(self.searchedText) }
     }
     
-    private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: activities, asc: false) }
-    private var filters: [String] { Set(cursus.map(\.cursus.name.capitalized)).sorted() }
+    private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: self.activities, order: .DESC) }
+    private var filters: [String] { Set(self.cursus.map(\.cursus.name.capitalized)).sorted() }
     
     var body: some View {
-        List(groupedActivities) { groupedActivity in
+        List(self.groupedActivities) { groupedActivity in
             if !groupedActivity.activities.isEmpty {
                 Section(groupedActivity.monthYear) {
                     ForEach(groupedActivity.activities) { activity in
-                        ActivityRow<T>(activity: activity)
+                        ActivityRow(type: activity.type, title: activity.title, description: activity.description)
                     }
                 }
             }
         }
         .navigationTitle("Projects")
-        .searchable(text: $searchText, prompt: "Search a project")
+        .searchable(text: self.$searchedText, prompt: "Search a project")
         .toolbar {
             ToolbarItem {
-                FilterButton(selectedFilter: $selectedFilter, filters: filters)
+                FilterButton(selectedFilter: self.$selectedFilter, filters: self.filters)
             }
         }
         .overlay {
-            if activities.isEmpty && searchText.isEmpty {
+            if self.activities.isEmpty == true && self.searchedText.isEmpty == true {
                 ContentUnavailableView(
                     "No project found",
                     systemImage: "folder",
                     description: Text("You must be registered or have submitted a project to see it in the list.")
                 )
             }
-            else if activities.isEmpty && !searchText.isEmpty {
-                ContentUnavailableView.search(text: searchText)
+            else if self.activities.isEmpty == true && self.searchedText.isEmpty == false {
+                ContentUnavailableView.search(text: self.searchedText)
             }
         }
     }

@@ -15,8 +15,8 @@ enum Languages: String, Identifiable, CaseIterable {
     
     var title: String {
         switch self {
-        case .fr: "Français"
-        case .en: "English"
+        case .fr: return "Français"
+        case .en: return "English"
         }
     }
 }
@@ -30,17 +30,17 @@ enum Themes: Int, Identifiable, CaseIterable {
     
     var title: LocalizedStringKey {
         switch self {
-        case .automatic: "Automatic"
-        case .light: "Light"
-        case .dark: "Dark"
+        case .automatic: return "Automatic"
+        case .light: return "Light"
+        case .dark: return "Dark"
         }
     }
     
     var scheme: ColorScheme? {
         switch self {
-        case .automatic: nil
-        case .light: .light
-        case .dark: .dark
+        case .automatic: return nil
+        case .light: return .light
+        case .dark: return .dark
         }
     }
 }

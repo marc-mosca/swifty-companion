@@ -11,16 +11,19 @@ struct ApplicationIcon: View {
     let width: CGFloat
     let height: CGFloat
     
+    private let bundle: Bundle = Bundle.main
+    
     init(width: CGFloat = 80, height: CGFloat = 80) {
         self.width = width
         self.height = height
     }
 
-    private var appIcon: String {
-        guard let icons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
+    private var applicationIcon: String {
+        guard let icons = bundle.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
               let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
               let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
-              let iconFileName = iconFiles.last else {
+              let iconFileName = iconFiles.last
+        else {
             fatalError("Could not find icons in bundle")
         }
         
@@ -28,9 +31,9 @@ struct ApplicationIcon: View {
     }
     
     var body: some View {
-        Image(uiImage: .init(imageLiteralResourceName: appIcon))
+        Image(uiImage: .init(imageLiteralResourceName: self.applicationIcon))
             .resizable()
-            .frame(width: width, height: height)
+            .frame(width: self.width, height: self.height)
             .clipShape(.rect(cornerRadius: 10))
     }
 }

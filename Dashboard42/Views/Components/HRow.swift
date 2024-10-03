@@ -23,13 +23,13 @@ struct HRow: View {
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(self.title)
                 .foregroundStyle(.primary)
                 .padding(.trailing, 10)
             
             Spacer()
             
-            Text(value)
+            Text(self.value)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .font(.subheadline)

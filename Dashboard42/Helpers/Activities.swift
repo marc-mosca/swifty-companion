@@ -14,33 +14,33 @@ enum Activities: Identifiable {
     case event(Event)
     
     private var formatter: Date.FormatStyle {
-        .dateTime.weekday(.wide).day(.twoDigits).month(.wide).year().hour().minute()
+        return .dateTime.weekday(.wide).day(.twoDigits).month(.wide).year().hour().minute()
     }
     
     var id: Int {
         switch self {
-        case .project(let project): project.id
-        case .exam(let exam): exam.id
-        case .scale(let scale): scale.id
-        case .event(let event): event.id
+        case .project(let project): return project.id
+        case .exam(let exam): return exam.id
+        case .scale(let scale): return scale.id
+        case .event(let event): return event.id
         }
     }
     
     var type: ActivityType {
         switch self {
-        case .project: .project
-        case .exam: .exam
-        case .scale: .scale
-        case .event: .event
+        case .project: return .project
+        case .exam: return .exam
+        case .scale: return .scale
+        case .event: return .event
         }
     }
     
     var title: LocalizedStringKey {
         switch self {
-        case .project(let project): "\(project.project.name)"
-        case .exam(let exam): "\(exam.name)"
-        case .scale(let scale): scale.corrector != nil ? "Scale \(scale.corrector!.login)" : "Scale"
-        case .event(let event): "\(event.name)"
+        case .project(let project): return "\(project.project.name)"
+        case .exam(let exam): return "\(exam.name)"
+        case .scale(let scale): return scale.corrector != nil ? "Scale \(scale.corrector!.login)" : "Scale"
+        case .event(let event): return  "\(event.name)"
         }
     }
     
@@ -57,34 +57,17 @@ enum Activities: Identifiable {
         return date?.formatted(formatter).capitalized ?? nil
     }
     
-    var hasDestination: Bool {
-        switch self {
-        case .event, .exam: true
-        default: false
-        }
-    }
-    
-    @ViewBuilder
-    var destination: some View {
-        if case .event(let event) = self {
-            EventDetailsView(event: event)
-        }
-        else if case .exam(let exam) = self {
-            ExamDetailsView(exam: exam)
-        }
-    }
-    
     var beginAt: Date {
         switch self {
-        case .project(let project): project.markedAt ?? Date()
-        case .exam(let exam): exam.beginAt
-        case .scale(let scale): scale.beginAt
-        case .event(let event): event.beginAt
+        case .project(let project): return project.markedAt ?? Date()
+        case .exam(let exam): return exam.beginAt
+        case .scale(let scale): return scale.beginAt
+        case .event(let event): return event.beginAt
         }
     }
     
     var beginAtFormatted: String {
-        beginAt.formatted(.dateTime.year().month(.wide))
+        return beginAt.formatted(.dateTime.year().month(.wide))
     }
 }
 
@@ -94,15 +77,17 @@ struct GroupedActivities: Identifiable {
     
     var id: String { monthYear }
     
-    static func create(for activities: [Activities], asc: Bool = true) -> [GroupedActivities] {
-        let dictionary = Dictionary(grouping: activities, by: \.beginAtFormatted)
-        let sortedKey = dictionary.keys.sorted { lhs, rhs in
-            let lhsActivity = activities.first(where: { $0.beginAtFormatted == lhs })
-            let rhsActivity = activities.first(where: { $0.beginAtFormatted == rhs })
-            
-            guard let lhsDate = lhsActivity?.beginAt, let rhsDate = rhsActivity?.beginAt else { return false }
-            return asc ? lhsDate < rhsDate : lhsDate > rhsDate
+    enum OrderBy {
+        case ASC
+        case DESC
+    }
+    
+    static func create(for activities: [Activities], order: OrderBy) -> [GroupedActivities] {
+        let groupedActivities: [String: [Activities]] = Dictionary(grouping: activities, by: \.beginAtFormatted)
+        let sortedGroups: [Dictionary<String, [Activities]>.Element] = groupedActivities.sorted { lhs, rhs in
+            guard let lhsDate = lhs.value.first?.beginAt, let rhsDate = rhs.value.first?.beginAt else { return false }
+            return order == .ASC ? lhsDate < rhsDate : lhsDate > rhsDate
         }
-        return sortedKey.compactMap { GroupedActivities(monthYear: $0, activities: dictionary[$0] ?? []) }
+        return sortedGroups.map { GroupedActivities(monthYear: $0.key, activities: $0.value) }
     }
 }

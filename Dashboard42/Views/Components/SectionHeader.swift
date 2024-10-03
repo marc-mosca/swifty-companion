@@ -11,7 +11,7 @@ struct SectionHeader: View {
     let header: LocalizedStringKey
     
     var body: some View {
-        Text(header)
+        Text(self.header)
             .textCase(.none)
             .font(.title2)
             .fontWeight(.bold)

@@ -8,33 +8,28 @@
 import Foundation
 
 enum Constants {
-    private static let infoDictionary = Bundle.main.infoDictionary
+    private static let bundle: Bundle = .main
     
-    static let userIsConnectedKey = "APPSTORAGE_USER_IS_CONNECTED_KEY"
-    static let applicationLanguageKey = "APPSTORAGE_APPLICATION_LANGUAGE_KEY"
-    static let applicationThemeKey = "APPSTORAGE_APPLICATION_THEME_KEY"
+    static let userIsConnectedKey: String = "APPSTORAGE_USER_IS_CONNECTED_KEY"
+    static let applicationLanguageKey: String = "APPSTORAGE_APPLICATION_LANGUAGE_KEY"
+    static let applicationThemeKey: String = "APPSTORAGE_APPLICATION_THEME_KEY"
     
     static var clientID: String {
-        guard let infoDictionary, let clientID: String = infoDictionary["API_CLIENT_ID"] as? String else {
-            fatalError("Missing API_CLIENT_ID in Info.plist")
-        }
-
+        guard let clientID: String = bundle.infoDictionary?["API_CLIENT_ID"] as? String else { error(key: "API_CLIENT_ID") }
         return clientID
     }
     
     static var clientSecret: String {
-        guard let infoDictionary, let clientSecret: String = infoDictionary["API_CLIENT_SECRET"] as? String else {
-            fatalError("Missing API_CLIENT_SECRET in Info.plist")
-        }
-        
+        guard let clientSecret: String = bundle.infoDictionary?["API_CLIENT_SECRET"] as? String else { error(key: "API_CLIENT_SECRET") }
         return clientSecret
     }
     
     static var redirectURI: String {
-        guard let infoDictionary, let redirectURI: String = infoDictionary["API_REDIRECT_URI"] as? String else {
-            fatalError("Missing API_REDIRECT_URI in Info.plist")
-        }
-        
+        guard let redirectURI: String = bundle.infoDictionary?["API_REDIRECT_URI"] as? String else { error(key: "API_REDIRECT_URI") }
         return redirectURI
+    }
+    
+    private static func error(key: String) -> Never {
+        fatalError("Error: missing \(key) in Info.plist file.")
     }
 }

@@ -19,73 +19,46 @@ enum ActivityType {
     
     var icon: String {
         switch self {
-        case .info: "info.circle"
-        case .project: "folder"
-        case .event: "megaphone"
-        case .exam: "book.closed"
-        case .scale: "pencil.and.outline"
-        case .logtime: "clock"
-        case .achievement: "rosette"
-        case .patronage: "person.2"
+        case .info: return "info.circle"
+        case .project: return "folder"
+        case .event: return "megaphone"
+        case .exam: return "book.closed"
+        case .scale: return "pencil.and.outline"
+        case .logtime: return "clock"
+        case .achievement: return "rosette"
+        case .patronage: return "person.2"
         }
     }
     
     var color: Color {
         switch self {
-        case .info: .gray
-        case .project: .indigo
-        case .event: .cyan
-        case .exam: .blue
-        case .scale: .purple
-        case .logtime: .teal
-        case .achievement: .brown
-        case .patronage: .pink
+        case .info: return .gray
+        case .project: return .indigo
+        case .event: return .cyan
+        case .exam: return .blue
+        case .scale: return .purple
+        case .logtime: return .teal
+        case .achievement: return .brown
+        case .patronage: return .pink
         }
     }
 }
 
-struct ActivityRow<T: View>: View {
+struct ActivityRow: View {
     let type: ActivityType
     let title: LocalizedStringKey
     let description: String?
-    let destination: AnyView?
-    
-    init(activity: Activities) {
-        self.type = activity.type
-        self.title = activity.title
-        self.description = activity.description
-        self.destination = activity.hasDestination ? AnyView(activity.destination) : nil
-    }
-    
-    init(type: ActivityType, title: LocalizedStringKey, description: String? = nil, destination: T) {
-        self.type = type
-        self.title = title
-        self.description = description
-        self.destination = AnyView(destination)
-    }
     
     var body: some View {
-        if let destination {
-            NavigationLink(destination: destination) {
-                activityLabel
-            }
-        }
-        else {
-            activityLabel
-        }
-    }
-    
-    @ViewBuilder
-    private var activityLabel: some View {
         HStack(spacing: 16) {
-            Image(systemName: type.icon)
+            Image(systemName: self.type.icon)
                 .imageScale(.large)
-                .foregroundStyle(type.color.gradient)
+                .foregroundStyle(self.type.color.gradient)
             
             VStack(alignment: .leading) {
-                Text(title)
+                Text(self.title)
                 
-                if let description {
+                if let description = self.description {
                     Text(description)
                         .font(.footnote)
                         .foregroundStyle(.secondary)
@@ -97,6 +70,6 @@ struct ActivityRow<T: View>: View {
 }
 
 #Preview {
-    ActivityRow(type: .project, title: "swifty-companion", description: "42cursus - Finished", destination: EmptyView())
+    ActivityRow(type: .project, title: "swifty-companion", description: "42cursus - Finished")
         .padding()
 }

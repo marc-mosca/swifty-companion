@@ -7,51 +7,51 @@
 
 import SwiftUI
 
-struct UserEvents<T: View>: View {
-    @State private var selectedFilter = ""
-    @State private var searchText = ""
+struct UserEvents: View {
+    @State private var searchedText: String = ""
+    @State private var selectedFilter: String = ""
     
     let events: [Event]
     
     private var activities: [Activities] {
-        let filteredEvents = selectedFilter == "" ? events : events.filter { $0.kind.capitalized == selectedFilter }
-        let events = filteredEvents.map { Activities.event($0) }.sorted(by: { $0.beginAt > $1.beginAt })
+        let filteredEvents: [Event] = self.selectedFilter == "" ? self.events : self.events.filter { $0.kind.capitalized == self.selectedFilter }
+        let events: [Activities] = filteredEvents.map { Activities.event($0) }.sorted(by: { $0.beginAt > $1.beginAt })
         
-        guard !searchText.isEmpty else { return events }
+        guard self.searchedText.isEmpty == false else { return events }
         
-        return events.filter { "\($0.title)".localizedStandardContains(searchText) }
+        return events.filter { "\($0.title)".localizedStandardContains(self.searchedText) }
     }
     
-    private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: activities, asc: false) }
-    private var activityFilters: [String] { Set(events.map(\.kind.capitalized)).sorted() }
+    private var groupedActivities: [GroupedActivities] { GroupedActivities.create(for: self.activities, order: .DESC) }
+    private var filters: [String] { Set(self.events.map(\.kind.capitalized)).sorted() }
     
     var body: some View {
-        List(groupedActivities) { groupedActivity in
+        List(self.groupedActivities) { groupedActivity in
             if !groupedActivity.activities.isEmpty {
                 Section(groupedActivity.monthYear) {
                     ForEach(groupedActivity.activities) { activity in
-                        ActivityRow<T>(activity: activity)
+                        ActivityRow(type: activity.type, title: activity.title, description: activity.description)
                     }
                 }
             }
         }
         .navigationTitle("Events")
-        .searchable(text: $searchText, prompt: "Search an event")
+        .searchable(text: self.$searchedText, prompt: "Search an event")
         .toolbar {
             ToolbarItem {
-                FilterButton(selectedFilter: $selectedFilter, filters: activityFilters)
+                FilterButton(selectedFilter: self.$selectedFilter, filters: self.filters)
             }
         }
         .overlay {
-            if activities.isEmpty && searchText.isEmpty {
+            if self.activities.isEmpty == true && self.searchedText.isEmpty == true {
                 ContentUnavailableView(
                     "No activity found",
                     systemImage: "calendar",
                     description: Text("No activity found in your campus. Please check back later.")
                 )
             }
-            else if activities.isEmpty && !searchText.isEmpty {
-                ContentUnavailableView.search(text: searchText)
+            else if self.activities.isEmpty == true && self.searchedText.isEmpty == false {
+                ContentUnavailableView.search(text: self.searchedText)
             }
         }
     }

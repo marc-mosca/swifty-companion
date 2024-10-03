@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ProfileView<T: View>: View {
-    @Environment(UserService.self) private var userService
+struct ProfileView: View {
+    @Environment(\.userService) private var userService: UserService
     
     let userParam: User?
     let isSearchedProfile: Bool
@@ -23,11 +23,11 @@ struct ProfileView<T: View>: View {
         self.isSearchedProfile = true
     }
     
-    private var user: User? { isSearchedProfile ? userParam : userService.user }
+    private var user: User? { self.isSearchedProfile ? userParam : self.userService.user }
     
     var body: some View {
         NavigationStack {
-            if let user {
+            if let user: User = self.user {
                 List {
                     Section {
                         VStack(spacing: 30) {
@@ -40,22 +40,42 @@ struct ProfileView<T: View>: View {
                             GridInformations(location: user.location, grade: user.mainCursus?.grade, poolYear: user.poolYear)
                         }
                     }
-                    .listRowInsets(EdgeInsets())
+                    .listRowInsets(.some(.init()))
                     .padding(4)
                     .padding(.vertical, 6)
                     
                     Section {
-                        ActivityRow(type: .info, title: "Informations", destination: UserInformations(user: user))
-                        ActivityRow(type: .project, title: "Projects", destination: UserProjects<T>(projects: user.projectsUsers, cursus: user.cursusUsers))
-                        
-                        if !isSearchedProfile {
-                            ActivityRow(type: .event, title: "Events", destination: UserEvents<T>(events: userService.events))
-                            ActivityRow(type: .scale, title: "Scales", destination: EmptyView())
-                            ActivityRow(type: .logtime, title: "Logtimes", destination: EmptyView())
+                        NavigationLink(destination: UserInformations(user: user)) {
+                            ActivityRow(type: .info, title: "Informations", description: nil)
                         }
                         
-                        ActivityRow(type: .achievement, title: "Achievements", destination: UserAchievements<T>(achievements: user.achievements))
-                        ActivityRow(type: .patronage, title: "Patronages", destination: EmptyView())
+                        NavigationLink(destination: UserProjects(projects: user.projectsUsers, cursus: user.cursusUsers)) {
+                            ActivityRow(type: .project, title: "Projects", description: nil)
+                        }
+                        
+                        if self.isSearchedProfile == false {
+                            NavigationLink(destination: UserEvents(events: self.userService.events)) {
+                                ActivityRow(type: .event, title: "Events", description: nil)
+                            }
+                            
+                            NavigationLink(destination: EmptyView()) {
+                                ActivityRow(type: .scale, title: "Scales", description: nil)
+                            }
+                            
+                            NavigationLink(destination: EmptyView()) {
+                                ActivityRow(type: .logtime, title: "Logtimes", description: nil)
+                            }
+                        }
+                        
+                        NavigationLink(destination: UserAchievements(achievements: user.achievements)) {
+                            ActivityRow(type: .achievement, title: "Achievements", description: nil)
+                        }
+                        
+                        if user.patroned.isEmpty == false || user.patroning.isEmpty == false {
+                            NavigationLink(destination: EmptyView()) {
+                                ActivityRow(type: .patronage, title: "Patronages", description: nil)
+                            }
+                        }
                     } header: {
                         SectionHeader(header: "Dashboard")
                     }
@@ -71,8 +91,7 @@ struct ProfileView<T: View>: View {
 }
 
 #Preview {
-    ProfileView<AnyView>()
-        .environment(UserService())
+    ProfileView()
 }
 
 extension ProfileView {
@@ -85,17 +104,19 @@ extension ProfileView {
         let isPostCommonCore: Bool
         let cursus: User.Cursus?
         
+        private var level: Double { self.cursus?.level ?? 0 }
+        
         var body: some View {
             VStack(alignment: .leading, spacing: 15) {
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
-                        Text(name)
+                        Text(self.name)
                             .foregroundStyle(.primary)
                             .font(.system(.title2, weight: .bold))
                         
                         Spacer()
                         
-                        if isPostCommonCore {
+                        if self.isPostCommonCore == true {
                             Image(systemName: "checkmark.seal.fill")
                                 .imageScale(.small)
                                 .padding(.vertical, 4)
@@ -103,13 +124,13 @@ extension ProfileView {
                         }
                     }
                     
-                    Text(email)
+                    Text(self.email)
                         .foregroundStyle(.secondary)
                         .font(.footnote)
                 }
                 
                 ProgressView(
-                    value: cursus?.level != nil ? (cursus!.level > 21 ? 21 : cursus!.level) : 0.0,
+                    value: self.cursus?.level != nil ? (level > 21 ? 21 : level) : 0.0,
                     total: 21
                 ) {
                     HStack {
@@ -118,12 +139,12 @@ extension ProfileView {
                             .font(.subheadline)
                             .fontWeight(.medium)
                         
-                        Text("Level - \(cursus?.level.formatted() ?? "0")")
+                        Text("Level - \(level.formatted())")
                             .font(.footnote)
                             .fontWeight(.medium)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        Text(cursus?.cursus.name ?? "Undefined")
+                        Text(self.cursus?.cursus.name ?? "Undefined")
                             .foregroundStyle(.secondary)
                             .font(.caption)
                     }
@@ -142,9 +163,9 @@ extension ProfileView {
         
         var body: some View {
             HStack {
-                GridInformationItem(title: "Location", value: location != nil ? "\(location!.uppercased())" : "Undefined")
-                GridInformationItem(title: "Grade", value: grade != nil ? "\(grade!)" : "Undefined")
-                GridInformationItem(title: "Promotion", value: "\(poolYear)")
+                GridInformationItem(title: "Location", value: self.location != nil ? "\(self.location!.uppercased())" : "Undefined")
+                GridInformationItem(title: "Grade", value: self.grade != nil ? "\(self.grade!)" : "Undefined")
+                GridInformationItem(title: "Promotion", value: "\(self.poolYear)")
             }
         }
     }
@@ -155,11 +176,11 @@ extension ProfileView {
         
         var body: some View {
             VStack(spacing: 8) {
-                Text(title)
+                Text(self.title)
                     .foregroundStyle(.secondary)
                     .font(.footnote)
                 
-                Text(value)
+                Text(self.value)
                     .foregroundStyle(.primary)
                     .fontWeight(.semibold)
             }

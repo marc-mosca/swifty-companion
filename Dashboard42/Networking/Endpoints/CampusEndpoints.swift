@@ -13,17 +13,17 @@ enum CampusEndpoints: NetworkingEndpoint {
     
     var path: String {
         switch self {
-        case .fetchEvents(let campusId, let cursusId): "/v2/campus/\(campusId)/cursus/\(cursusId)/events"
-        case .fetchExams(let campusId): "/v2/campus/\(campusId)/exams"
+        case .fetchEvents(let campusId, let cursusId): return "/v2/campus/\(campusId)/cursus/\(cursusId)/events"
+        case .fetchExams(let campusId): return "/v2/campus/\(campusId)/exams"
         }
     }
     
-    var method: NetworkingManager.HTTPMethod { .GET }
+    var method: NetworkingManager.HTTPMethod { return .GET }
     
     var token: AuthenticationToken? {
         switch self {
-        case .fetchEvents: .user
-        case .fetchExams: .application
+        case .fetchEvents: return .user
+        case .fetchExams: return .application
         }
     }
     

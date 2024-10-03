@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @Environment(UserService.self) private var userService
-    @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool?
+    @Environment(\.userService) private var userService: UserService
+
+    @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool = false
     @AppStorage(Constants.applicationLanguageKey) private var applicationLanguage: String?
     @AppStorage(Constants.applicationThemeKey) private var applicationTheme: Int?
     
-    @State private var languageSelected = UserDefaults.standard.string(forKey: Constants.applicationLanguageKey) ?? Locale.preferredLanguages[0].components(separatedBy: "-").first ?? "en"
-    @State private var themeSelected = UserDefaults.standard.integer(forKey: Constants.applicationThemeKey)
-    @State private var presentDialog = false
+    @State private var languageSelected: String = UserDefaults.standard.string(forKey: Constants.applicationLanguageKey) ?? Locale.preferredLanguages[0].components(separatedBy: "-").first ?? "en"
+    @State private var themeSelected: Int = UserDefaults.standard.integer(forKey: Constants.applicationThemeKey)
+    @State private var presentDialog: Bool = false
     
     private var applicationVersion: String {
-        guard let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
+        guard let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
             fatalError("CFBundleShortVersionString should not be missing from info dictionary")
         }
         return version
@@ -34,7 +35,7 @@ struct SettingsView: View {
                         .font(.title)
                         .fontWeight(.bold)
                     
-                    Text("Version \(applicationVersion)")
+                    Text("Version \(self.applicationVersion)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -44,21 +45,21 @@ struct SettingsView: View {
                 .padding(.vertical)
                 
                 Section("General") {
-                    Picker("Language", selection: $languageSelected) {
+                    Picker("Language", selection: self.$languageSelected) {
                         ForEach(Languages.allCases) { language in
                             Text(language.title)
                                 .tag(language.rawValue)
                         }
                     }
-                    .onChange(of: languageSelected) { applicationLanguage = languageSelected }
+                    .onChange(of: self.languageSelected) { self.applicationLanguage = self.languageSelected }
                     
-                    Picker("Theme", selection: $themeSelected) {
+                    Picker("Theme", selection: self.$themeSelected) {
                         ForEach(Themes.allCases) { colorscheme in
                             Text(colorscheme.title)
                                 .tag(colorscheme.rawValue)
                         }
                     }
-                    .onChange(of: themeSelected) { applicationTheme = themeSelected }
+                    .onChange(of: self.themeSelected) { self.applicationTheme = self.themeSelected }
                 }
                 
                 Section("Help") {
@@ -66,20 +67,24 @@ struct SettingsView: View {
                 }
                 
                 Section("Account") {
-                    CustomLink(title: "Intranet Profile", url: URL(string: "https://profile.intra.42.fr/users/\(userService.user?.login ?? "")")!)
-                    Button("Log out", role: .destructive, action: { presentDialog.toggle() })
+                    CustomLink(title: "Intranet Profile", url: URL(string: "https://profile.intra.42.fr/users/\(self.userService.user?.login ?? "")")!)
+                    Button("Log out", role: .destructive) {
+                        self.presentDialog = true
+                    }
                 }
             }
             .navigationTitle("Settings")
-            .confirmationDialog("Are you sure you want to log out?", isPresented: $presentDialog) {
-                Button("Log out", role: .destructive, action: logOutButtonTapped)
+            .confirmationDialog("Are you sure you want to log out?", isPresented: self.$presentDialog) {
+                Button("Log out", role: .destructive) {
+                    self.logOutButtonTapped()
+                }
             }
         }
     }
     
-    private func logOutButtonTapped() {
+    private func logOutButtonTapped() -> Void {
         withAnimation {
-            userIsConnected = false
+            self.userIsConnected = false
             KeychainService.shared.clear()
         }
     }
@@ -87,7 +92,6 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
-        .environment(UserService())
 }
 
 extension SettingsView {
@@ -96,9 +100,9 @@ extension SettingsView {
         let url: URL
 
         var body: some View {
-            Link(destination: url) {
+            Link(destination: self.url) {
                 HStack {
-                    Text(title)
+                    Text(self.title)
                     Spacer()
                     Image(systemName: "chevron.right")
                         .imageScale(.small)

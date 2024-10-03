@@ -18,20 +18,28 @@ enum ApplicationScreens: Identifiable, CaseIterable {
     @ViewBuilder
     var label: some View {
         switch self {
-        case .home: Label("Home", systemImage: "house")
-        case .activities: Label("Activities", systemImage: "calendar")
-        case .profile: Label("Profile", systemImage: "person")
-        case .settings: Label("Settings", systemImage: "slider.horizontal.3")
+        case .home:
+            Label("Home", systemImage: "house")
+        case .activities:
+            Label("Activities", systemImage: "calendar")
+        case .profile:
+            Label("Profile", systemImage: "person")
+        case .settings:
+            Label("Settings", systemImage: "slider.horizontal.3")
         }
     }
     
     @ViewBuilder
     var destination: some View {
         switch self {
-        case .home: HomeView<AnyView>()
-        case .activities: ActivitiesView<AnyView>()
-        case .profile: ProfileView<AnyView>()
-        case .settings: SettingsView()
+        case .home:
+            HomeView()
+        case .activities:
+            ActivitiesView()
+        case .profile:
+            ProfileView()
+        case .settings:
+            SettingsView()
         }
     }
 }

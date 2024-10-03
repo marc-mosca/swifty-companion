@@ -19,29 +19,29 @@ enum UserEndpoints: NetworkingEndpoint {
     
     var path: String {
         switch self {
-        case .fetchMe: "/v2/me"
-        case .fetchUser(let login): "/v2/users/\(login)"
-        case .fetchEvents(let userId): "/v2/users/\(userId)/events"
-        case .fetchExams(let userId): "/v2/users/\(userId)/exams"
-        case .fetchScales: "/v2/me/scale_teams"
-        case .fetchEventUser(let userId, _): "/v2/users/\(userId)/events_users"
-        case .registerEvent: "/v2/events_users"
-        case .unregisterEvent(let eventUserId): "/v2/events_users/\(eventUserId)"
+        case .fetchMe: return "/v2/me"
+        case .fetchUser(let login): return "/v2/users/\(login)"
+        case .fetchEvents(let userId): return "/v2/users/\(userId)/events"
+        case .fetchExams(let userId): return "/v2/users/\(userId)/exams"
+        case .fetchScales: return "/v2/me/scale_teams"
+        case .fetchEventUser(let userId, _): return "/v2/users/\(userId)/events_users"
+        case .registerEvent: return "/v2/events_users"
+        case .unregisterEvent(let eventUserId): return "/v2/events_users/\(eventUserId)"
         }
     }
     
     var method: NetworkingManager.HTTPMethod {
         switch self {
-        case .registerEvent: .POST
-        case .unregisterEvent: .DELETE
-        default: .GET
+        case .registerEvent: return .POST
+        case .unregisterEvent: return .DELETE
+        default: return .GET
         }
     }
     
     var token: AuthenticationToken? {
         switch self {
-        case .fetchExams: .application
-        default: .user
+        case .fetchExams: return .application
+        default: return .user
         }
     }
     

@@ -29,17 +29,17 @@ struct User: Identifiable, Decodable {
     let campusUsers: [Self.CampusUsers]
     
     var mainCursus: Self.Cursus? {
-        let studentCursus = cursusUsers.first(where: { $0.cursus.slug == "42cursus" })
-        let piscineCursus = cursusUsers.first(where: { $0.cursus.slug == "c-piscine" })
+        let studentCursus: User.Cursus? = self.cursusUsers.first(where: { $0.cursus.slug == "42cursus" })
+        let piscineCursus: User.Cursus? = self.cursusUsers.first(where: { $0.cursus.slug == "c-piscine" })
         
         return studentCursus != nil ? studentCursus : piscineCursus
     }
     
-    var mainCampus: Self.CampusUsers? { campusUsers.first(where: \.isPrimary) }
+    var mainCampus: Self.CampusUsers? { self.campusUsers.first(where: \.isPrimary) }
     
     var isPostCC: Bool {
-        let lastProject = projectsUsers.first(where: { $0.project.slug == "ft_transcendence" })
-        let lastExam = projectsUsers.first(where: { $0.project.slug == "exam-rank-06" })
+        let lastProject: User.Projects? = self.projectsUsers.first(where: { $0.project.slug == "ft_transcendence" })
+        let lastExam: User.Projects? = self.projectsUsers.first(where: { $0.project.slug == "exam-rank-06" })
         
         return lastProject?.validated == true && lastExam?.validated == true
     }

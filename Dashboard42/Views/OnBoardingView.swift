@@ -9,9 +9,13 @@ import AuthenticationServices
 import SwiftUI
 
 struct OnBoardingView: View {
-    @Environment(\.webAuthenticationSession) private var webAuthenticationSession
-    @Environment(AuthenticationService.self) private var authenticationService
+    @Environment(\.webAuthenticationSession) private var webAuthenticationSession: WebAuthenticationSession
+    @Environment(\.authenticationService) private var authenticationService: AuthenticationService
+    
     @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool?
+    
+    @State private var error: Dashboard42UIErrors? = nil
+    @State private var hasError: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -45,16 +49,13 @@ struct OnBoardingView: View {
         }
     }
     
-    private func signInButtonTapped() {
-        guard let authenticationURL = authenticationService.authenticationURL,
-              let callbackURL = Constants.redirectURI.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        else {
-            return
-        }
+    private func signInButtonTapped() -> Void {
+        guard let authenticationURL: URL = authenticationService.authenticationURL else { return }
+        guard let callbackURL: String = Constants.redirectURI.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         
         Task {
             do {
-                let urlWithToken = try await webAuthenticationSession.authenticate(
+                let urlWithToken: URL = try await webAuthenticationSession.authenticate(
                     using: authenticationURL,
                     callbackURLScheme: callbackURL
                 )
@@ -62,7 +63,8 @@ struct OnBoardingView: View {
                 userIsConnected = true
             }
             catch {
-                print(error)
+                self.error = .cannotLinkAccount
+                self.hasError = true
             }
         }
     }
@@ -70,6 +72,5 @@ struct OnBoardingView: View {
 
 #Preview {
     OnBoardingView()
-        .environment(AuthenticationService())
         .padding()
 }

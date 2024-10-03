@@ -13,8 +13,8 @@ struct FilterButton: View {
     
     var body: some View {
         Menu("Filter activities", systemImage: "line.3.horizontal.decrease.circle") {
-            Picker("Select a filter", selection: Binding($selectedFilter, deselectTo: "")) {
-                ForEach(filters, id: \.self) { filter in
+            Picker("Select a filter", selection: Binding(self.$selectedFilter, deselectTo: "")) {
+                ForEach(self.filters, id: \.self) { filter in
                     Text(filter)
                 }
             }

@@ -12,9 +12,9 @@ enum AuthenticationEndpoints: NetworkingEndpoint {
     case applicationTokens
     case refreshUserTokens(refreshToken: String)
     
-    var path: String { "/oauth/token" }
-    var method: NetworkingManager.HTTPMethod { .POST }
-    var token: AuthenticationToken? { nil }
+    var path: String { return "/oauth/token" }
+    var method: NetworkingManager.HTTPMethod { return .POST }
+    var token: AuthenticationToken? { return nil }
     
     var queryItems: [URLQueryItem]? {
         let items: [String: String]

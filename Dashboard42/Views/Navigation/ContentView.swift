@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool?
-    @State private var selection = ApplicationScreens.home
+    @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool = false
+
+    @State var selection: ApplicationScreens = .home
 
     var body: some View {
-        if userIsConnected != true {
+        if self.userIsConnected == false {
             OnBoardingView()
                 .padding()
         }
         else {
-            ApplicationTabView(selection: $selection)
+            ApplicationTabView(selection: self.$selection)
         }
     }
 }
 
 #Preview {
     ContentView()
-        .environment(AuthenticationService())
 }

@@ -12,7 +12,7 @@ struct Avatar: View {
     let isAvailable: Bool
     
     var body: some View {
-        AsyncImage(url: URL(string: url)) { image in
+        AsyncImage(url: URL(string: self.url)) { image in
             image
                 .resizable()
                 .scaledToFill()
@@ -25,7 +25,7 @@ struct Avatar: View {
         .overlay {
             Circle()
                 .fill(.clear)
-                .stroke(isAvailable ? .green.opacity(0.7) : .gray.opacity(0.5), lineWidth: 2)
+                .stroke(self.isAvailable ? .green.opacity(0.7) : .gray.opacity(0.5), lineWidth: 2)
         }
         .frame(width: 100, height: 100)
     }
