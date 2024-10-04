@@ -25,4 +25,25 @@ extension Date {
             return "Undefined"
         }
     }
+    
+    static func getNumberOfDaysToWorkPerMonth(_ dateStr: String) -> Double {
+        let dateFormatter: DateFormatter = .init()
+        dateFormatter.dateFormat = "yyyy-MM"
+        
+        guard let date: Date = dateFormatter.date(from: dateStr) else { return 0.0 }
+        
+        let calendar: Calendar = .current
+        let interval: DateInterval = calendar.dateInterval(of: .month, for: date)!
+        var count: Double = 0.0
+        var currentDate: Date = interval.start
+        
+        while currentDate < interval.end {
+            if !calendar.isDateInWeekend(currentDate) {
+                count += 1
+            }
+            currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
+        }
+        
+        return count
+    }
 }

@@ -87,10 +87,6 @@ struct ActivitiesView: View {
             }
         }
         .error(isPresented: self.$hasError, error: self.error)
-        .task {
-            guard self.isFirstLoad == true else { return }
-            await self.fetchCampusActivities()
-        }
     }
 
     

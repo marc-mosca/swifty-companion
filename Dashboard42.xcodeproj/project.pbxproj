@@ -52,6 +52,7 @@
 		01D976B82BE8D0DA00DB9F30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01D976B72BE8D0DA00DB9F30 /* Preview Assets.xcassets */; };
 		01E43CD12CAEB25D006141E8 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E43CD02CAEB25D006141E8 /* EnvironmentValues.swift */; };
 		01E7A8D62CB0012C00871D8C /* UserPatronages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7A8D52CB0012C00871D8C /* UserPatronages.swift */; };
+		01E7A8D82CB00E7B00871D8C /* Logtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7A8D72CB00E7B00871D8C /* Logtime.swift */; };
 		01F270152C99DA5B00F9683C /* AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F270142C99DA5B00F9683C /* AuthenticationToken.swift */; };
 		01F270172C99DC9400F9683C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F270162C99DC9400F9683C /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		01D976B72BE8D0DA00DB9F30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		01E43CD02CAEB25D006141E8 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
 		01E7A8D52CB0012C00871D8C /* UserPatronages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPatronages.swift; sourceTree = "<group>"; };
+		01E7A8D72CB00E7B00871D8C /* Logtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logtime.swift; sourceTree = "<group>"; };
 		01F270142C99DA5B00F9683C /* AuthenticationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationToken.swift; sourceTree = "<group>"; };
 		01F270162C99DC9400F9683C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -286,6 +288,7 @@
 				01F270142C99DA5B00F9683C /* AuthenticationToken.swift */,
 				017403A82CA6997D00410419 /* Event.swift */,
 				017403AA2CA699CE00410419 /* Exam.swift */,
+				01E7A8D72CB00E7B00871D8C /* Logtime.swift */,
 				017403AC2CA69A3F00410419 /* Scale.swift */,
 				019951B72CA581DB00ECD4EA /* User.swift */,
 			);
@@ -395,6 +398,7 @@
 				01D976B12BE8D0D900DB9F30 /* Dashboard42App.swift in Sources */,
 				01169A3D2CA315BC00F52E90 /* SettingsView.swift in Sources */,
 				01B32F9D2CAC170E00C6C828 /* Avatar.swift in Sources */,
+				01E7A8D82CB00E7B00871D8C /* Logtime.swift in Sources */,
 				017403A92CA6997D00410419 /* Event.swift in Sources */,
 				017403B32CA6AFD000410419 /* CampusService.swift in Sources */,
 				01F270172C99DC9400F9683C /* AuthenticationService.swift in Sources */,

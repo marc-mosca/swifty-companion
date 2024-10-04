@@ -82,23 +82,13 @@ struct HomeView: View {
                     }
                 }
                 .navigationTitle("Home")
-                .searchable(text: $searchedText, prompt: "Search a student")
-                .onAppear {
-                    self.searchedSucceeded = false
-                }
-                .onChange(of: self.searchedText) {
-                    self.searchedSucceeded = false
-                }
-                .onSubmit(of: .search) {
-                    self.fetchUser()
-                }
-                .navigationDestination(isPresented: self.$searchedSucceeded) {
+                .searchable(text: self.$searchedText, prompt: "Search a student")
+                .refreshable { await self.fetchUserInformations() }
+                .onSubmit(of: .search) { self.fetchUser() }
+                .navigationDestination(isPresented: .constant(self.searchedSucceeded == true)) {
                     if let user: User = self.searchedUser {
                         ProfileView(user: user)
                     }
-                }
-                .refreshable {
-                    await self.fetchUserInformations()
                 }
             }
             else {
@@ -106,10 +96,6 @@ struct HomeView: View {
             }
         }
         .error(isPresented: $hasError, error: self.error)
-        .task {
-            guard self.userService.user == nil else { return }
-            await self.fetchUserInformations()
-        }
     }
     
     private func fetchUserInformations() async -> Void {
@@ -123,6 +109,7 @@ struct HomeView: View {
             try await self.userService.fetchEvents(userId: user.id)
             try await self.userService.fetchExams(userId: user.id)
             try await self.userService.fetchScales()
+            try await self.userService.fetchLogtimes(login: user.login, entryDate: user.entryDate)
         }
         catch {
             self.error = .cannotFetchUserInformations
@@ -143,6 +130,7 @@ struct HomeView: View {
             catch {
                 self.error = .userNotFound
                 self.hasError = true
+                self.searchedSucceeded = false
             }
             
             self.isLoading = false

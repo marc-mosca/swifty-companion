@@ -44,6 +44,24 @@ struct User: Identifiable, Decodable {
         return lastProject?.validated == true && lastExam?.validated == true
     }
     
+    var entryDate: String {
+        let defaultEntryDate: String = "\(poolYear)-01-01"
+        let dateFormatter: DateFormatter = .init()
+        dateFormatter.dateFormat = "MMMM"
+        
+        guard let monthDate: Date = dateFormatter.date(from: poolMonth) else { return defaultEntryDate }
+        
+        let calendar: Calendar = .current
+        let year: Int = Int(poolYear) ?? 1
+        
+        guard let date: Date = calendar.date(bySetting: .year, value: year, of: monthDate) else {
+            return defaultEntryDate
+        }
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case email = "email"
