@@ -53,6 +53,8 @@
 		01E43CD12CAEB25D006141E8 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E43CD02CAEB25D006141E8 /* EnvironmentValues.swift */; };
 		01E7A8D62CB0012C00871D8C /* UserPatronages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7A8D52CB0012C00871D8C /* UserPatronages.swift */; };
 		01E7A8D82CB00E7B00871D8C /* Logtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7A8D72CB00E7B00871D8C /* Logtime.swift */; };
+		01E7A8DA2CB01DFB00871D8C /* CorrectionPointHistorics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7A8D92CB01DFB00871D8C /* CorrectionPointHistorics.swift */; };
+		01E7A8DC2CB01E2000871D8C /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7A8DB2CB01E2000871D8C /* Slot.swift */; };
 		01F270152C99DA5B00F9683C /* AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F270142C99DA5B00F9683C /* AuthenticationToken.swift */; };
 		01F270172C99DC9400F9683C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F270162C99DC9400F9683C /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,8 @@
 		01E43CD02CAEB25D006141E8 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
 		01E7A8D52CB0012C00871D8C /* UserPatronages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPatronages.swift; sourceTree = "<group>"; };
 		01E7A8D72CB00E7B00871D8C /* Logtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logtime.swift; sourceTree = "<group>"; };
+		01E7A8D92CB01DFB00871D8C /* CorrectionPointHistorics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionPointHistorics.swift; sourceTree = "<group>"; };
+		01E7A8DB2CB01E2000871D8C /* Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		01F270142C99DA5B00F9683C /* AuthenticationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationToken.swift; sourceTree = "<group>"; };
 		01F270162C99DC9400F9683C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -286,10 +290,12 @@
 			isa = PBXGroup;
 			children = (
 				01F270142C99DA5B00F9683C /* AuthenticationToken.swift */,
+				01E7A8D92CB01DFB00871D8C /* CorrectionPointHistorics.swift */,
 				017403A82CA6997D00410419 /* Event.swift */,
 				017403AA2CA699CE00410419 /* Exam.swift */,
 				01E7A8D72CB00E7B00871D8C /* Logtime.swift */,
 				017403AC2CA69A3F00410419 /* Scale.swift */,
+				01E7A8DB2CB01E2000871D8C /* Slot.swift */,
 				019951B72CA581DB00ECD4EA /* User.swift */,
 			);
 			path = Models;
@@ -394,6 +400,7 @@
 				01169A342CA30B9200F52E90 /* ApplicationIcon.swift in Sources */,
 				01B32F972CAC0F7600C6C828 /* ProfileView.swift in Sources */,
 				013595A82CA45F08009385EE /* ApplicationSettings.swift in Sources */,
+				01E7A8DC2CB01E2000871D8C /* Slot.swift in Sources */,
 				019951B62CA5811400ECD4EA /* HomeView.swift in Sources */,
 				01D976B12BE8D0D900DB9F30 /* Dashboard42App.swift in Sources */,
 				01169A3D2CA315BC00F52E90 /* SettingsView.swift in Sources */,
@@ -407,6 +414,7 @@
 				0120889F2C9C71930007E57B /* Constants.swift in Sources */,
 				019951BA2CA5891900ECD4EA /* UserService.swift in Sources */,
 				01D702DE2CABF63C00456C61 /* Date.swift in Sources */,
+				01E7A8DA2CB01DFB00871D8C /* CorrectionPointHistorics.swift in Sources */,
 				01D702D72CABF37200456C61 /* EventDetailsView.swift in Sources */,
 				017403B52CA6B60600410419 /* Activities.swift in Sources */,
 				01E7A8D62CB0012C00871D8C /* UserPatronages.swift in Sources */,

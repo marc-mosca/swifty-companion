@@ -31,21 +31,8 @@ struct Scale: Identifiable, Decodable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.scaleId = try container.decode(Int.self, forKey: .scaleId)
         self.beginAt = try container.decode(Date.self, forKey: .beginAt)
-        
-        if let userList = try? container.decode([Scale.User].self, forKey: .correcteds) {
-            self.correcteds = userList
-        }
-        else {
-            self.correcteds = nil
-        }
-        
-        if let user = try? container.decode(Scale.User.self, forKey: .corrector) {
-            self.corrector = user
-        }
-        else {
-            self.corrector = nil
-        }
-        
+        self.correcteds = try container.decodeIfPresent([Scale.User].self, forKey: .correcteds)
+        self.corrector = try container.decodeIfPresent(Scale.User.self, forKey: .corrector)
         self.scale = try container.decode(Scale.Details.self, forKey: .scale)
         self.teams = try container.decodeIfPresent(Scale.Team.self, forKey: .teams)
     }

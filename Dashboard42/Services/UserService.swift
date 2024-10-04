@@ -13,6 +13,8 @@ final class UserService {
     private(set) var events: [Event] = []
     private(set) var exams: [Exam] = []
     private(set) var scales: [Scale] = []
+    private(set) var slots: [Slot] = []
+    private(set) var correctionPointHistorics: [CorrectionPointHistorics] = []
     private(set) var logtimes: [Logtime] = []
     
     private let network: NetworkingManager = .shared
@@ -48,6 +50,18 @@ final class UserService {
         self.scales = try await network.request(endpoint, type: [Scale].self)
     }
     
+    func fetchSlots() async throws -> Void {
+        let endpoint: NetworkingEndpoint = UserEndpoints.fetchSlots
+        
+        self.slots = try await network.request(endpoint, type: [Slot].self)
+    }
+    
+    func fetchCorrectionPointHistorics(userId: Int) async throws -> Void {
+        let endpoint: NetworkingEndpoint = UserEndpoints.fetchCorrectionPointHistorics(userId: userId)
+        
+        self.correctionPointHistorics = try await network.request(endpoint, type: [CorrectionPointHistorics].self)
+    }
+    
     func fetchLogtimes(login: String, entryDate: String) async throws -> Void {
         let endpoint: NetworkingEndpoint = UserEndpoints.fetchLogtime(login: login, entryDate: entryDate)
         
@@ -78,6 +92,16 @@ final class UserService {
         
         endpoint = UserEndpoints.fetchEvents(userId: userId)
         self.events = try await network.request(endpoint, type: [Event].self)
+    }
+    
+    func updateSlot(userId: Int, beginAt: Date, endAt: Date) async throws -> Void {
+        let endpoint: NetworkingEndpoint = UserEndpoints.registerSlot(userId: userId, beginAt: beginAt, endAt: endAt)
+        try await network.request(endpoint)
+    }
+    
+    func deleteSlot(slotId: Int) async throws -> Void {
+        let endpoint: NetworkingEndpoint = UserEndpoints.unregisterSlot(slotId: slotId)
+        try await network.request(endpoint)
     }
 }
 
