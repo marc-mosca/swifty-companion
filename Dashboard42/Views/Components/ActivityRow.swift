@@ -9,7 +9,7 @@ import SwiftUI
 
 enum ActivityType {
     case info
-    case project
+    case project(project: User.Projects?)
     case event
     case exam
     case scale
@@ -60,9 +60,18 @@ struct ActivityRow: View {
                 
                 if let description = self.description {
                     Text(description)
-                        .font(.footnote)
+                        .font(.caption)
                         .foregroundStyle(.secondary)
                 }
+            }
+            
+            if case let .project(project) = self.type, let project = project, let finalMark = project.finalMark {
+                Spacer()
+                
+                Text(finalMark, format: .percent)
+                    .foregroundStyle(project.validated == true ? .green : .red)
+                    .font(.footnote)
+                    .fontWeight(.medium)
             }
         }
         .frame(height: 40, alignment: .leading)
@@ -70,6 +79,6 @@ struct ActivityRow: View {
 }
 
 #Preview {
-    ActivityRow(type: .project, title: "swifty-companion", description: "42cursus - Finished")
+    ActivityRow(type: .project(project: nil), title: "Project", description: nil)
         .padding()
 }

@@ -50,7 +50,7 @@ struct ProfileView: View {
                         }
                         
                         NavigationLink(destination: UserProjects(projects: user.projectsUsers, cursus: user.cursusUsers)) {
-                            ActivityRow(type: .project, title: "Projects", description: nil)
+                            ActivityRow(type: .project(project: nil), title: "Projects", description: nil)
                         }
                         
                         if self.isSearchedProfile == false {
@@ -72,7 +72,7 @@ struct ProfileView: View {
                         }
                         
                         if user.patroned.isEmpty == false || user.patroning.isEmpty == false {
-                            NavigationLink(destination: EmptyView()) {
+                            NavigationLink(destination: UserPatronages(patroned: user.patroned, patroning: user.patroning)) {
                                 ActivityRow(type: .patronage, title: "Patronages", description: nil)
                             }
                         }

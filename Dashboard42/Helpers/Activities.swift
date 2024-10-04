@@ -28,7 +28,7 @@ enum Activities: Identifiable {
     
     var type: ActivityType {
         switch self {
-        case .project: return .project
+        case .project(let project): return .project(project: project)
         case .exam: return .exam
         case .scale: return .scale
         case .event: return .event

@@ -366,19 +366,84 @@
       }
     },
     "Cannot fetch campus activities. Please check your internet connection and try again." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot fetch campus activities. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de récupérer les activités du campus. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
     },
     "Cannot fetch user information. Please check your internet connection and try again." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot fetch user information. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d'obtenir des informations sur l'utilisateur. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
     },
     "Cannot link your 42 account. Please check your internet connection and try again." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot link your 42 account. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de relier votre compte 42. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
     },
     "Cannot register event. Please check your internet connection and try again." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot register event. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d'enregistrer l'événement. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
     },
     "Cannot unregister event. Please check your internet connection and try again." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot unregister event. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de désinscrire l'événement. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
     },
     "Correction points" : {
       "localizations" : {
@@ -520,22 +585,100 @@
       }
     },
     "Error: Cannot fetch campus activities" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot fetch campus activities"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de récupérer les activités du campus"
+          }
+        }
+      }
     },
     "Error: Cannot fetch user information" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot fetch user information"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible d'obtenir des informations sur l'utilisateur"
+          }
+        }
+      }
     },
     "Error: Cannot link your 42 account" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot link your 42 account"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de relier votre compte 42"
+          }
+        }
+      }
     },
     "Error: Cannot register event" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot register event"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de s’inscrire à l’événement"
+          }
+        }
+      }
     },
     "Error: Cannot unregister event" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot unregister event"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de se désinscrire de l'événement"
+          }
+        }
+      }
     },
     "Error: User not found" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: User not found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Utilisateur non trouvé"
+          }
+        }
+      }
     },
     "Events" : {
       "localizations" : {
@@ -548,7 +691,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Évènements"
+            "value" : "Événements"
           }
         }
       }
@@ -857,6 +1000,22 @@
         }
       }
     },
+    "No patronages found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No patronages found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun parrainage trouvé"
+          }
+        }
+      }
+    },
     "No project found" : {
       "localizations" : {
         "en" : {
@@ -949,6 +1108,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parrainages"
+          }
+        }
+      }
+    },
+    "Patroned" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patroned"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parrain"
+          }
+        }
+      }
+    },
+    "Patroning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patroning"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filleul"
           }
         }
       }
@@ -1204,7 +1395,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rechercher un évènement"
+            "value" : "Rechercher un événement"
           }
         }
       }
@@ -1274,7 +1465,20 @@
       }
     },
     "The search for the user was unsuccessful. Please check the login and try again." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The search for the user was unsuccessful. Please check the login and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La recherche de l'utilisateur n'a pas abouti. Veuillez vérifier le login et réessayer."
+          }
+        }
+      }
     },
     "Theme" : {
       "localizations" : {

@@ -34,7 +34,7 @@ struct HomeView: View {
                 List {
                     Section {
                         NavigationLink(destination: UserProjects(projects: user.projectsUsers, cursus: user.cursusUsers)) {
-                            ActivityRow(type: .project, title: "Projects", description: nil)
+                            ActivityRow(type: .project(project: nil), title: "Projects", description: nil)
                         }
                         
                         NavigationLink(destination: EmptyView()) {
@@ -98,7 +98,7 @@ struct HomeView: View {
                     }
                 }
                 .refreshable {
-                    self.fetchUserInformations()
+                    await self.fetchUserInformations()
                 }
             }
             else {
@@ -108,30 +108,28 @@ struct HomeView: View {
         .error(isPresented: $hasError, error: self.error)
         .task {
             guard self.userService.user == nil else { return }
-            self.fetchUserInformations()
+            await self.fetchUserInformations()
         }
     }
     
-    private func fetchUserInformations() -> Void {
-        Task {
-            self.isLoading = true
+    private func fetchUserInformations() async -> Void {
+        self.isLoading = true
+        
+        do {
+            try await self.userService.fetchConnectedUser()
             
-            do {
-                try await self.userService.fetchConnectedUser()
-                
-                guard let user: User = self.userService.user else { return }
-                
-                try await self.userService.fetchEvents(userId: user.id)
-                try await self.userService.fetchExams(userId: user.id)
-                try await self.userService.fetchScales()
-            }
-            catch {
-                self.error = .cannotFetchUserInformations
-                self.hasError = true
-            }
+            guard let user: User = self.userService.user else { return }
             
-            self.isLoading = false
+            try await self.userService.fetchEvents(userId: user.id)
+            try await self.userService.fetchExams(userId: user.id)
+            try await self.userService.fetchScales()
         }
+        catch {
+            self.error = .cannotFetchUserInformations
+            self.hasError = true
+        }
+        
+        self.isLoading = false
     }
     
     private func fetchUser() -> Void {

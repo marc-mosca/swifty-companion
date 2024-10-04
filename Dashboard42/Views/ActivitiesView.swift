@@ -62,7 +62,7 @@ struct ActivitiesView: View {
                 .navigationTitle("Activities")
                 .searchable(text: self.$searchedText, prompt: "Search an activity")
                 .refreshable {
-                    self.fetchCampusActivities()
+                    await self.fetchCampusActivities()
                 }
                 .toolbar {
                     ToolbarItem {
@@ -89,30 +89,29 @@ struct ActivitiesView: View {
         .error(isPresented: self.$hasError, error: self.error)
         .task {
             guard self.isFirstLoad == true else { return }
-            self.fetchCampusActivities()
+            await self.fetchCampusActivities()
         }
     }
 
     
-    private func fetchCampusActivities() -> Void {
+    private func fetchCampusActivities() async -> Void {
         guard let user: User = self.userService.user else { return }
         guard let campusId: Int = user.mainCampus?.campusId else { return }
         guard let cursusId: Int = user.mainCursus?.cursusId else { return }
         
-        Task {
-            self.isLoading = true
-            
-            do {
-                try await self.campusService.fetchEvents(campusId: campusId, cursusId: cursusId)
-                try await self.campusService.fetchExams(campusId: campusId)
-            }
-            catch {
-                self.error = .cannotFetchCampusActivities
-                self.hasError = true
-            }
-            
-            self.isLoading = false
+        self.isLoading = true
+        
+        do {
+            try await self.campusService.fetchEvents(campusId: campusId, cursusId: cursusId)
+            try await self.campusService.fetchExams(campusId: campusId)
         }
+        catch {
+            self.error = .cannotFetchCampusActivities
+            self.hasError = true
+        }
+        
+        self.isFirstLoad = false
+        self.isLoading = false
     }
 }
 
