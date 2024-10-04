@@ -301,6 +301,22 @@
         }
       }
     },
+    "An error occurred while loading the application. Please try again later." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while loading the application. Please try again later."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur est apparue lors du chargement de l’application. Veuillez réessayer plus tard."
+          }
+        }
+      }
+    },
     "Are you sure you want to log out?" : {
       "localizations" : {
         "en" : {
@@ -873,7 +889,20 @@
       }
     },
     "Loading..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement…"
+          }
+        }
+      }
     },
     "Location" : {
       "localizations" : {
@@ -935,6 +964,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nom"
+          }
+        }
+      }
+    },
+    "Network error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Network error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur réseau"
           }
         }
       }
@@ -1495,6 +1540,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Thème"
+          }
+        }
+      }
+    },
+    "Try again" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try again"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essayer de nouveau"
           }
         }
       }

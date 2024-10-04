@@ -32,7 +32,17 @@ struct ContentView: View {
                     ProgressView("Loading...")
                 }
                 else if self.hasError == true {
-                    Text("Error")
+                    ContentUnavailableView {
+                        Label("Network error", systemImage: "network")
+                    } description: {
+                        Text("An error occurred while loading the application. Please try again later.")
+                    } actions: {
+                        Button("Try again") {
+                            Task {
+                                await self.fetch()
+                            }
+                        }
+                    }
                 }
                 else {
                     ApplicationTabView(selection: self.$selection)
