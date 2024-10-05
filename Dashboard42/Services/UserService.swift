@@ -66,7 +66,7 @@ final class UserService {
         let endpoint: NetworkingEndpoint = UserEndpoints.fetchLogtime(login: login, entryDate: entryDate)
         
         let log: LogtimeResult = try await network.request(endpoint, type: LogtimeResult.self)
-        self.logtimes = self.convertLogtimes(log)
+        self.logtimes = Logtime.organize(log, entryDate: entryDate)
     }
     
     func updateEvent(userId: Int, eventId: Int) async throws -> Void {
@@ -102,39 +102,5 @@ final class UserService {
     func deleteSlot(slotId: Int) async throws -> Void {
         let endpoint: NetworkingEndpoint = UserEndpoints.unregisterSlot(slotId: slotId)
         try await network.request(endpoint)
-    }
-}
-
-extension UserService {
-    private func convertLogtimes(_ result: LogtimeResult) -> [Logtime] {
-        var monthData: [Logtime] = []
-        var monthlyData: [String: Double] = [:]
-        
-        for (date, time) in result {
-            let components: [String.SubSequence] = date.split(separator: "-")
-            let yearMonth: String = "\(components[0])-\(components[1])"
-            let timeComponents: [String] = time.components(separatedBy: ":")
-            let hours: Double = Double(timeComponents[0]) ?? 0.0
-            let minutes: Double = Double(timeComponents[1]) ?? 0.0
-            let seconds: Double = Double(timeComponents[2].components(separatedBy: ".").first ?? "0.0") ?? 0.0
-            
-            let totalHours: Double = hours + minutes / 60.0 + seconds / 3600.0
-            monthlyData[yearMonth, default: 0.0] += totalHours
-        }
-        
-        monthData = monthlyData.map { month, totalHours in
-            let logtime: LogtimeResult = result.filter { $0.key.contains(month) }
-            let numberOfDaysToWork = Date.getNumberOfDaysToWorkPerMonth(month)
-            
-            return Logtime(
-                month: month,
-                total: totalHours,
-                details: logtime,
-                numberOfDaysToWork: numberOfDaysToWork
-            )
-        }
-        
-        monthData.sort(by: { $0.month > $1.month })
-        return monthData
     }
 }

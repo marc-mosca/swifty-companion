@@ -62,7 +62,7 @@ struct ProfileView: View {
                                 ActivityRow(type: .scale, title: "Scales", description: nil)
                             }
                             
-                            NavigationLink(destination: EmptyView()) {
+                            NavigationLink(destination: UserLogtimes()) {
                                 ActivityRow(type: .logtime, title: "Logtimes", description: nil)
                             }
                         }
@@ -80,8 +80,8 @@ struct ProfileView: View {
                         SectionHeader(header: "Dashboard")
                     }
                 }
-                .navigationTitle(user.login)
-                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle(self.isSearchedProfile == true ? user.login : "Profile")
+                .navigationBarTitleDisplayMode(self.isSearchedProfile == true ? .inline : .large)
             }
             else {
                 ProgressView()

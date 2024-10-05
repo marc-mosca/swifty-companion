@@ -41,7 +41,7 @@ struct HomeView: View {
                             ActivityRow(type: .scale, title: "Scales", description: nil)
                         }
                         
-                        NavigationLink(destination: EmptyView()) {
+                        NavigationLink(destination: UserLogtimes()) {
                             ActivityRow(type: .logtime, title: "Logtimes", description: nil)
                         }
                         
@@ -109,6 +109,8 @@ struct HomeView: View {
             try await self.userService.fetchEvents(userId: user.id)
             try await self.userService.fetchExams(userId: user.id)
             try await self.userService.fetchScales()
+            try await self.userService.fetchSlots()
+            try await self.userService.fetchCorrectionPointHistorics(userId: user.id)
             try await self.userService.fetchLogtimes(login: user.login, entryDate: user.entryDate)
         }
         catch {

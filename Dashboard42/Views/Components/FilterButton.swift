@@ -11,8 +11,12 @@ struct FilterButton: View {
     @Binding var selectedFilter: String
     let filters: [String]
     
+    private var image: String {
+        self.selectedFilter.isEmpty == true ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill"
+    }
+    
     var body: some View {
-        Menu("Filter activities", systemImage: "line.3.horizontal.decrease.circle") {
+        Menu("Filter activities", systemImage: self.image) {
             Picker("Select a filter", selection: Binding(self.$selectedFilter, deselectTo: "")) {
                 ForEach(self.filters, id: \.self) { filter in
                     Text(filter)

@@ -57,6 +57,7 @@
 		01E7A8DC2CB01E2000871D8C /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7A8DB2CB01E2000871D8C /* Slot.swift */; };
 		01F270152C99DA5B00F9683C /* AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F270142C99DA5B00F9683C /* AuthenticationToken.swift */; };
 		01F270172C99DC9400F9683C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F270162C99DC9400F9683C /* AuthenticationService.swift */; };
+		01F9D41A2CB1350200982630 /* UserLogtimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9D4192CB1350200982630 /* UserLogtimes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		01E7A8DB2CB01E2000871D8C /* Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		01F270142C99DA5B00F9683C /* AuthenticationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationToken.swift; sourceTree = "<group>"; };
 		01F270162C99DC9400F9683C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		01F9D4192CB1350200982630 /* UserLogtimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogtimes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -236,6 +238,7 @@
 				01B32F9F2CAC1D9500C6C828 /* UserInformations.swift */,
 				01B32FA12CAC1E4100C6C828 /* UserProjects.swift */,
 				01E7A8D52CB0012C00871D8C /* UserPatronages.swift */,
+				01F9D4192CB1350200982630 /* UserLogtimes.swift */,
 			);
 			path = ProfileDetails;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				01169A342CA30B9200F52E90 /* ApplicationIcon.swift in Sources */,
 				01B32F972CAC0F7600C6C828 /* ProfileView.swift in Sources */,
 				013595A82CA45F08009385EE /* ApplicationSettings.swift in Sources */,
+				01F9D41A2CB1350200982630 /* UserLogtimes.swift in Sources */,
 				01E7A8DC2CB01E2000871D8C /* Slot.swift in Sources */,
 				019951B62CA5811400ECD4EA /* HomeView.swift in Sources */,
 				01D976B12BE8D0D900DB9F30 /* Dashboard42App.swift in Sources */,
