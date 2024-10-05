@@ -7,6 +7,40 @@
 
 import Foundation
 
+struct GroupedSlot: Identifiable {
+    var id: UUID { .init() }
+    
+    var beginAt: Date
+    var endAt: Date
+    var slots: [Slot]
+    var slotsIds: [Int]
+    
+    static func create(for slots: [Slot]) -> [GroupedSlot] {
+        let sortedSlots: [Slot] = slots.sorted { $0.beginAt < $1.beginAt }
+        var groupedSlots: [GroupedSlot] = []
+        
+        sortedSlots.forEach { slot in
+            if groupedSlots.isEmpty == true || groupedSlots.last!.endAt != slot.beginAt {
+                let newGroupedSlot: GroupedSlot = .init(
+                    beginAt: slot.beginAt,
+                    endAt: slot.endAt,
+                    slots: [slot],
+                    slotsIds: [slot.id]
+                )
+                groupedSlots.append(newGroupedSlot)
+            }
+            else {
+                let count: Int = groupedSlots.count - 1
+                groupedSlots[count].slots.append(slot)
+                groupedSlots[count].slotsIds.append(slot.id)
+                groupedSlots[count].endAt = slot.endAt
+            }
+        }
+        
+        return groupedSlots
+    }
+}
+
 struct Slot: Identifiable, Decodable {
     let id: Int
     let beginAt: Date

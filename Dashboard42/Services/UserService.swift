@@ -14,7 +14,6 @@ final class UserService {
     private(set) var exams: [Exam] = []
     private(set) var scales: [Scale] = []
     private(set) var slots: [Slot] = []
-    private(set) var correctionPointHistorics: [CorrectionPointHistorics] = []
     private(set) var logtimes: [Logtime] = []
     
     private let network: NetworkingManager = .shared
@@ -54,12 +53,6 @@ final class UserService {
         let endpoint: NetworkingEndpoint = UserEndpoints.fetchSlots
         
         self.slots = try await network.request(endpoint, type: [Slot].self)
-    }
-    
-    func fetchCorrectionPointHistorics(userId: Int) async throws -> Void {
-        let endpoint: NetworkingEndpoint = UserEndpoints.fetchCorrectionPointHistorics(userId: userId)
-        
-        self.correctionPointHistorics = try await network.request(endpoint, type: [CorrectionPointHistorics].self)
     }
     
     func fetchLogtimes(login: String, entryDate: String) async throws -> Void {

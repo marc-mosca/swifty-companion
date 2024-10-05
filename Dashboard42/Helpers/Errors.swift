@@ -20,8 +20,10 @@ enum Dashboard42UIErrors: Error {
     case cannotLinkAccount
     case cannotFetchUserInformations
     case cannotFetchCampusActivities
+    case cannotFetchSlots
     case cannotRegisterEvent
     case cannotUnregisterEvent
+    case cannotUnregisterSlot
     case userNotFound
     
     var title: LocalizedStringKey {
@@ -29,8 +31,10 @@ enum Dashboard42UIErrors: Error {
         case .cannotLinkAccount: return "Error: Cannot link your 42 account"
         case .cannotFetchUserInformations: return "Error: Cannot fetch user information"
         case .cannotFetchCampusActivities: return "Error: Cannot fetch campus activities"
+        case .cannotFetchSlots: return "Error: Cannot fetch slots"
         case .cannotRegisterEvent: return "Error: Cannot register event"
         case .cannotUnregisterEvent: return "Error: Cannot unregister event"
+        case .cannotUnregisterSlot: return "Error: Cannot unregister slot"
         case .userNotFound: return "Error: User not found"
         }
     }
@@ -40,8 +44,10 @@ enum Dashboard42UIErrors: Error {
         case .cannotLinkAccount: return "Cannot link your 42 account. Please check your internet connection and try again."
         case .cannotFetchUserInformations: return "Cannot fetch user information. Please check your internet connection and try again."
         case .cannotFetchCampusActivities: return "Cannot fetch campus activities. Please check your internet connection and try again."
+        case .cannotFetchSlots: return "Cannot fetch slots. Please check your internet connection and try again."
         case .cannotRegisterEvent: return "Cannot register event. Please check your internet connection and try again."
         case .cannotUnregisterEvent: return "Cannot unregister event. Please check your internet connection and try again."
+        case .cannotUnregisterSlot: return "Cannot unregister slot. Please check your internet connection and try again."
         case .userNotFound: return "The search for the user was unsuccessful. Please check the login and try again."
         }
     }

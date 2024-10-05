@@ -253,6 +253,22 @@
         }
       }
     },
+    "A slot is an interval of time during which you declare yourself available to assess other students. A time slot can be defined between 45 minutes and 2 weeks in advance, and must last at least one hour." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A slot is an interval of time during which you declare yourself available to assess other students. A time slot can be defined between 45 minutes and 2 weeks in advance, and must last at least one hour."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un créneau est un intervalle de temps pendant lequel vous vous déclarez disponible pour évaluer les autres étudiants. Un créneau peut être défini chaque jour entre 45 minutes et 2 semaines à l'avance et doit durer au moins une heure."
+          }
+        }
+      }
+    },
     "Account" : {
       "localizations" : {
         "en" : {
@@ -413,6 +429,22 @@
         }
       }
     },
+    "Cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        }
+      }
+    },
     "Cannot fetch campus activities. Please check your internet connection and try again." : {
       "localizations" : {
         "en" : {
@@ -425,6 +457,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impossible de récupérer les activités du campus. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
+    },
+    "Cannot fetch slots. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot fetch slots. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de récupérer les créneaux. Veuillez vérifier votre connexion Internet et réessayer."
           }
         }
       }
@@ -493,6 +541,22 @@
         }
       }
     },
+    "Cannot unregister slot. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot unregister slot. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de désenregistrer le créneau. Veuillez vérifier votre connexion Internet et réessayer."
+          }
+        }
+      }
+    },
     "Correction points" : {
       "localizations" : {
         "en" : {
@@ -505,6 +569,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Points de correction"
+          }
+        }
+      }
+    },
+    "Create" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer"
+          }
+        }
+      }
+    },
+    "Create a correction slot" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a correction slot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer un créneau de correction"
+          }
+        }
+      }
+    },
+    "Create a correction slot to see it appear in the list." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a correction slot to see it appear in the list."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez un créneau de correction pour le voir apparaître dans la liste."
           }
         }
       }
@@ -632,6 +744,22 @@
         }
       }
     },
+    "End" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fin"
+          }
+        }
+      }
+    },
     "Error: Cannot fetch campus activities" : {
       "localizations" : {
         "en" : {
@@ -644,6 +772,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur : Impossible de récupérer les activités du campus"
+          }
+        }
+      }
+    },
+    "Error: Cannot fetch slots" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot fetch slots"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de récupérer les créneaux"
           }
         }
       }
@@ -708,6 +852,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur : Impossible de se désinscrire de l'événement"
+          }
+        }
+      }
+    },
+    "Error: Cannot unregister slot" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot unregister slot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de désenregistrer le slot"
           }
         }
       }
@@ -1092,6 +1252,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune activité n’a été trouvé dans votre campus. Merci de réessayer plus tard."
+          }
+        }
+      }
+    },
+    "No correction slots found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No correction slots found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun emplacement de correction n'a été trouvé"
           }
         }
       }
@@ -1572,6 +1748,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se connecter"
+          }
+        }
+      }
+    },
+    "Slot" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créneau"
+          }
+        }
+      }
+    },
+    "Slot available for a scale" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot available for a scale"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créneau disponible pour une correction"
+          }
+        }
+      }
+    },
+    "Slot taken by a scale" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot taken by a scale"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créneau pris par une correction"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Début"
           }
         }
       }

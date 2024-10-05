@@ -58,6 +58,7 @@
 		01F270152C99DA5B00F9683C /* AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F270142C99DA5B00F9683C /* AuthenticationToken.swift */; };
 		01F270172C99DC9400F9683C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F270162C99DC9400F9683C /* AuthenticationService.swift */; };
 		01F9D41A2CB1350200982630 /* UserLogtimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9D4192CB1350200982630 /* UserLogtimes.swift */; };
+		01F9D41C2CB1654200982630 /* UserCorrections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9D41B2CB1654200982630 /* UserCorrections.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		01F270142C99DA5B00F9683C /* AuthenticationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationToken.swift; sourceTree = "<group>"; };
 		01F270162C99DC9400F9683C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		01F9D4192CB1350200982630 /* UserLogtimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogtimes.swift; sourceTree = "<group>"; };
+		01F9D41B2CB1654200982630 /* UserCorrections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCorrections.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -234,11 +236,12 @@
 			isa = PBXGroup;
 			children = (
 				01340E1C2CAC40E600FCD809 /* UserAchievements.swift */,
+				01F9D41B2CB1654200982630 /* UserCorrections.swift */,
 				01B32FA32CAC22C700C6C828 /* UserEvents.swift */,
 				01B32F9F2CAC1D9500C6C828 /* UserInformations.swift */,
-				01B32FA12CAC1E4100C6C828 /* UserProjects.swift */,
-				01E7A8D52CB0012C00871D8C /* UserPatronages.swift */,
 				01F9D4192CB1350200982630 /* UserLogtimes.swift */,
+				01E7A8D52CB0012C00871D8C /* UserPatronages.swift */,
+				01B32FA12CAC1E4100C6C828 /* UserProjects.swift */,
 			);
 			path = ProfileDetails;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				01E43CD12CAEB25D006141E8 /* EnvironmentValues.swift in Sources */,
 				01D702D32CABE63400456C61 /* FilterButton.swift in Sources */,
 				019C2A532CAECF2800D64F08 /* Error.swift in Sources */,
+				01F9D41C2CB1654200982630 /* UserCorrections.swift in Sources */,
 				01169A312CA3073C00F52E90 /* AuthenticationEndpoints.swift in Sources */,
 				019358812CAB25D500A2F971 /* KeychainService.swift in Sources */,
 				01D702DC2CABF4D100456C61 /* HRow.swift in Sources */,

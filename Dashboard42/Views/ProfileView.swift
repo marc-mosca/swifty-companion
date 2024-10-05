@@ -24,6 +24,7 @@ struct ProfileView: View {
     }
     
     private var user: User? { self.isSearchedProfile ? userParam : self.userService.user }
+    private var navigationTitle: LocalizedStringKey { self.isSearchedProfile == true ? "\(user?.login ?? "")" : "Profile" }
     
     var body: some View {
         NavigationStack {
@@ -58,7 +59,7 @@ struct ProfileView: View {
                                 ActivityRow(type: .event, title: "Events", description: nil)
                             }
                             
-                            NavigationLink(destination: EmptyView()) {
+                            NavigationLink(destination: UserCorrections()) {
                                 ActivityRow(type: .scale, title: "Scales", description: nil)
                             }
                             
@@ -80,7 +81,7 @@ struct ProfileView: View {
                         SectionHeader(header: "Dashboard")
                     }
                 }
-                .navigationTitle(self.isSearchedProfile == true ? user.login : "Profile")
+                .navigationTitle(self.navigationTitle)
                 .navigationBarTitleDisplayMode(self.isSearchedProfile == true ? .inline : .large)
             }
             else {

@@ -14,7 +14,6 @@ enum UserEndpoints: NetworkingEndpoint {
     case fetchExams(userId: Int)
     case fetchScales
     case fetchSlots
-    case fetchCorrectionPointHistorics(userId: Int)
     case fetchLogtime(login: String, entryDate: String)
     case fetchEventUser(userId: Int, eventId: Int)
     case registerEvent(userId: Int, eventId: Int)
@@ -30,7 +29,6 @@ enum UserEndpoints: NetworkingEndpoint {
         case .fetchExams(let userId): return "/v2/users/\(userId)/exams"
         case .fetchScales: return "/v2/me/scale_teams"
         case .fetchSlots: return "/v2/me/slots"
-        case .fetchCorrectionPointHistorics(let userId): return "/v2/users/\(userId)/correction_point_historics"
         case .fetchLogtime(let login, _): return "/v2/users/\(login)/locations_stats"
         case .fetchEventUser(let userId, _): return "/v2/users/\(userId)/events_users"
         case .registerEvent: return "/v2/events_users"
@@ -63,7 +61,6 @@ enum UserEndpoints: NetworkingEndpoint {
         case .fetchExams: items = ["filter[future]": "true", "sort": "-begin_at"]
         case .fetchScales: items = ["sort": "-begin_at", "page[size]": "100"]
         case .fetchSlots: items = ["filter[future]": "true", "sort": "-begin_at", "page[size]": "100"]
-        case .fetchCorrectionPointHistorics: items = ["sort": "-created_at"]
         case .fetchLogtime(_, let entryDate): items = ["begin_at": entryDate]
         case .fetchEventUser(_, let eventId): items = ["filter[event_id]": "\(eventId)"]
         case .registerEvent(let userId, let eventId): items = ["events_user[event_id]": "\(eventId)", "events_user[user_id]": "\(userId)"]
