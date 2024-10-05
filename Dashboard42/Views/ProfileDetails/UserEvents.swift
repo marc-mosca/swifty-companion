@@ -30,7 +30,14 @@ struct UserEvents: View {
             if !groupedActivity.activities.isEmpty {
                 Section(groupedActivity.monthYear) {
                     ForEach(groupedActivity.activities) { activity in
-                        ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                        if case let .event(event) = activity {
+                            NavigationLink(destination: EventDetailsView(event: event)) {
+                                ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                            }
+                        }
+                        else {
+                            ActivityRow(type: activity.type, title: activity.title, description: activity.description)
+                        }
                     }
                 }
             }

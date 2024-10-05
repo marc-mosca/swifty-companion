@@ -38,13 +38,13 @@ struct UserLogtimes: View {
                             HStack {
                                 GroupBox("Online") {
                                     Text("\(logtime.details.count) days")
-                                        .font(.footnote)
+                                        .font(.caption)
                                         .foregroundStyle(.secondary)
                                 }
                                 
                                 GroupBox("Total") {
                                     Text("\(String(format: "%.2f", logtime.total)) hours")
-                                        .font(.footnote)
+                                        .font(.caption)
                                         .foregroundStyle(.secondary)
                                 }
                                 
@@ -52,7 +52,7 @@ struct UserLogtimes: View {
                                     let average = logtime.total == 0 || logtime.details.count == 0 ? 0 : logtime.total / Double(logtime.details.count)
                                     
                                     Text("\(String(format: "%.2f", average)) hours")
-                                        .font(.footnote)
+                                        .font(.caption)
                                         .foregroundStyle(.secondary)
                                 }
                             }
