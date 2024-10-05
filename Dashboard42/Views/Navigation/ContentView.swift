@@ -8,80 +8,91 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.campusService) private var campusService: CampusService
+    @Environment(\.userService) private var userService: UserService
+    
+    @AppStorage(Constants.userIsConnectedKey) private var userIsConnected: Bool = false
 
-    // MARK: - Properties
-
-    @Environment(\.store) private var store
-    @AppStorage(Constants.AppStorage.userIsConnected) private var userIsConnected: Bool?
-    @State private var isLoading = false
-
-    // MARK: - Body
+    @State var selection: ApplicationScreens = .home
+    
+    @State private var isLoading: Bool = false
+    @State private var isFirstLoad: Bool = true
+    
+    @State private var error: Dashboard42UIErrors? = nil
+    @State private var hasError: Bool = false
 
     var body: some View {
-        @Bindable var store = store
-
-        if userIsConnected != true {
+        if self.userIsConnected == false {
             OnBoardingView()
+                .padding()
         }
         else {
             VStack {
-                if isLoading {
-                    ProgressView()
+                if self.isLoading == true {
+                    ProgressView("Loading...")
+                }
+                else if self.hasError == true {
+                    ContentUnavailableView {
+                        Label("Network error", systemImage: "network")
+                    } description: {
+                        Text("An error occurred while loading the application. Please try again later.")
+                    } actions: {
+                        Button("Try again") {
+                            Task {
+                                await self.fetch()
+                            }
+                        }
+                    }
                 }
                 else {
-                    AppTabView(selection: $store.selection)
+                    ApplicationTabView(selection: self.$selection)
                 }
             }
+            .error(isPresented: self.$hasError, error: self.error)
             .task {
-                await fetchConnectedUserInformations()
+                guard self.isFirstLoad == true else { return }
+                await self.fetch()
             }
         }
     }
+    
+    private func fetch() async -> Void {
+        self.isLoading = true
+        
+        do {
+            try await self.userService.fetchConnectedUser()
+            
+            guard let user: User = self.userService.user else { return }
+            
+            try await self.userService.fetchEvents(userId: user.id)
+            try await self.userService.fetchExams(userId: user.id)
+            try await self.userService.fetchScales()
+            try await self.userService.fetchSlots()
+            try await self.userService.fetchLogtimes(login: user.login, entryDate: user.entryDate)
+        }
+        catch {
+            self.error = .cannotFetchUserInformations
+            self.hasError = true
+        }
+        
+        do {
+            guard let user: User = self.userService.user else { return }
+            guard let campusId: Int = user.mainCampus?.campusId else { return }
+            guard let cursusId: Int = user.mainCursus?.cursusId else { return }
+            
+            try await self.campusService.fetchEvents(campusId: campusId, cursusId: cursusId)
+            try await self.campusService.fetchExams(campusId: campusId)
+        }
+        catch {
+            self.error = .cannotFetchCampusActivities
+            self.hasError = true
+        }
+        
+        self.isFirstLoad = false
+        self.isLoading = false
+    }
 }
-
-// MARK: - Previews
 
 #Preview {
     ContentView()
-}
-
-// MARK: - Private Methods
-
-extension ContentView {
-
-    /// Retrieves full details of the logged-in user, it also handles load status and potential errors.
-    func fetchConnectedUserInformations() async {
-        isLoading = true
-
-        do {
-            let user = try await store.userService.fetchUser()
-            let campusId = user.mainCampus?.campusId
-            let cursusId = user.mainCursus?.cursusId
-
-            guard let campusId, let cursusId else { return }
-
-            store.user = user
-            store.userEvents = try await store.eventService.fetchUserEvents(userId: user.id)
-            store.userExams = try await store.examService.fetchUserExams(userId: user.id)
-            store.userScales = try await store.correctionService.fetchUserScales()
-            store.userLogtimes = try await store.userService.fetchLogtime(for: user.login, entryDate: user.entryDate)
-            store.userSlots = try await store.correctionService.fetchUserSlots()
-            store.userCorrectionPointHistorics = try await store.correctionService.fetchCorrectionPointHistorics(
-                userId: user.id
-            )
-            store.campusEvents = try await store.eventService.fetchCampusEvents(campusId: campusId, cursusId: cursusId)
-            store.campusExams = try await store.examService.fetchCampusExams(campusId: campusId)
-        }
-        catch {
-            store.error = error as? Api.Errors
-            store.errorAction = {
-                Task {
-                    await fetchConnectedUserInformations()
-                }
-            }
-        }
-
-        isLoading = false
-    }
-
 }

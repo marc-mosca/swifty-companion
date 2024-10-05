@@ -1,22 +1,6 @@
 {
-  "sourceLanguage" : "fr",
+  "sourceLanguage" : "en",
   "strings" : {
-    "- %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@"
-          }
-        }
-      }
-    },
     "%@" : {
       "localizations" : {
         "en" : {
@@ -33,71 +17,7 @@
         }
       }
     },
-    "%@ - %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ - %2$@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        }
-      }
-    },
-    "%@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ %2$@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        }
-      }
-    },
-    "%@ %%" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ %%"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ %%"
-          }
-        }
-      }
-    },
-    "%@ 👋" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ 👋"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ 👋"
-          }
-        }
-      }
-    },
-    "%@ heures" : {
+    "%@ hours" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -113,23 +33,47 @@
         }
       }
     },
-    "%@h / jour" : {
+    "%lld days" : {
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@h / day"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld day"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld days"
+                }
+              }
+            }
           }
         },
         "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@h / jour"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld jour"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld jours"
+                }
+              }
+            }
           }
         }
       }
     },
-    "%lld heures" : {
+    "%lld hours" : {
       "localizations" : {
         "en" : {
           "variations" : {
@@ -142,7 +86,7 @@
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "translated",
+                  "state" : "new",
                   "value" : "%lld hours"
                 }
               }
@@ -160,7 +104,7 @@
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "new",
+                  "state" : "translated",
                   "value" : "%lld heures"
                 }
               }
@@ -169,7 +113,7 @@
         }
       }
     },
-    "%lld heures %lld minutes" : {
+    "%lld hours %lld minutes" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -269,46 +213,6 @@
         }
       }
     },
-    "%lld jours" : {
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld day"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld days"
-                }
-              }
-            }
-          }
-        },
-        "fr" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld jour"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "new",
-                  "value" : "%lld jours"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "%lld minutes" : {
       "localizations" : {
         "en" : {
@@ -322,7 +226,7 @@
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "translated",
+                  "state" : "new",
                   "value" : "%lld minutes"
                 }
               }
@@ -340,7 +244,7 @@
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "new",
+                  "state" : "translated",
                   "value" : "%lld minutes"
                 }
               }
@@ -349,295 +253,23 @@
         }
       }
     },
-    "%lldh" : {
+    "A slot is an interval of time during which you declare yourself available to assess other students. A time slot can be defined between 45 minutes and 2 weeks in advance, and must last at least one hour." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lldh"
+            "value" : "A slot is an interval of time during which you declare yourself available to assess other students. A time slot can be defined between 45 minutes and 2 weeks in advance, and must last at least one hour."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lldh"
+            "value" : "Un créneau est un intervalle de temps pendant lequel vous vous déclarez disponible pour évaluer les autres étudiants. Un créneau peut être défini chaque jour entre 45 minutes et 2 semaines à l'avance et doit durer au moins une heure."
           }
         }
       }
     },
-    "Accomplissements" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Achievements"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Accomplissements"
-          }
-        }
-      }
-    },
-    "Activités à venir" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Upcoming activities"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activités à venir"
-          }
-        }
-      }
-    },
-    "Aide" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Help"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aide"
-          }
-        }
-      }
-    },
-    "Ajouter" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajouter"
-          }
-        }
-      }
-    },
-    "Ajouter un créneau de correction" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add a correction slot"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajouter un créneau de correction"
-          }
-        }
-      }
-    },
-    "Annuler" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancel"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Annuler"
-          }
-        }
-      }
-    },
-    "Aucun accomplissement trouvé" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No achievement found"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun accomplissement trouvé"
-          }
-        }
-      }
-    },
-    "Aucun créneau de correction trouvé" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No correction slot found"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun créneau de correction trouvé"
-          }
-        }
-      }
-    },
-    "Aucun historique de recherche" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No search history"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun historique de recherche"
-          }
-        }
-      }
-    },
-    "Aucun parrainage trouvé" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No patronage found"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun parrainage trouvé"
-          }
-        }
-      }
-    },
-    "Aucun projet trouvé" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No project found"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun projet trouvé"
-          }
-        }
-      }
-    },
-    "Aucune activité prévu" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No activity scheduled"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucune activité prévu"
-          }
-        }
-      }
-    },
-    "Aucune compétence trouvée" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No expertise found"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucune compétence trouvée"
-          }
-        }
-      }
-    },
-    "Bienvenue sur" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Welcome to"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bienvenue sur"
-          }
-        }
-      }
-    },
-    "Bon retour parmi nous !" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Welcome back!"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bon retour parmi nous !"
-          }
-        }
-      }
-    },
-    "Clair" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Light"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clair"
-          }
-        }
-      }
-    },
-    "Compétences" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Expertises"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Compétences"
-          }
-        }
-      }
-    },
-    "Compte" : {
+    "Account" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -653,23 +285,311 @@
         }
       }
     },
-    "Corrections" : {
+    "Achievements" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Corrections"
+            "value" : "Achievements"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Corrections"
+            "value" : "Accomplissements"
           }
         }
       }
     },
-    "Créer un créneau de correction" : {
+    "Activities" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activities"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activités"
+          }
+        }
+      }
+    },
+    "An application developed by a student for the student community of 42." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An application developed by a student for the student community of 42."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une application développée par un étudiant pour la communauté étudiante de 42."
+          }
+        }
+      }
+    },
+    "An error occurred while loading the application. Please try again later." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while loading the application. Please try again later."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur est apparue lors du chargement de l’application. Veuillez réessayer plus tard."
+          }
+        }
+      }
+    },
+    "Are you sure you want to log out?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to log out?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etes-vous sûr de vouloir vous déconnecter ?"
+          }
+        }
+      }
+    },
+    "Are you sure you want to register for this event?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to register for this event?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etes-vous sûr de vouloir vous inscrire à cet événement ?"
+          }
+        }
+      }
+    },
+    "Are you sure you want to unregister for this event?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to unregister for this event?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etes-vous sûr de vouloir vous désinscrire de cet événement ?"
+          }
+        }
+      }
+    },
+    "Automatic" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatic"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatique"
+          }
+        }
+      }
+    },
+    "Average" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Average"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moyenne"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        }
+      }
+    },
+    "Cannot fetch campus activities. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot fetch campus activities. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de récupérer les activités du campus. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
+    },
+    "Cannot fetch slots. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot fetch slots. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de récupérer les créneaux. Veuillez vérifier votre connexion Internet et réessayer."
+          }
+        }
+      }
+    },
+    "Cannot fetch user information. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot fetch user information. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d'obtenir des informations sur l'utilisateur. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
+    },
+    "Cannot link your 42 account. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot link your 42 account. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de relier votre compte 42. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
+    },
+    "Cannot register event. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot register event. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d'enregistrer l'événement. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
+    },
+    "Cannot unregister event. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot unregister event. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de désinscrire l'événement. Veuillez vérifier votre connexion internet et réessayer."
+          }
+        }
+      }
+    },
+    "Cannot unregister slot. Please check your internet connection and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot unregister slot. Please check your internet connection and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de désenregistrer le créneau. Veuillez vérifier votre connexion Internet et réessayer."
+          }
+        }
+      }
+    },
+    "Correction points" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correction points"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Points de correction"
+          }
+        }
+      }
+    },
+    "Create" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer"
+          }
+        }
+      }
+    },
+    "Create a correction slot" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -685,7 +605,7 @@
         }
       }
     },
-    "Créez un créneau de correction pour le voir apparaître dans la liste." : {
+    "Create a correction slot to see it appear in the list." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -697,54 +617,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Créez un créneau de correction pour le voir apparaître dans la liste."
-          }
-        }
-      }
-    },
-    "Créneau de correction" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Correction slot"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Créneau de correction"
-          }
-        }
-      }
-    },
-    "Créneau disponible" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Available slot"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Créneau disponible"
-          }
-        }
-      }
-    },
-    "Créneau pris" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Taken slot"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Créneau pris"
           }
         }
       }
@@ -765,7 +637,23 @@
         }
       }
     },
-    "Dashboard42" : {
+    "Dark" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sombre"
+          }
+        }
+      }
+    },
+    "Dashboard" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -776,10 +664,21 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dashboard42"
+            "value" : "Tableau de bord"
           }
         }
       }
+    },
+    "Dashboard42" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dashboard42"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "Date" : {
       "localizations" : {
@@ -793,70 +692,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date"
-          }
-        }
-      }
-    },
-    "Début" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Begin"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Début"
-          }
-        }
-      }
-    },
-    "Définissez la langue de l'application." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Define the application language."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Définissez la langue de l'application."
-          }
-        }
-      }
-    },
-    "Définissez le thème de l'application." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Define the theme of the application."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Définissez le thème de l'application."
-          }
-        }
-      }
-    },
-    "Définissez une valeur par défaut pour le nombre d'heures que vous souhaitez travailler par jour. Laissez sur « Défaut » si vous souhaitez que l'application calcule automatiquement le nombre d'heures que vous devriez travailler par mois." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Set a default value for the number of hours you wish to work per day. Leave on \"Default\" if you want the application to automatically calculate the number of hours you should work per month."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Définissez une valeur par défaut pour le nombre d'heures que vous souhaitez travailler par jour. Laissez sur « Défaut » si vous souhaitez que l'application calcule automatiquement le nombre d'heures que vous devriez travailler par mois."
           }
         }
       }
@@ -877,39 +712,7 @@
         }
       }
     },
-    "Détails" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Details"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Détails"
-          }
-        }
-      }
-    },
-    "Developed by Marc MOSCA while eating 🍿" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Developed by Marc MOSCA while eating 🍿"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Developed by Marc MOSCA while eating 🍿"
-          }
-        }
-      }
-    },
-    "Durée" : {
+    "Duration" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -941,87 +744,7 @@
         }
       }
     },
-    "Emplacement" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Location"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Emplacement"
-          }
-        }
-      }
-    },
-    "En cours" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In progress"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "En cours"
-          }
-        }
-      }
-    },
-    "Évènements" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Events"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Évènements"
-          }
-        }
-      }
-    },
-    "Examens" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Exams"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Examens"
-          }
-        }
-      }
-    },
-    "Filleul" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patroning"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filleul"
-          }
-        }
-      }
-    },
-    "Fin" : {
+    "End" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1037,7 +760,167 @@
         }
       }
     },
-    "Général" : {
+    "Error: Cannot fetch campus activities" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot fetch campus activities"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de récupérer les activités du campus"
+          }
+        }
+      }
+    },
+    "Error: Cannot fetch slots" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot fetch slots"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de récupérer les créneaux"
+          }
+        }
+      }
+    },
+    "Error: Cannot fetch user information" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot fetch user information"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible d'obtenir des informations sur l'utilisateur"
+          }
+        }
+      }
+    },
+    "Error: Cannot link your 42 account" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot link your 42 account"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de relier votre compte 42"
+          }
+        }
+      }
+    },
+    "Error: Cannot register event" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot register event"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de s’inscrire à l’événement"
+          }
+        }
+      }
+    },
+    "Error: Cannot unregister event" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot unregister event"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de se désinscrire de l'événement"
+          }
+        }
+      }
+    },
+    "Error: Cannot unregister slot" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Cannot unregister slot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Impossible de désenregistrer le slot"
+          }
+        }
+      }
+    },
+    "Error: User not found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: User not found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur : Utilisateur non trouvé"
+          }
+        }
+      }
+    },
+    "Events" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Events"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Événements"
+          }
+        }
+      }
+    },
+    "Filter activities" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter activities"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrer les activités"
+          }
+        }
+      }
+    },
+    "General" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1049,6 +932,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Général"
+          }
+        }
+      }
+    },
+    "Goal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goal"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Objectif"
           }
         }
       }
@@ -1069,34 +968,34 @@
         }
       }
     },
-    "Historique de recherche" : {
+    "Help" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search history"
+            "value" : "Help"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Historique de recherche"
+            "value" : "Aide"
           }
         }
       }
     },
-    "Indéfinie" : {
+    "Home" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Undefined"
+            "value" : "Home"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Indéfinie"
+            "value" : "Accueil"
           }
         }
       }
@@ -1117,39 +1016,23 @@
         }
       }
     },
-    "Inscrit" : {
+    "Intranet Profile" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Registered"
+            "value" : "Intranet Profile"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inscrit"
+            "value" : "Profil Intranet"
           }
         }
       }
     },
-    "Inscrivez-vous à une activité (événement, correction ou examen) pour le voir apparaître sur la page d'accueil." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Register for an activity (event, correction or exam) to see it appear on the home page."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inscrivez-vous à une activité (événement, correction ou examen) pour le voir apparaître sur la page d'accueil."
-          }
-        }
-      }
-    },
-    "Langue" : {
+    "Language" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1165,71 +1048,7 @@
         }
       }
     },
-    "Lieu" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Location"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lieu"
-          }
-        }
-      }
-    },
-    "Logtime" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logtime"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logtime"
-          }
-        }
-      }
-    },
-    "Mon campus" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "My campus"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mon campus"
-          }
-        }
-      }
-    },
-    "Moyenne" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Average"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Moyenne"
-          }
-        }
-      }
-    },
-    "Niveau" : {
+    "Level" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1245,7 +1064,7 @@
         }
       }
     },
-    "Niveau - %@" : {
+    "Level - %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1261,7 +1080,87 @@
         }
       }
     },
-    "Nom" : {
+    "Light" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clair"
+          }
+        }
+      }
+    },
+    "Loading..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement…"
+          }
+        }
+      }
+    },
+    "Location" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieu"
+          }
+        }
+      }
+    },
+    "Log out" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log out"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se déconnecter"
+          }
+        }
+      }
+    },
+    "Logtimes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logtimes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logtimes"
+          }
+        }
+      }
+    },
+    "Name" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1277,7 +1176,23 @@
         }
       }
     },
-    "Non" : {
+    "Network error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Network error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur réseau"
+          }
+        }
+      }
+    },
+    "No" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1293,50 +1208,130 @@
         }
       }
     },
-    "Nouveau créneau de correction" : {
+    "No achivements found" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "New correction slot"
+            "value" : "No achievements found"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nouveau créneau de correction"
+            "value" : "Aucun accomplissement trouvé"
           }
         }
       }
     },
-    "Numéro de téléphone" : {
+    "No activity found" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Phone number"
+            "value" : "No activity found"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Numéro de téléphone"
+            "value" : "Aucune activité trouvé"
           }
         }
       }
     },
-    "Objectif" : {
+    "No activity found in your campus. Please check back later." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Goal"
+            "value" : "No activity found in your campus. Please check back later."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Objectif"
+            "value" : "Aucune activité n’a été trouvé dans votre campus. Merci de réessayer plus tard."
+          }
+        }
+      }
+    },
+    "No correction slots found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No correction slots found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun emplacement de correction n'a été trouvé"
+          }
+        }
+      }
+    },
+    "No patronages found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No patronages found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun parrainage trouvé"
+          }
+        }
+      }
+    },
+    "No project found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No project found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun projet trouvé"
+          }
+        }
+      }
+    },
+    "No recent activity" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No recent activity"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune activité récente"
+          }
+        }
+      }
+    },
+    "No recent activity was found on your profile." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No recent activity was found on your profile."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune activité récente n'a été trouvé sur votre profil."
           }
         }
       }
@@ -1357,82 +1352,18 @@
         }
       }
     },
-    "Oui" : {
+    "Online" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Yes"
+            "value" : "Online"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Oui"
-          }
-        }
-      }
-    },
-    "Par défaut" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Par défaut"
-          }
-        }
-      }
-    },
-    "Paramètres" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paramètres"
-          }
-        }
-      }
-    },
-    "Parrain" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patroned"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Parrain"
-          }
-        }
-      }
-    },
-    "Parrainages" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patronages"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Parrainages"
+            "value" : "Connecté"
           }
         }
       }
@@ -1453,39 +1384,71 @@
         }
       }
     },
-    "Points de corrections" : {
+    "Patronages" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Correction points"
+            "value" : "Patronages"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Points de corrections"
+            "value" : "Parrainages"
           }
         }
       }
     },
-    "Profil intranet" : {
+    "Patroned" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Intranet profile"
+            "value" : "Patroned"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Profil intranet"
+            "value" : "Parrain"
           }
         }
       }
     },
-    "Projets" : {
+    "Patroning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patroning"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filleul"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil"
+          }
+        }
+      }
+    },
+    "Projects" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1497,22 +1460,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Projets"
-          }
-        }
-      }
-    },
-    "Projets associés" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Associated projects"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Projets associés"
           }
         }
       }
@@ -1533,167 +1480,71 @@
         }
       }
     },
-    "Recherche" : {
+    "Recent" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Research"
+            "value" : "Recent"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recherche"
+            "value" : "Récent"
           }
         }
       }
     },
-    "Recherchez un étudiant pour le voir dans la liste." : {
+    "Register" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search for a student to see them in the list."
+            "value" : "Register"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recherchez un étudiant pour le voir dans la liste."
+            "value" : "S’inscrire"
           }
         }
       }
     },
-    "S'inscrire" : {
+    "Registered" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sign up"
+            "value" : "Registered"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "S'inscrire"
+            "value" : "Inscrit"
           }
         }
       }
     },
-    "S'inscrire à l'événement" : {
+    "Related Projects" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sign up for the event"
+            "value" : "Related Projects"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "S'inscrire à l'événement"
+            "value" : "Projets Associés"
           }
         }
       }
     },
-    "Se déconnecter" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disconnecting"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se déconnecter"
-          }
-        }
-      }
-    },
-    "Se désinscrire" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unsubscribe"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se désinscrire"
-          }
-        }
-      }
-    },
-    "Se désinscrire de l'événement" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unsubscribe from the event"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se désinscrire de l'événement"
-          }
-        }
-      }
-    },
-    "Selectionne une catégorie d'activité" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select an activity category"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selectionne une catégorie d'activité"
-          }
-        }
-      }
-    },
-    "Sélectionner un filtre" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select a filter"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sélectionner un filtre"
-          }
-        }
-      }
-    },
-    "Sélectionner une categorie d'activité" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select an activity category"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sélectionner une categorie d'activité"
-          }
-        }
-      }
-    },
-    "Signaler un problème" : {
+    "Report a problem" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1709,119 +1560,279 @@
         }
       }
     },
-    "Sombre" : {
+    "Scale" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dark"
+            "value" : "Scale"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sombre"
+            "value" : "Correction"
           }
         }
       }
     },
-    "Souhaitez vous vraiment vous désinscrire de cet événement ?" : {
+    "Scale %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you really want to unsubscribe from this event?"
+            "value" : "Scale %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Souhaitez vous vraiment vous désinscrire de cet événement ?"
+            "value" : "Correction %@"
           }
         }
       }
     },
-    "Souhaitez vous vraiment vous inscrire à cet événement ?" : {
+    "Scales" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you really want to sign up for this event?"
+            "value" : "Scales"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Souhaitez vous vraiment vous inscrire à cet événement ?"
+            "value" : "Corrections"
           }
         }
       }
     },
-    "Souhaitez-vous vraiment vous déconnecter de l'application ?" : {
+    "Search a project" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you really want to disconnect from the application?"
+            "value" : "Search a project"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Souhaitez-vous vraiment vous déconnecter de l'application ?"
+            "value" : "Rechercher un projet"
           }
         }
       }
     },
-    "Système" : {
+    "Search a student" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "System"
+            "value" : "Search a student"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Système"
+            "value" : "Rechercher un étudiant"
           }
         }
       }
     },
-    "Tableau de bord" : {
+    "Search an achievement" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dashboard"
+            "value" : "Search an achievement"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tableau de bord"
+            "value" : "Rechercher un accomplissement"
           }
         }
       }
     },
-    "Terminé" : {
+    "Search an activity" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Finished"
+            "value" : "Search an activity"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminé"
+            "value" : "Rechercher une activité"
           }
         }
       }
     },
-    "Thème" : {
+    "Search an event" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search an event"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher un événement"
+          }
+        }
+      }
+    },
+    "Select a filter" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a filter"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner un filtre"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres"
+          }
+        }
+      }
+    },
+    "Shortcuts" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shortcuts"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccourcis"
+          }
+        }
+      }
+    },
+    "Sign In" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign In"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se connecter"
+          }
+        }
+      }
+    },
+    "Slot" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créneau"
+          }
+        }
+      }
+    },
+    "Slot available for a scale" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot available for a scale"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créneau disponible pour une correction"
+          }
+        }
+      }
+    },
+    "Slot taken by a scale" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot taken by a scale"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créneau pris par une correction"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Début"
+          }
+        }
+      }
+    },
+    "The search for the user was unsuccessful. Please check the login and try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The search for the user was unsuccessful. Please check the login and try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La recherche de l'utilisateur n'a pas abouti. Veuillez vérifier le login et réessayer."
+          }
+        }
+      }
+    },
+    "Theme" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1853,55 +1864,55 @@
         }
       }
     },
-    "Tous" : {
+    "Try again" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "All"
+            "value" : "Try again"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tous"
+            "value" : "Essayer de nouveau"
           }
         }
       }
     },
-    "Tous voir" : {
+    "Undefined" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "See all"
+            "value" : "Undefined"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tous voir"
+            "value" : "Non définie"
           }
         }
       }
     },
-    "Un créneau est un intervalle de temps pendant lequel vous vous déclarez disponible pour évaluer les autres étudiants. Un créneau peut être défini chaque jour entre 45 minutes et 2 semaines à l'avance et doit durer au moins une heure." : {
+    "Unregister" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A slot is an interval of time during which you declare yourself available to assess other students. A slot can be defined each day between 45 minutes and 2 weeks in advance and must last at least one hour."
+            "value" : "Unregister"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Un créneau est un intervalle de temps pendant lequel vous vous déclarez disponible pour évaluer les autres étudiants. Un créneau peut être défini chaque jour entre 45 minutes et 2 semaines à l'avance et doit durer au moins une heure."
+            "value" : "Se désinscrire"
           }
         }
       }
     },
-    "Valeur" : {
+    "Value" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1917,82 +1928,18 @@
         }
       }
     },
-    "Validez un projet pour gagner des points de compétences." : {
+    "Version %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Validate a project to earn skill points."
+            "value" : "Version %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Validez un projet pour gagner des points de compétences."
-          }
-        }
-      }
-    },
-    "Vous corrigez %@ sur %@." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You correct %1$@ on %2$@."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Vous corrigez %1$@ sur %2$@."
-          }
-        }
-      }
-    },
-    "Vous devez atteindre des objectifs pour débloquer des accomplissements." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You need to reach objectives to unlock achievements."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vous devez atteindre des objectifs pour débloquer des accomplissements."
-          }
-        }
-      }
-    },
-    "Vous devez être inscrit ou avoir rendu un projet pour le voir dans la liste." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You must be registered or have submitted a project to see it in the list."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vous devez être inscrit ou avoir rendu un projet pour le voir dans la liste."
-          }
-        }
-      }
-    },
-    "Vous êtes corrigé par %@ sur %@." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You have been corrected by %1$@ on %2$@."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Vous êtes corrigé par %1$@ sur %2$@."
+            "value" : "Version %@"
           }
         }
       }
@@ -2009,6 +1956,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wallets"
+          }
+        }
+      }
+    },
+    "Welcome to" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenue sur"
+          }
+        }
+      }
+    },
+    "Yes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oui"
+          }
+        }
+      }
+    },
+    "You must be registered or have submitted a project to see it in the list." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You must be registered or have submitted a project to see it in the list."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous devez être inscrit ou avoir rendu un projet pour le voir dans la liste."
+          }
+        }
+      }
+    },
+    "You must complete goals to unlock achievements." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You must complete goals to unlock achievements."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous devez avoir compléter un objectif pour débloquer des accomplissements."
           }
         }
       }

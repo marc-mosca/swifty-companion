@@ -1,0 +1,31 @@
+//
+//  FilterButton.swift
+//  Dashboard42
+//
+//  Created by Marc MOSCA on 01/10/2024.
+//
+
+import SwiftUI
+
+struct FilterButton: View {
+    @Binding var selectedFilter: String
+    let filters: [String]
+    
+    private var image: String {
+        self.selectedFilter.isEmpty == true ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill"
+    }
+    
+    var body: some View {
+        Menu("Filter activities", systemImage: self.image) {
+            Picker("Select a filter", selection: Binding(self.$selectedFilter, deselectTo: "")) {
+                ForEach(self.filters, id: \.self) { filter in
+                    Text(filter)
+                }
+            }
+        }
+    }
+}
+
+#Preview {
+    FilterButton(selectedFilter: .constant(""), filters: ["Foo", "Bar"])
+}

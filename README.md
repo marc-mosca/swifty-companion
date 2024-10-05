@@ -1,35 +1,77 @@
-#  Dashboard42 - iOS Application for 42 Students
+# Dashboard42
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+**Dashboard42** is an iOS app designed for students of School 42. It provides easy access to intranet 42 information directly from your iPhone, with a set of features to simplify the management of your academic journey.
 
-## Introduction
+## Features
 
-Dashboard42 is an iOS app designed to enhance the experience of students at 42.
-This app aims to provide 42 students with convenient access to essential information, resources, and tools to streamline their academic journey.
+- **Access to student profile**: View your personal information and your progress in the course.
+- **Project Viewing**: Access the list of available projects, their description and your results.
+- **Correction Tracking**: Schedule and track your correction appointments.
+- **Real-time statistics**: Track your ranking, progress points, skills and current level.
+- **Events Calendar**: Stay informed about events and meetings organized within 42.
+- **Connection History**: Track your cluster connection times and recent activity.
 
-## Feedback and Contributions
+## Prerequisites
 
-We welcome feedback, bug reports, and contributions from the 42 community to help improve the app.
-If you encounter any issues or have suggestions for new features, please open an issue on the GitHub repository.
+- iOS 17 or later
+- Valid account 42 to connect to the intranet via the API
 
-If you'd like to contribute to the development of Dashboard42, feel free to fork the repository, make your changes, and submit a pull request.
+## Installation
 
-### Requirements
+1. Clone the repository:
 
-To run the app, you first need to [create an app for 42's API](https://profile.intra.42.fr/oauth/applications/new) with the following redirection URI : `fr.marcmosca.Dashboard42://oauth2callback`.
+    ```bash
+    git clone https://github.com/Dashboard42/Dashboard42.git
+    ```
 
-Then create a file in Dashboard42 folder named `Api.plist` and add your credentials, like that :
+2. Navigate to the project folder:
 
-- `API_CLIENT_ID` : Correspond to your app client id.
-- `API_CLIENT_SECRET` : Correspond to your app secret id.
-- `API_REDIRECT_URI` : Correspond to your app redirect uri (so `fr.marcmosca.Dashboard42://oauth2callback`).
+    ```bash
+    cd Dashboard42
+    ```
+
+3. Open the project with Xcode:
+
+    ```bash
+    open Dashboard42.xcodeproj
+    ```
+
+4. Compile and run on your simulator or iOS device.
+
+## Technologies used
+
+- **SwiftUI**: Modern and responsive user interface.
+- **API 42**: Retrieving data from the intranet.
+
+## Contribute
+
+Contributions are welcome! If you would like to suggest changes or improvements, please follow the steps below:
+
+1. Fork the repository.
+2. Create a branch for your feature or bugfix (`git checkout -b feature/new-feature`).
+3. Make your changes and commit them (`git commit -am 'Adding new feature'`).
+4. Push your branch (`git push origin feature/new-feature`).
+5. Open a Pull Request.
+
+You need to [create an application for 42's API]((https://profile.intra.42.fr/oauth/applications/new)) with the following redirection URI: `fr.marcmosca.Dashboard42://oauth2callback`.
+
+After this, you need to create a configuration file (.xcconfig) to contains API credentials, like this:
+
+```xcconfig
+API_CLIENT_ID = <YOUR_CLIENT_ID_KEY>
+API_CLIENT_SECRET = <YOUR_CLIENT_SECRET_KEY>
+API_CALLBACK = /oauth2callback
+API_REDIRECT_URI = fr.marcmosca.Dashboard42:/$(API_CALLBACK)
+```
+
+## Known Issues
+
+- The application may have difficulty retrieving data when API 42 is under maintenance.
 
 ## Disclaimer
 
-This project is not officially affiliated with 42 or any of its official entities.
-It is an independent project created by and for 42 students to enhance their experience.
-Use this app responsibly and respect the policies and guidelines of 42.
+This project is not officially affiliated with 42 or any of its official entities. It is an independent project created by and for 42 students to enhance their experience. Use this app responsibly and respect the policies and guidelines of 42.
 
-## Contact me
+## Contact
 
 You can send me an email at **mmosca@student.42lyon.fr**.

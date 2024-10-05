@@ -9,26 +9,21 @@ import SwiftUI
 
 @main
 struct Dashboard42App: App {
+    @AppStorage(Constants.applicationLanguageKey) private var applicationLanguage: String = Locale.current.identifier
+    @AppStorage(Constants.applicationThemeKey) private var applicationTheme: Int = 0
 
-    // MARK: - Properties
-
-    @AppStorage(Constants.AppStorage.userColorscheme) private var userColorscheme: Int?
-    @AppStorage(Constants.AppStorage.userLanguage) private var userLanguage: String?
-    @State private var store = Store()
-
-    private var identifier: String { userLanguage ?? Locale.current.identifier }
-    private var colorscheme: ColorScheme? { AppColorScheme.transformToColorScheme(colorScheme: userColorscheme ?? 0) }
-
-    // MARK: - Body
+    @State var authenticationService: AuthenticationService = .init()
+    @State var campusService: CampusService = .init()
+    @State var userService: UserService = .init()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.store, store)
-                .environment(\.locale, .init(identifier: identifier))
-                .preferredColorScheme(colorscheme)
-                .handleError(error: store.error, actions: store.errorAction)
+                .preferredColorScheme(Themes(rawValue: self.applicationTheme)?.scheme)
+                .environment(\.locale, .init(identifier: self.applicationLanguage))
+                .environment(\.authenticationService, self.authenticationService)
+                .environment(\.campusService, self.campusService)
+                .environment(\.userService, self.userService)
         }
-        .modelContainer(for: HistorySearch.self)
     }
 }

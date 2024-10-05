@@ -2,77 +2,34 @@
 //  Constants.swift
 //  Dashboard42
 //
-//  Created by Marc MOSCA on 06/05/2024.
+//  Created by Marc MOSCA on 19/09/2024.
 //
 
 import Foundation
 
-/// Container for static constants and configurations used in the application.
-/// It is structured into sub-enumerations to organise the constants linked to the application's APIs and local storage.
 enum Constants {
-
-    /// Groups together constants and properties related to API configuration, including client identifiers, secrets, redirection URIs and access token managers.
-    enum Api {
-        static let clientId = getValueOfKeyInApiFile(for: "API_CLIENT_ID")
-        static let clientSecret = getValueOfKeyInApiFile(for: "API_CLIENT_SECRET")
-        static let redirectUri = getValueOfKeyInApiFile(for: "API_REDIRECT_URI")
-
-        static var applicationAccessToken: String? {
-            get { KeychainManager.shared.get(account: .applicationAccessToken) }
-            set { saveTokenInKeychain(newValue: newValue, account: .applicationAccessToken) }
-        }
-
-        static var userAccessToken: String? {
-            get { KeychainManager.shared.get(account: .userAccessToken) }
-            set { saveTokenInKeychain(newValue: newValue, account: .userAccessToken) }
-        }
-
-        static var userRefreshToken: String? {
-            get { KeychainManager.shared.get(account: .userRefreshToken) }
-            set { saveTokenInKeychain(newValue: newValue, account: .userRefreshToken) }
-        }
+    private static let bundle: Bundle = .main
+    
+    static let userIsConnectedKey: String = "APPSTORAGE_USER_IS_CONNECTED_KEY"
+    static let applicationLanguageKey: String = "APPSTORAGE_APPLICATION_LANGUAGE_KEY"
+    static let applicationThemeKey: String = "APPSTORAGE_APPLICATION_THEME_KEY"
+    
+    static var clientID: String {
+        guard let clientID: String = bundle.infoDictionary?["API_CLIENT_ID"] as? String else { error(key: "API_CLIENT_ID") }
+        return clientID
     }
-
-    /// Contains the keys used to store application data in `UserDefaults` or other persistent storage mechanisms.
-    enum AppStorage {
-        static let userIsConnected = "APPSTORAGE_USER_IS_CONNECTED"
-        static let userColorscheme = "APPSTORAGE_USER_COLORSCHEME"
-        static let userLanguage = "APPSTORAGE_USER_LANGUAGE"
-        static let userLogtime = "APPSTORAGE_USER_LOGTIME"
+    
+    static var clientSecret: String {
+        guard let clientSecret: String = bundle.infoDictionary?["API_CLIENT_SECRET"] as? String else { error(key: "API_CLIENT_SECRET") }
+        return clientSecret
     }
-
-}
-
-// MARK: - Private Helpers
-
-/// Extracts specific values from an Api.plist configuration file located in the main application bundle.
-/// Is used to retrieve secure configurations and other critical constants required for API operations.
-/// - Parameter key: The key for which the value is to be retrieved from the Api.plist file.
-/// - Returns: The character string associated with the key specified in the Api.plist file.
-private func getValueOfKeyInApiFile(for key: String) -> String {
-    guard let apiFilePath = Bundle.main.path(forResource: "Api", ofType: "plist") else {
-        fatalError("error: couldn't find `Api.plist` file.")
+    
+    static var redirectURI: String {
+        guard let redirectURI: String = bundle.infoDictionary?["API_REDIRECT_URI"] as? String else { error(key: "API_REDIRECT_URI") }
+        return redirectURI
     }
-
-    let plist = NSDictionary(contentsOfFile: apiFilePath)
-
-    guard let value = plist?.object(forKey: key) as? String else {
-        fatalError("error: couldn't find \(key) key in Api.plist file.")
-    }
-
-    return value
-}
-
-/// Saves or deletes access tokens and refresh tokens in the application's keychain.
-/// Supports conditional management of tokens based on the presence or absence of a value.
-/// - Parameters:
-///   - newValue: The new value of the token to be saved. If `nil`, the function will delete the existing token associated with the account specified in the keyring.
-///   - account: The specific keychain account under which the token is to be saved or deleted.
-private func saveTokenInKeychain(newValue: String?, account: KeychainAccount) {
-    if let newValue = newValue {
-        try? KeychainManager.shared.save(account: account, data: newValue)
-    }
-    else {
-        try? KeychainManager.shared.delete(account: account)
+    
+    private static func error(key: String) -> Never {
+        fatalError("Error: missing \(key) in Info.plist file.")
     }
 }

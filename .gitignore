@@ -89,6 +89,9 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-# API Keys files
+# Configuration files
 
-Dashboard42/Api.plist
+Configurations/*.xcconfig
+
+Development.xcconfig
+Release.xcconfig
