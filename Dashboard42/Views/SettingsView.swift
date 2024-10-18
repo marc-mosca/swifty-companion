@@ -63,7 +63,7 @@ struct SettingsView: View {
                 }
                 
                 Section("Help") {
-                    CustomLink(title: "Report a problem", url: URL(string: "https://github.com/Dashboard42/Dashboard42/issues")!)
+                    CustomLink(title: "Report a problem", url: URL(string: "https://github.com/marc-mosca/Dashboard42/issues")!)
                 }
                 
                 Section("Account") {
